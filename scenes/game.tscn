@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp0i3ja112uqq"]
+
+[ext_resource type="Script" uid="uid://dfr7tyxqn7l17" path="res://scripts/window_management.gd" id="1_yqjtg"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_yqjtg")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(192, 90)
+
+[node name="game" type="MarginContainer" parent="."]
+offset_right = 383.0
+offset_bottom = 180.0
+
+[node name="BL" type="Button" parent="game"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "BL"
+
+[node name="ClickPolygon" type="CollisionPolygon2D" parent="game/BL" groups=["Clickables"]]
+polygon = PackedVector2Array(0, 0, 28, 0, 28, 31, 0, 31)
+
+[node name="TR" type="Button" parent="game"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "TR"
+
+[node name="ClickPolygon" type="CollisionPolygon2D" parent="game/TR" groups=["Clickables"]]
+polygon = PackedVector2Array(28, 0, 28, 31, 0, 31, 0, 0)
+
+[node name="TL" type="Button" parent="game"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "TL"
+
+[node name="ClickPolygon" type="CollisionPolygon2D" parent="game/TL" groups=["Clickables"]]
+polygon = PackedVector2Array(0, 31, 0, 0, 26, 0, 26, 31)
+
+[node name="BR" type="Button" parent="game"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "BR"
+
+[node name="ClickPolygon" type="CollisionPolygon2D" parent="game/BR" groups=["Clickables"]]
+polygon = PackedVector2Array(0, 0, 0, 31, 29, 31, 29, 0)
+
+[connection signal="pressed" from="game/BL" to="." method="_on_bl_pressed"]
+[connection signal="pressed" from="game/TR" to="." method="_on_tr_pressed"]
+[connection signal="pressed" from="game/TL" to="." method="_on_tl_pressed"]
+[connection signal="pressed" from="game/BR" to="." method="_on_br_pressed"]
