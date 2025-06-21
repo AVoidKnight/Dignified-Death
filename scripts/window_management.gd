@@ -12,7 +12,7 @@ func _ready() -> void:
 	screen_size = DisplayServer.screen_get_size()
 	taskbar_height = get_taskbar_height()
 	_on_bl_pressed()
-	click_through_window()
+
 
 func _on_tr_pressed() -> void:
 	print("TR_PRESSED")
@@ -50,7 +50,3 @@ func _on_br_pressed() -> void:
 
 func get_taskbar_height() -> int:
 	return DisplayServer.screen_get_size().y - DisplayServer.screen_get_usable_rect().size.y
-
-
-func click_through_window() -> void:
-	pass
