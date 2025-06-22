@@ -24,15 +24,6 @@ position = Vector2(225, 138)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_3e1qr")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="RigidBody2D"]
-position = Vector2(76, 0)
-rotation = 1.5708
-node_a = NodePath("..")
-node_b = NodePath("../../RigidBody2D2")
-bias = 0.9
-length = 160.0
-rest_length = 100.0
-
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
 position = Vector2(301, 138)
 
