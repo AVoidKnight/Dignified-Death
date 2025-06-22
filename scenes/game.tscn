@@ -9,6 +9,7 @@ script = ExtResource("3_lnu2h")
 [node name="game" type="MarginContainer" parent="."]
 offset_right = 384.0
 offset_bottom = 180.0
+metadata/_edit_use_anchors_ = true
 
 [node name="BL" type="Button" parent="game"]
 layout_mode = 2
