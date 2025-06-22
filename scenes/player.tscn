@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwnq8pswwwcir"]
+[gd_scene load_steps=3 format=3 uid="uid://dwnq8pswwwcir"]
 
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dlxo4qnbf0y5s" path="res://scenes/player.gd" id="1_g2els"]
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-28, 8, -23, 8, -23, 5, -22, 5, -22, 4, -21, 4, -21, 3, -16, 3, -16, 4, -15, 4, -15, 5, -14, 5, -14, 8, 11, 8, 11, 5, 12, 5, 12, 4, 13, 4, 13, 3, 18, 3, 18, 4, 19, 4, 19, 5, 20, 5, 20, 8, 28, 8, 28, 7, 29, 7, 29, 4, 28, 4, 28, 3, 27, 3, 26, 3, 26, 2, 25, 2, 25, 1, 24, 1, 24, 0, 21, 0, 21, -1, 13, -1, 13, -2, 10, -2, 10, -3, 9, -3, 9, -4, 8, -4, 8, -5, 6, -5, 6, -6, 2, -6, 2, -7, -15, -7, -15, -6, -16, -6, -16, -5, -17, -5, -17, -4, -18, -4, -18, -3, -20, -3, -20, -2, -22, -2, -22, -1, -23, -1, -23, 0, -25, 0, -25, 1, -26, 1, -26, 2, -27, 2, -27, 3, -28, 3)
