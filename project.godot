@@ -18,6 +18,10 @@ boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
 
+[autoload]
+
+WindowManagement="*res://scripts/window_management.gd"
+
 [display]
 
 window/size/viewport_width=384

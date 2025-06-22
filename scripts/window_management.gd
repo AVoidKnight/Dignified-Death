@@ -11,10 +11,10 @@ func _ready() -> void:
 	window_size = DisplayServer.window_get_size()
 	screen_size = DisplayServer.screen_get_size()
 	taskbar_height = get_taskbar_height()
-	_on_bl_pressed()
+	move_to_bl_corner()
 
 
-func _on_tr_pressed() -> void:
+func move_to_tr_corner() -> void:
 	print("TR_PRESSED")
 	current_corner = TOP_RIGHT
 	window_position.x = screen_size.x - window_size.x
@@ -22,7 +22,7 @@ func _on_tr_pressed() -> void:
 	DisplayServer.window_set_position(window_position)
 
 
-func _on_tl_pressed() -> void:
+func move_to_tl_corner() -> void:
 	print("TL_PRESSED")
 	current_corner = TOP_LEFT
 	window_position.x = 0
@@ -30,7 +30,7 @@ func _on_tl_pressed() -> void:
 	DisplayServer.window_set_position(window_position)
 
 
-func _on_bl_pressed() -> void:
+func move_to_bl_corner() -> void:
 	print("BL_PRESSED")
 	current_corner = BOTTOM_LEFT
 	window_position.x = 0
@@ -39,7 +39,7 @@ func _on_bl_pressed() -> void:
 	DisplayServer.window_set_position(window_position)
 
 
-func _on_br_pressed() -> void:
+func move_to_br_corner() -> void:
 	print("BR_PRESSED")
 	current_corner = BOTTOM_RIGHT
 	window_position.x = screen_size.x - window_size.x
