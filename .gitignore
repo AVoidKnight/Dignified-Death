@@ -17,3 +17,4 @@ mono_crash.*.json
 
 addons/godot-git-plugin/
 addons/godot-git-plugin/win64/~libgit_plugin.windows.editor.x86_64.dll
+Godot/overlay_game/scenes/debug_scene.tscn
