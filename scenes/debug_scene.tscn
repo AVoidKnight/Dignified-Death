@@ -1,12 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://8kqovrisdy41"]
+[gd_scene load_steps=4 format=3 uid="uid://8kqovrisdy41"]
+
+[ext_resource type="PackedScene" uid="uid://dwnq8pswwwcir" path="res://scenes/player.tscn" id="1_3e1qr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsf0s"]
 size = Vector2(381, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3e1qr"]
+
 [node name="debug_scene" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="abaddon" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="abaddon"]
 position = Vector2(194, 161)
 shape = SubResource("RectangleShape2D_rsf0s")
+
+[node name="player" parent="." instance=ExtResource("1_3e1qr")]
+position = Vector2(137, 26)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(225, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_3e1qr")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="RigidBody2D"]
+position = Vector2(76, 0)
+rotation = 1.5708
+node_a = NodePath("..")
+node_b = NodePath("../../RigidBody2D2")
+bias = 0.9
+length = 160.0
+rest_length = 100.0
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2(301, 138)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+shape = SubResource("CircleShape2D_3e1qr")
