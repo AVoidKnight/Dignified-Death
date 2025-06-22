@@ -38,7 +38,6 @@ text = "BR"
 position = Vector2(132, 84)
 scale = Vector2(2, 2)
 texture = ExtResource("2_yqjtg")
-script = ExtResource("3_lnu2h")
 
 [connection signal="pressed" from="game/BL" to="." method="_on_bl_pressed"]
 [connection signal="pressed" from="game/TR" to="." method="_on_tr_pressed"]

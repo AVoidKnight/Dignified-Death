@@ -50,3 +50,15 @@ func move_to_br_corner() -> void:
 
 func get_taskbar_height() -> int:
 	return DisplayServer.screen_get_size().y - DisplayServer.screen_get_usable_rect().size.y
+
+
+func debug_window_change() -> void:
+	window_position.x = DisplayServer.screen_get_size().x / 2
+	window_position.y = DisplayServer.screen_get_size().y / 2
+	DisplayServer.window_set_size(DisplayServer.screen_get_size())
+	DisplayServer.window_set_position(window_position)
+
+
+func test_window_change() -> void:
+	DisplayServer.window_set_size(window_size)
+	move_to_bl_corner()
