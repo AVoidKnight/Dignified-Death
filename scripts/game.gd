@@ -1,10 +1,6 @@
 extends Node2D
 
 
-func _ready() -> void:
-	_on_bl_pressed()
-
-
 func _on_tr_pressed() -> void:
 	WindowManagement.move_to_tr_corner()
 
