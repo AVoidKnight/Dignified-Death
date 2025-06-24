@@ -56,7 +56,7 @@ func debug_window_change() -> void:
 	window_position.x = DisplayServer.screen_get_size().x / 2
 	window_position.y = DisplayServer.screen_get_size().y / 2
 	DisplayServer.window_set_size(DisplayServer.screen_get_size())
-	DisplayServer.window_set_position(window_position)
+	DisplayServer.window_set_position(Vector2.ZERO)
 
 
 func test_window_change() -> void:
