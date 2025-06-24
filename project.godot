@@ -57,6 +57,12 @@ testing_state={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="CarBody"
+2d_physics/layer_2="Wheels"
+2d_physics/layer_3="Environment"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
