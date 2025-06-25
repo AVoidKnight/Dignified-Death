@@ -16,10 +16,38 @@ script = ExtResource("1_k4lwf")
 collision_mask = 5
 
 [node name="FixL" type="Node2D" parent="base_car"]
-position = Vector2(-37, 6)
+position = Vector2(-37.5, 13.5)
+
+[node name="WheelStabilizerL" type="StaticBody2D" parent="base_car/FixL"]
+position = Vector2(0, -9)
+scale = Vector2(1.4, 1.4)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base_car/FixL/WheelStabilizerL"]
+polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="base_car/FixL/WheelStabilizerL"]
+position = Vector2(0, 14)
+scale = Vector2(-1, -1)
+polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
 
 [node name="FixR" type="Node2D" parent="base_car"]
-position = Vector2(31, 6)
+position = Vector2(30.5, 13.5)
+
+[node name="WheelStabilizerR" type="StaticBody2D" parent="base_car/FixR"]
+position = Vector2(0, -9)
+scale = Vector2(1.4, 1.4)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base_car/FixR/WheelStabilizerR"]
+polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="base_car/FixR/WheelStabilizerR"]
+position = Vector2(0, 14)
+scale = Vector2(-1, -1)
+polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base_car"]
 scale = Vector2(2, 2)
@@ -34,7 +62,7 @@ texture = ExtResource("2_sud1f")
 position = Vector2(-37.5, 13)
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 4
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WheelL"]
 position = Vector2(0, 0.5)
@@ -45,7 +73,7 @@ position = Vector2(0, 1.5)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WheelL/CarStabilizerL"]
-position = Vector2(0, 0.25)
+position = Vector2(0, 1.25)
 scale = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_k4lwf")
 
@@ -53,7 +81,7 @@ shape = SubResource("RectangleShape2D_k4lwf")
 position = Vector2(30.5, 13)
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 4
+collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WheelR"]
 position = Vector2(0, 0.5)
@@ -64,6 +92,6 @@ position = Vector2(0, 1.5)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WheelR/CarStabilizerR"]
-position = Vector2(0, 0.25)
+position = Vector2(0, 1.25)
 scale = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_k4lwf")

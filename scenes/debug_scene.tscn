@@ -18,3 +18,4 @@ shape = SubResource("RectangleShape2D_rsf0s")
 
 [node name="base_car" parent="." instance=ExtResource("1_3e1qr")]
 position = Vector2(148, 30)
+wheels_distance_fix = 4.0
