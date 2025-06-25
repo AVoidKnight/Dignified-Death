@@ -53,8 +53,7 @@ func get_taskbar_height() -> int:
 
 
 func debug_window_change() -> void:
-	window_position.x = DisplayServer.screen_get_size().x / 2
-	window_position.y = DisplayServer.screen_get_size().y / 2
+	window_position = DisplayServer.screen_get_size() / 2
 	DisplayServer.window_set_size(DisplayServer.screen_get_size())
 	DisplayServer.window_set_position(Vector2.ZERO)
 
