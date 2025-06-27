@@ -12,30 +12,15 @@ height = 112.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4lwf"]
 radius = 4.0
 
-[node name="base_car" type="Node2D"]
+[node name="base_car" type="Node2D" node_paths=PackedStringArray("wheel_array")]
 script = ExtResource("1_k4lwf")
+wheel_array = [NodePath("WheelL"), NodePath("WheelR")]
 
-[node name="base_car" type="CharacterBody2D" parent="." groups=["CharacterBodies"]]
+[node name="base_car" type="CharacterBody2D" parent="."]
 collision_mask = 5
 
 [node name="Camera2D" type="Camera2D" parent="base_car"]
 offset = Vector2(80, -30)
-
-[node name="FixL" type="Node2D" parent="base_car"]
-position = Vector2(-37.5, 13.5)
-
-[node name="NormalRay" type="RayCast2D" parent="base_car/FixL"]
-position = Vector2(-0.5, -8.5)
-target_position = Vector2(0, 18)
-collision_mask = 4
-
-[node name="FixR" type="Node2D" parent="base_car"]
-position = Vector2(30.5, 13.5)
-
-[node name="NormalRay" type="RayCast2D" parent="base_car/FixR"]
-position = Vector2(0.5, -8.5)
-target_position = Vector2(0, 18)
-collision_mask = 4
 
 [node name="BetaCarProperSprite" type="Sprite2D" parent="base_car"]
 position = Vector2(0.5, 0)
@@ -47,7 +32,7 @@ position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_scnjq")
 
-[node name="WheelL" type="RigidBody2D" parent="." groups=["CharacterBodies"]]
+[node name="WheelL" type="RigidBody2D" parent="."]
 position = Vector2(-37.5, 14)
 collision_layer = 2
 collision_mask = 6
@@ -65,7 +50,7 @@ position = Vector2(0, 0.5)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_k4lwf")
 
-[node name="WheelR" type="RigidBody2D" parent="." groups=["CharacterBodies"]]
+[node name="WheelR" type="RigidBody2D" parent="."]
 position = Vector2(30.5, 14)
 collision_layer = 2
 collision_mask = 6
