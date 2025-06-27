@@ -3,13 +3,11 @@
 [ext_resource type="Script" uid="uid://dlxo4qnbf0y5s" path="res://scripts/base_car.gd" id="1_k4lwf"]
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="2_sud1f"]
 [ext_resource type="Texture2D" uid="uid://ustg7qkbjw0j" path="res://assets/sprites/beta wheel.png" id="3_sud1f"]
+[ext_resource type="Script" uid="uid://cnwgksmrqv2n0" path="res://scripts/gravity_component.gd" id="4_scnjq"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k4lwf"]
-radius = 17.0
-height = 114.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_sud1f"]
-radius = 3.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_scnjq"]
+radius = 11.0
+height = 112.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k4lwf"]
 radius = 4.0
@@ -17,25 +15,14 @@ radius = 4.0
 [node name="base_car" type="Node2D"]
 script = ExtResource("1_k4lwf")
 
-[node name="base_car" type="RigidBody2D" parent="." groups=["CharacterBodies"]]
+[node name="base_car" type="CharacterBody2D" parent="." groups=["CharacterBodies"]]
 collision_mask = 5
+
+[node name="Camera2D" type="Camera2D" parent="base_car"]
+offset = Vector2(80, -30)
 
 [node name="FixL" type="Node2D" parent="base_car"]
 position = Vector2(-37.5, 13.5)
-
-[node name="WheelStabilizerL" type="StaticBody2D" parent="base_car/FixL"]
-position = Vector2(0, -9)
-scale = Vector2(1.2, 1.2)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base_car/FixL/WheelStabilizerL"]
-polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="base_car/FixL/WheelStabilizerL"]
-position = Vector2(0, 14)
-scale = Vector2(-1, -1)
-polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
 
 [node name="NormalRay" type="RayCast2D" parent="base_car/FixL"]
 position = Vector2(-0.5, -8.5)
@@ -44,20 +31,6 @@ collision_mask = 4
 
 [node name="FixR" type="Node2D" parent="base_car"]
 position = Vector2(30.5, 13.5)
-
-[node name="WheelStabilizerR" type="StaticBody2D" parent="base_car/FixR"]
-position = Vector2(0, -9)
-scale = Vector2(1.2, 1.2)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base_car/FixR/WheelStabilizerR"]
-polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="base_car/FixR/WheelStabilizerR"]
-position = Vector2(0, 14)
-scale = Vector2(-1, -1)
-polygon = PackedVector2Array(0, -4, 5, -3, 9, 0, 11, 4, 12, 8, 11, 12, 9, 15, 5, 17, 0, 18, 0, 19, 5, 18, 9, 16, 12, 12, 13, 8, 12, 4, 10, 0, 6, -4, 0, -5)
 
 [node name="NormalRay" type="RayCast2D" parent="base_car/FixR"]
 position = Vector2(0.5, -8.5)
@@ -72,30 +45,13 @@ texture = ExtResource("2_sud1f")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="base_car"]
 position = Vector2(0, 9)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_k4lwf")
-
-[node name="AmorL" type="Area2D" parent="base_car"]
-position = Vector2(-37, 22)
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="base_car/AmorL"]
-position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_sud1f")
-
-[node name="AmorR" type="Area2D" parent="base_car"]
-position = Vector2(31, 22)
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="base_car/AmorR"]
-position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_sud1f")
+shape = SubResource("CapsuleShape2D_scnjq")
 
 [node name="WheelL" type="RigidBody2D" parent="." groups=["CharacterBodies"]]
 position = Vector2(-37.5, 14)
 collision_layer = 2
 collision_mask = 6
+mass = 1.1
 
 [node name="BetaWheel" type="Sprite2D" parent="WheelL"]
 position = Vector2(-9.5, -8)
@@ -113,6 +69,7 @@ shape = SubResource("CircleShape2D_k4lwf")
 position = Vector2(30.5, 14)
 collision_layer = 2
 collision_mask = 6
+mass = 1.1
 
 [node name="BetaWheel" type="Sprite2D" parent="WheelR"]
 position = Vector2(-9.5, -8)
@@ -126,7 +83,10 @@ position = Vector2(0, 0.5)
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_k4lwf")
 
-[connection signal="body_entered" from="base_car/AmorL" to="." method="_on_amor_l_environment_touched"]
-[connection signal="body_exited" from="base_car/AmorL" to="." method="_on_amor_l_body_exited"]
-[connection signal="body_entered" from="base_car/AmorR" to="." method="_on_amor_r_environment_touched"]
-[connection signal="body_exited" from="base_car/AmorR" to="." method="_on_amor_r_body_exited"]
+[node name="GravityComponent" type="RigidBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("4_scnjq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityComponent"]
