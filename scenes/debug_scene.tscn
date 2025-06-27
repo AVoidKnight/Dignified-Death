@@ -16,6 +16,11 @@ collision_mask = 0
 position = Vector2(194, 161)
 shape = SubResource("RectangleShape2D_rsf0s")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="abaddon"]
+position = Vector2(561.809, 221.349)
+rotation = 0.322886
+shape = SubResource("RectangleShape2D_rsf0s")
+
 [node name="base_car" parent="." instance=ExtResource("1_3e1qr")]
 position = Vector2(148, 30)
 wheels_distance_fix = 4.0
