@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1x62vb0l2mdh"]
+
+[ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_7230a"]
+
+[node name="LevelPart" type="StaticBody2D"]
+script = ExtResource("1_7230a")
