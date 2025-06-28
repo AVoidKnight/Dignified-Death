@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp0i3ja112uqq"]
 
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://dcfiiqlr8mf0g" path="res://scripts/game.gd" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://dcfiiqlr8mf0g" path="res://src/game/game.gd" id="3_lnu2h"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("3_lnu2h")

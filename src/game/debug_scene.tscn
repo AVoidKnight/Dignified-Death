@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://8kqovrisdy41"]
 
-[ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://scenes/base_car.tscn" id="1_3e1qr"]
+[ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="1_w5w5f"]
 
 [node name="debug_scene" type="Node2D"]
 
-[node name="base_car" parent="." instance=ExtResource("1_3e1qr")]
+[node name="base_car" parent="." instance=ExtResource("1_w5w5f")]
 position = Vector2(148, 30)
 
 [node name="abaddon" type="StaticBody2D" parent="."]

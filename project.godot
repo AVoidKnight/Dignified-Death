@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-WindowManagement="*res://scripts/window_management.gd"
-GlobalInputs="*res://scripts/global_inputs.gd"
+WindowManagement="*res://src/autoload/window_management.gd"
+GlobalInputs="*res://src/autoload/global_inputs.gd"
 
 [display]
 
