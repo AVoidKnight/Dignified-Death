@@ -1,77 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://di0iqwdilk0b"]
+[gd_scene load_steps=4 format=3 uid="uid://c8m25vro04m75"]
 
-[ext_resource type="Script" uid="uid://dlxo4qnbf0y5s" path="res://scripts/base_car.gd" id="1_k4lwf"]
+[ext_resource type="PackedScene" uid="uid://y466bjhb17da" path="res://scenes/wheel.tscn" id="2_scnjq"]
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="2_sud1f"]
-[ext_resource type="Texture2D" uid="uid://ustg7qkbjw0j" path="res://assets/sprites/beta wheel.png" id="3_sud1f"]
-[ext_resource type="Script" uid="uid://cnwgksmrqv2n0" path="res://scripts/gravity_component.gd" id="4_scnjq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_scnjq"]
 radius = 11.0
 height = 112.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k4lwf"]
-radius = 4.0
-
-[node name="base_car" type="Node2D" node_paths=PackedStringArray("wheel_array")]
-script = ExtResource("1_k4lwf")
-wheel_array = [NodePath("WheelL"), NodePath("WheelR")]
-
-[node name="base_car" type="CharacterBody2D" parent="."]
+[node name="base_car" type="RigidBody2D"]
 collision_mask = 5
 
-[node name="Camera2D" type="Camera2D" parent="base_car"]
-offset = Vector2(80, -30)
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(80.085, -20.305)
+zoom = Vector2(0.77, 0.77)
 
-[node name="BetaCarProperSprite" type="Sprite2D" parent="base_car"]
+[node name="BetaCarProperSprite" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("2_sud1f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="base_car"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_scnjq")
 
-[node name="WheelL" type="RigidBody2D" parent="."]
-position = Vector2(-37.5, 14)
-collision_layer = 2
-collision_mask = 6
-mass = 1.1
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-37, 14)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 2.66
 
-[node name="BetaWheel" type="Sprite2D" parent="WheelL"]
-position = Vector2(-9.5, -8)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("3_sud1f")
-centered = false
-offset = Vector2(0.5, -0.5)
+[node name="Wheel" parent="PinJoint2D" instance=ExtResource("2_scnjq")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelL"]
-position = Vector2(0, 0.5)
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_k4lwf")
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(31, 14)
+node_a = NodePath("..")
+node_b = NodePath("Wheel")
+softness = 2.66
 
-[node name="WheelR" type="RigidBody2D" parent="."]
-position = Vector2(30.5, 14)
-collision_layer = 2
-collision_mask = 6
-mass = 1.1
-
-[node name="BetaWheel" type="Sprite2D" parent="WheelR"]
-position = Vector2(-9.5, -8)
-scale = Vector2(1.1, 1.1)
-texture = ExtResource("3_sud1f")
-centered = false
-offset = Vector2(0.5, -0.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelR"]
-position = Vector2(0, 0.5)
-scale = Vector2(2, 2)
-shape = SubResource("CircleShape2D_k4lwf")
-
-[node name="GravityComponent" type="RigidBody2D" parent="."]
-visible = false
-collision_layer = 0
-collision_mask = 0
-script = ExtResource("4_scnjq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityComponent"]
+[node name="Wheel" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]

@@ -63,6 +63,11 @@ testing_state={
 2d_physics/layer_2="Wheels"
 2d_physics/layer_3="Environment"
 
+[physics]
+
+2d/solver/contact_recycle_radius=0.07
+2d/solver/contact_max_allowed_penetration=0.05
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

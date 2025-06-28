@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://b64dbl5skbraq"]
+[gd_scene load_steps=3 format=3 uid="uid://y466bjhb17da"]
 
-[ext_resource type="Script" uid="uid://dgqdo11xtaris" path="res://scripts/wheel.gd" id="1_hm1pg"]
+[ext_resource type="Texture2D" uid="uid://ustg7qkbjw0j" path="res://assets/sprites/beta wheel.png" id="1_hm1pg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c65p7"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_sud1f"]
+radius = 5.5
 
 [node name="Wheel" type="RigidBody2D"]
-script = ExtResource("1_hm1pg")
+collision_layer = 2
+collision_mask = 6
+mass = 1.1
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BetaWheel" type="Sprite2D" parent="."]
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_hm1pg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_c65p7")
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_sud1f")

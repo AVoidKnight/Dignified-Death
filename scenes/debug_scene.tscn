@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://8kqovrisdy41"]
+[gd_scene load_steps=2 format=3 uid="uid://8kqovrisdy41"]
 
-[ext_resource type="PackedScene" uid="uid://di0iqwdilk0b" path="res://scenes/base_car.tscn" id="1_3e1qr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsf0s"]
-size = Vector2(381, 20)
+[ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://scenes/base_car.tscn" id="1_3e1qr"]
 
 [node name="debug_scene" type="Node2D"]
 
@@ -12,14 +9,8 @@ rotation = 0.0698132
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="abaddon"]
-position = Vector2(194, 161)
-shape = SubResource("RectangleShape2D_rsf0s")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="abaddon"]
-position = Vector2(561.809, 221.349)
-rotation = 0.322886
-shape = SubResource("RectangleShape2D_rsf0s")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="abaddon"]
+polygon = PackedVector2Array(-93.5203, 124.828, -2.27462, 139.498, 58.3465, 146.286, 137.782, 149.754, 218.564, 158.139, 316.653, 170.326, 420.288, 190.145, 640.01, 192.825, 810.97, 214.953, -11.7278, 362.702)
 
 [node name="base_car" parent="." instance=ExtResource("1_3e1qr")]
 position = Vector2(148, 30)
