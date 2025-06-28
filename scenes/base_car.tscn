@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8m25vro04m75"]
+[gd_scene load_steps=5 format=3 uid="uid://c8m25vro04m75"]
 
+[ext_resource type="Script" uid="uid://b6mhr5wyaraqq" path="res://scripts/base_car.gd" id="1_sud1f"]
 [ext_resource type="PackedScene" uid="uid://y466bjhb17da" path="res://scenes/wheel.tscn" id="2_scnjq"]
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="2_sud1f"]
 
@@ -9,6 +10,7 @@ height = 112.0
 
 [node name="base_car" type="RigidBody2D"]
 collision_mask = 5
+script = ExtResource("1_sud1f")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(80.085, -20.305)
