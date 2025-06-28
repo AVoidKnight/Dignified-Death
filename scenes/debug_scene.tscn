@@ -4,13 +4,5 @@
 
 [node name="debug_scene" type="Node2D"]
 
-[node name="abaddon" type="StaticBody2D" parent="."]
-rotation = 0.0698132
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="abaddon"]
-polygon = PackedVector2Array(-93.5203, 124.828, -2.27462, 139.498, 58.3465, 146.286, 137.782, 149.754, 218.564, 158.139, 316.653, 170.326, 420.288, 190.145, 640.01, 192.825, 810.97, 214.953, -11.7278, 362.702)
-
 [node name="base_car" parent="." instance=ExtResource("1_3e1qr")]
 position = Vector2(148, 30)
