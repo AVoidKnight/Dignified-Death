@@ -1,14 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://8kqovrisdy41"]
+[gd_scene load_steps=5 format=3 uid="uid://8kqovrisdy41"]
 
+[ext_resource type="Script" uid="uid://cdhb54dqt5v2o" path="res://src/game/debug_scene.gd" id="1_4ewb7"]
 [ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="1_w5w5f"]
+[ext_resource type="PackedScene" uid="uid://cycex7pdelwka" path="res://src/level_parts/level_part_1.tscn" id="2_kojx4"]
+[ext_resource type="PackedScene" uid="uid://d2xmjyfsb5ssh" path="res://src/level_parts/level_part_2.tscn" id="3_6xner"]
 
 [node name="debug_scene" type="Node2D"]
+script = ExtResource("1_4ewb7")
 
 [node name="base_car" parent="." instance=ExtResource("1_w5w5f")]
-position = Vector2(148, 30)
+position = Vector2(64, -80)
+gravity_scale = 0.5
 
-[node name="abaddon" type="StaticBody2D" parent="."]
-collision_layer = 4
-collision_mask = 0
+[node name="CollisionShape2D" parent="base_car" index="2"]
+position = Vector2(0, 8)
+
+[node name="LevelPart" parent="." instance=ExtResource("2_kojx4")]
+end_position = null
+
+[node name="LevelPart" parent="LevelPart" instance=ExtResource("3_6xner")]
+end_position = null
 
 [editable path="base_car"]
