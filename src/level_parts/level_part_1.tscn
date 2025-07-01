@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cycex7pdelwka"]
+[gd_scene load_steps=6 format=3 uid="uid://cycex7pdelwka"]
 
 [ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_acy02"]
 [ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_7mtg0"]
 [ext_resource type="Texture2D" uid="uid://bhtenlea18ovo" path="res://assets/sprites/beta road.png" id="3_4hm2m"]
 [ext_resource type="PackedScene" uid="uid://dohy5d0kc0nni" path="res://src/objects/rock.tscn" id="4_2d41t"]
+[ext_resource type="Texture2D" uid="uid://ct5miegmkip3e" path="res://assets/sprites/bush1.png" id="5_gsbpj"]
 
 [node name="LevelPart" type="StaticBody2D"]
 scale = Vector2(6, 6)
@@ -14,16 +15,16 @@ end_position = Vector2(382, -13)
 metadata/_custom_type_script = "uid://dkm2tm70mfqe7"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 10, -3, 22.3333, -3.83333, 35, -8, 50, -6, 59.5, -2.16667, 76, -3, 91, -2.5, 106, -8, 130, -13, 152, -11, 168.333, -8.83333, 184, -13.8333, 200, -19.1667, 219, -21, 241.333, -23.5, 263, -19, 282.167, -10.3333, 307, -11, 333.5, -4.83333, 357, -9, 382, -13, 382, 13, 0, 13)
+polygon = PackedVector2Array(-27.5515, -15.1304, -23.5225, -15.9079, -15.6767, -15.4838, -10.25, -12.7907, -6.59782, -7.45117, -0.336863, -4.49145, 10, -3, 22.3333, -3.83333, 35, -8, 50, -6, 59.5, -2.16667, 76, -3, 91, -2.5, 106, -8, 130, -13, 152, -11, 168.333, -8.83333, 184, -13.8333, 200, -19.1667, 219, -21, 241.333, -23.5, 263, -19, 282.167, -10.3333, 307, -11, 333.5, -4.83333, 357, -9, 382, -13, 382, 13, -27.6222, 13.2841)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource("2_7mtg0")
-polygon = PackedVector2Array(0, 0, 10, -3, 22.3333, -3.83333, 35, -8, 50, -6, 59.5, -2.16667, 76, -3, 91, -2.5, 106, -8, 130, -13, 152, -11, 168.333, -8.83333, 184, -13.8333, 200, -19.1667, 219, -21, 241.333, -23.5, 263, -19, 282.167, -10.3333, 307, -11, 333.5, -4.83333, 357, -9, 382, -13, 382, 13, 0, 13)
+polygon = PackedVector2Array(-27.5515, -15.1304, -23.5225, -15.9079, -15.6767, -15.4838, -10.25, -12.7907, -6.59782, -7.45117, -0.336863, -4.49145, 10, -3, 22.3333, -3.83333, 35, -8, 50, -6, 59.5, -2.16667, 76, -3, 91, -2.5, 106, -8, 130, -13, 152, -11, 168.333, -8.83333, 184, -13.8333, 200, -19.1667, 219, -21, 241.333, -23.5, 263, -19, 282.167, -10.3333, 307, -11, 333.5, -4.83333, 357, -9, 382, -13, 382, 13, -27.6222, 13.2841)
 uv = PackedVector2Array(0, 0, 10, -3, 22, -2, 35, -8, 50, -6, 59, -1, 76, -3, 91, -1, 106, -8, 130, -13, 152, -11, 168, -5, 186, -11, 200, -22, 219, -21, 242, -25, 263, -19, 281, -8, 307, -11, 333, -4, 357, -9, 382, -13, 382, 13, 0, 13)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 10, -3, 22.3333, -3.83333, 35, -8, 50, -6, 59.5, -2.16667, 76, -3, 91, -2.5, 106, -8, 130, -13, 152, -11, 168.333, -8.83333, 184, -13.8333, 200, -19.1667, 219, -21, 241.333, -23.5, 263, -19, 282.167, -10.3333, 307, -11, 333.5, -4.83333, 357, -9, 382, -13)
+points = PackedVector2Array(-27.5515, -15.1304, -23.5225, -15.9079, -15.6767, -15.4838, -10.25, -12.7907, -6.59782, -7.45117, -0.336863, -4.49145, 10, -3, 22.3333, -3.83333, 35, -8, 50, -6, 59.5, -2.16667, 76, -3, 91, -2.5, 106, -8, 130, -13, 152, -11, 168.333, -8.83333, 184, -13.8333, 200, -19.1667, 219, -21, 241.333, -23.5, 263, -19, 282.167, -10.3333, 307, -11, 333.5, -4.83333, 357, -9, 382, -13)
 width = 1.0
 texture = ExtResource("3_4hm2m")
 texture_mode = 1
@@ -31,57 +32,101 @@ texture_mode = 1
 [node name="rocks" type="Node2D" parent="."]
 
 [node name="rock" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(41.441, -11.0887)
-rotation = 0.141372
+position = Vector2(40.9883, -7.70363)
+rotation = 0.132256
 
 [node name="rock2" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(150.668, -16.334)
-rotation = 0.0910439
+position = Vector2(150.398, -11.6446)
+rotation = 0.0913268
 
 [node name="rock7" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(173.259, -16.9704)
-rotation = 0.0910439
+position = Vector2(180.395, -13.2083)
+rotation = -0.307371
 
 [node name="rock8" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(223.713, -29.0916)
-rotation = 0.0910439
+position = Vector2(224.027, -22.0565)
+rotation = -0.111235
 
 [node name="rock9" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(248.107, -28.4855)
-rotation = 0.0910439
+position = Vector2(248.015, -22.6252)
+rotation = 0.20309
 
 [node name="rock10" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(268.865, -23.1825)
-rotation = 0.0910439
+position = Vector2(269.423, -16.6453)
+rotation = 0.423294
 
 [node name="rock11" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(296.439, -18.7902)
-rotation = 0.0910439
+position = Vector2(302.347, -11.3709)
+rotation = -0.028568
 
 [node name="rock12" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(320.352, -17.8141)
-rotation = 0.0910439
+position = Vector2(321.218, -8.20146)
+rotation = 0.229416
 
 [node name="rock13" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(355.491, -33.6752)
-rotation = 0.0910439
+position = Vector2(359.332, -9.87557)
+rotation = -0.158257
 
 [node name="rock14" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(373.548, -19.7662)
-rotation = 0.0910439
+position = Vector2(376.119, -12.5594)
+rotation = -0.163067
 
 [node name="rock3" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(81.5563, -8.27161)
-rotation = -0.0570552
+position = Vector2(81.5997, -3.31179)
+rotation = 0.0331347
 
 [node name="rock4" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(65.3901, -7.36401)
-rotation = -0.0557194
+position = Vector2(72.0723, -3.30147)
+rotation = -0.0512337
 
 [node name="rock5" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(103.8, -11.2791)
-rotation = -0.354099
+position = Vector2(104.44, -7.95818)
+rotation = -0.351718
 
 [node name="rock6" parent="rocks" instance=ExtResource("4_2d41t")]
-position = Vector2(126.147, -16.7556)
-rotation = -0.205153
+position = Vector2(125.862, -12.6466)
+rotation = -0.203691
+
+[node name="bushes" type="Node2D" parent="."]
+
+[node name="Bush1" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(11.3973, -5.80863)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")
+
+[node name="Bush2" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(133.184, -15.1729)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")
+
+[node name="Bush3" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(239.854, -25.7979)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")
+
+[node name="Bush4" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(310.612, -12.3779)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")
+
+[node name="Bush5" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(42.7987, -9.4505)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")
+
+[node name="Bush6" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(199.833, -21.7901)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")
+
+[node name="Bush7" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(373.952, -14.5765)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_gsbpj")

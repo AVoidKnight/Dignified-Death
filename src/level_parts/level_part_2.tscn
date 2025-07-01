@@ -6,21 +6,21 @@
 [ext_resource type="PackedScene" uid="uid://dohy5d0kc0nni" path="res://src/objects/rock.tscn" id="4_cnuus"]
 
 [node name="LevelPart" type="StaticBody2D"]
-scale = Vector2(6, 6)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_a71n8")
+end_position = Vector2(384, -42)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376, -40, 384, -42, 384, 52, 0, 52)
+polygon = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376.09, -40.7087, 384, -42, 384, 52, 0, 52)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource("2_j3npd")
-polygon = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376, -40, 384, -42, 384, 52, 0, 52)
+polygon = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376.09, -40.7087, 384, -42, 384, 52, 0, 52)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376, -40, 384, -42)
+points = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376.09, -40.7087, 384, -42)
 width = 1.0
 texture = ExtResource("3_cnuus")
 texture_mode = 1
@@ -28,46 +28,60 @@ texture_mode = 1
 [node name="rocks" type="Node2D" parent="."]
 
 [node name="rock" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(24, -14)
+position = Vector2(24, -5.8)
+rotation = 0.15708
 
 [node name="rock2" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(43, -15)
+position = Vector2(49.6821, -7.81638)
+rotation = -0.349066
 
 [node name="rock3" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(65, -17)
+position = Vector2(65.3374, -9.30921)
+rotation = 0.139626
 
 [node name="rock4" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(82, -21)
+position = Vector2(94.571, -14.9569)
+rotation = 0.0698132
 
 [node name="rock5" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(109, -29)
+position = Vector2(110.627, -17.5148)
+rotation = -0.314159
 
 [node name="rock6" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(145, -32)
+position = Vector2(147.998, -21.1756)
+rotation = -0.165667
 
 [node name="rock7" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(180, -27)
+position = Vector2(176.918, -13.8641)
+rotation = 0.399185
 
 [node name="rock8" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(214, -19)
+position = Vector2(215.918, -7.47823)
 
 [node name="rock9" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(239, -41)
+position = Vector2(242.236, -15.8049)
+rotation = -0.48339
 
 [node name="rock10" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(254, -49)
+position = Vector2(264.45, -24.2149)
+rotation = -0.176505
 
 [node name="rock11" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(284, -41)
+position = Vector2(286.837, -25.4923)
+rotation = 0.0945162
 
 [node name="rock12" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(309, -55)
+position = Vector2(317.457, -32.4926)
+rotation = -0.516124
 
 [node name="rock13" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(332, -55)
+position = Vector2(338.021, -39.0019)
+rotation = 0.0653264
 
 [node name="rock14" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(357, -63)
+position = Vector2(364.376, -43.3933)
+rotation = 0.242203
 
 [node name="rock15" parent="rocks" instance=ExtResource("4_cnuus")]
-position = Vector2(377, -53)
+position = Vector2(381.152, -42.0287)
+rotation = -0.157547
