@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2xmjyfsb5ssh"]
+
+[ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_a71n8"]
+[ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_j3npd"]
+[ext_resource type="Texture2D" uid="uid://bhtenlea18ovo" path="res://assets/sprites/beta road.png" id="3_cnuus"]
+[ext_resource type="PackedScene" uid="uid://dohy5d0kc0nni" path="res://src/objects/rock.tscn" id="4_cnuus"]
+
+[node name="LevelPart" type="StaticBody2D"]
+scale = Vector2(6, 6)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_a71n8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376, -40, 384, -42, 384, 52, 0, 52)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource("2_j3npd")
+polygon = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376, -40, 384, -42, 384, 52, 0, 52)
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 20, -6, 38, -3, 57, -10, 71, -8, 87, -15, 101, -14, 117, -19, 132, -18, 150, -21, 168, -17, 185, -10, 200, -7, 218, -7, 238, -13, 255, -22, 277, -26, 297, -24, 314, -30, 330, -39, 346, -38, 360, -44, 376, -40, 384, -42)
+width = 1.0
+texture = ExtResource("3_cnuus")
+texture_mode = 1
+
+[node name="rocks" type="Node2D" parent="."]
+
+[node name="rock" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(24, -14)
+
+[node name="rock2" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(43, -15)
+
+[node name="rock3" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(65, -17)
+
+[node name="rock4" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(82, -21)
+
+[node name="rock5" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(109, -29)
+
+[node name="rock6" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(145, -32)
+
+[node name="rock7" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(180, -27)
+
+[node name="rock8" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(214, -19)
+
+[node name="rock9" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(239, -41)
+
+[node name="rock10" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(254, -49)
+
+[node name="rock11" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(284, -41)
+
+[node name="rock12" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(309, -55)
+
+[node name="rock13" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(332, -55)
+
+[node name="rock14" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(357, -63)
+
+[node name="rock15" parent="rocks" instance=ExtResource("4_cnuus")]
+position = Vector2(377, -53)
