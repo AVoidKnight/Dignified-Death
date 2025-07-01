@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmxn14lq350js"]
+
+[ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_qnroy"]
+[ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_rksrg"]
+[ext_resource type="Texture2D" uid="uid://bhtenlea18ovo" path="res://assets/sprites/beta road.png" id="3_juucf"]
+[ext_resource type="Texture2D" uid="uid://cq51s1kj411kg" path="res://assets/sprites/beta camp.png" id="4_rksrg"]
+[ext_resource type="Script" uid="uid://n8f4i66c14qe" path="res://src/level_parts/tutor_area.gd" id="5_juucf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnroy"]
+size = Vector2(122, 20)
+
+[node name="LevelPart" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_qnroy")
+end_position = Vector2(217, 0)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 217, 0, 217, 72, 0, 72)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource("2_rksrg")
+polygon = PackedVector2Array(0, 0, 217, 0, 217, 72, 0, 72)
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 217, 0)
+width = 1.0
+texture = ExtResource("3_juucf")
+texture_mode = 1
+
+[node name="rocks" type="Node2D" parent="."]
+
+[node name="BetaCamp" type="Sprite2D" parent="."]
+position = Vector2(20.0167, -4.49525)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_rksrg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("5_juucf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(62, -11)
+shape = SubResource("RectangleShape2D_qnroy")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_tutor_hitbox"]
