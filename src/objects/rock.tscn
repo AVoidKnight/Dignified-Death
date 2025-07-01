@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dohy5d0kc0nni"]
+[gd_scene load_steps=3 format=3 uid="uid://dohy5d0kc0nni"]
 
 [ext_resource type="Texture2D" uid="uid://ctld7r2av1oyb" path="res://assets/sprites/beta rock.png" id="1_wyfgd"]
 
@@ -13,22 +13,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2mnh2"]
-radius = 3.0
-height = 14.0
-
-[node name="rock" type="RigidBody2D"]
+[node name="rock" type="StaticBody2D"]
 collision_layer = 4
 collision_mask = 4
-mass = 100.0
-gravity_scale = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.0473633, -5.54045)
+position = Vector2(-0.0473633, -1.60167)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_5s80d")
 animation = &"rock_sprites"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.609375)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_2mnh2")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = -0.0267906
+polygon = PackedVector2Array(-1.95961, -0.0759574, -1.16266, -0.359399, -0.152493, -0.433928, 0.597028, -0.406028, 1.0555, -0.307774, 1.41119, -0.165382, 1.62504, 0.0201004)
