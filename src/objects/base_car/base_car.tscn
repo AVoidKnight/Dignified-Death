@@ -1,20 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8m25vro04m75"]
+[gd_scene load_steps=6 format=3 uid="uid://c8m25vro04m75"]
 
 [ext_resource type="Script" uid="uid://b6mhr5wyaraqq" path="res://src/objects/base_car/base_car.gd" id="1_sud1f"]
 [ext_resource type="PackedScene" uid="uid://y466bjhb17da" path="res://src/objects/wheel.tscn" id="2_scnjq"]
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="2_sud1f"]
+[ext_resource type="PackedScene" uid="uid://cp7bu3qe876qx" path="res://src/camera_2d.tscn" id="2_yeeaf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_scnjq"]
-radius = 11.0
-height = 112.0
+radius = 8.0
+height = 98.3831
 
 [node name="base_car" type="RigidBody2D"]
 collision_mask = 5
 script = ExtResource("1_sud1f")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(80.085, -20.305)
-zoom = Vector2(0.77, 0.77)
+[node name="Camera2D" parent="." instance=ExtResource("2_yeeaf")]
 
 [node name="BetaCarProperSprite" type="Sprite2D" parent="."]
 position = Vector2(0.5, 0)
@@ -22,22 +21,22 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_sud1f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(-1.39969, 8.0923)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_scnjq")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
-position = Vector2(-37, 14)
+position = Vector2(-32.8938, 15.1719)
 node_a = NodePath("..")
 node_b = NodePath("Wheel")
-softness = 2.66
+softness = 1.5
 
 [node name="Wheel" parent="PinJoint2D" instance=ExtResource("2_scnjq")]
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
-position = Vector2(31, 14)
+position = Vector2(28.4012, 15.1719)
 node_a = NodePath("..")
 node_b = NodePath("Wheel")
-softness = 2.66
+softness = 2.2
 
 [node name="Wheel" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]
