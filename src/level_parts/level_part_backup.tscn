@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://civm6ltfdyy54"]
+
+[ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_g4pww"]
+
+[node name="LevelPart" type="StaticBody2D"]
+scale = Vector2(6, 6)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_g4pww")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
