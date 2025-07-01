@@ -1,7 +1,8 @@
 extends RigidBody2D
 var wheel_array : Array[Node]
-@export var speed = 60000
-@export var max_speed = 50
+@export var speed = 40
+@export var max_speed = 30
+var is_movable : bool = true
 
 func _ready() -> void:
 	wheel_array = get_tree().get_nodes_in_group("wheel")
