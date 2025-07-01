@@ -17,14 +17,18 @@ animations = [{
 radius = 3.0
 height = 14.0
 
-[node name="rock" type="StaticBody2D"]
+[node name="rock" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+mass = 100.0
+gravity_scale = 5.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(-0.0473633, -5.54045)
 sprite_frames = SubResource("SpriteFrames_5s80d")
 animation = &"rock_sprites"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, -0.609375)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_2mnh2")
