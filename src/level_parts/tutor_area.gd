@@ -2,7 +2,7 @@ extends Area2D
 var player
 
 func _ready() -> void:
-	player = get_node("/root").get_child(-1).get_node("base_car")
+	player = get_tree().get_first_node_in_group("player")
 
 
 func _tutor_hitbox(body: Node2D) -> void:
