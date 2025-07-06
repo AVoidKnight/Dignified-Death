@@ -7,5 +7,4 @@ func _ready() -> void:
 
 func _tutor_hitbox(body: Node2D) -> void:
 	player.is_movable = false
-	while player.linear_velocity.x > 0:
-		player.apply_central_force(Vector2.LEFT * 400)
+	Input.action_press("brake")
