@@ -7,7 +7,7 @@ class_name LevelPart
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		sync()
-	if get_parent() is not SubViewport:
+	if ("end_position" in get_parent()) == true:
 		position = get_parent().end_position
 
 
