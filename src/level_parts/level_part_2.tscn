@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2xmjyfsb5ssh"]
+[gd_scene load_steps=6 format=3 uid="uid://d2xmjyfsb5ssh"]
 
 [ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_a71n8"]
 [ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_j3npd"]
 [ext_resource type="Texture2D" uid="uid://bhtenlea18ovo" path="res://assets/sprites/beta road.png" id="3_cnuus"]
 [ext_resource type="PackedScene" uid="uid://dohy5d0kc0nni" path="res://src/objects/rock.tscn" id="4_cnuus"]
+[ext_resource type="Texture2D" uid="uid://ct5miegmkip3e" path="res://assets/sprites/bush1.png" id="5_5qses"]
 
 [node name="LevelPart" type="StaticBody2D"]
 collision_layer = 4
@@ -85,3 +86,47 @@ rotation = 0.242203
 [node name="rock15" parent="rocks" instance=ExtResource("4_cnuus")]
 position = Vector2(381.152, -42.0287)
 rotation = -0.157547
+
+[node name="bushes" type="Node2D" parent="."]
+
+[node name="Bush1" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(36.0859, -6.26563)
+rotation = 0.169355
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5qses")
+
+[node name="Bush2" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(88.8826, -17.7939)
+rotation = 0.0706965
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5qses")
+
+[node name="Bush3" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(161.023, -21.5603)
+rotation = 0.225098
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5qses")
+
+[node name="Bush4" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(232.984, -14.5262)
+rotation = -0.288902
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5qses")
+
+[node name="Bush5" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(294.406, -27.1561)
+rotation = 0.0997012
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5qses")
+
+[node name="Bush6" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(361.289, -46.6898)
+rotation = 0.213817
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_5qses")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqnc2g37p8lry"]
+[gd_scene load_steps=6 format=3 uid="uid://bqnc2g37p8lry"]
 
 [ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_r3h1s"]
 [ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_lc8wy"]
 [ext_resource type="Texture2D" uid="uid://bhtenlea18ovo" path="res://assets/sprites/beta road.png" id="3_vm8xl"]
 [ext_resource type="PackedScene" uid="uid://dohy5d0kc0nni" path="res://src/objects/rock.tscn" id="4_lc8wy"]
+[ext_resource type="Texture2D" uid="uid://ct5miegmkip3e" path="res://assets/sprites/bush1.png" id="5_vm8xl"]
 
 [node name="LevelPart" type="StaticBody2D"]
 collision_layer = 4
@@ -17,11 +18,11 @@ polygon = PackedVector2Array(0, 0, 11.8127, -2.62505, 27, -6, 40.9789, -5.51797,
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource("2_lc8wy")
-polygon = PackedVector2Array(0, 0, 11.8127, -2.62505, 27, -6, 40.9789, -5.51797, 56, -7, 69.9978, -5.60953, 81.2947, 0.33621, 88, 7, 98, 14, 105.654, 19.9249, 117.443, 27.2534, 122.86, 34.5819, 129.551, 39.9986, 140.384, 47.9644, 148.987, 54.0184, 165.357, 63.9756, 185.112, 69.7109, 198.814, 79.5885, 216.657, 85.6425, 235.775, 92.971, 251.706, 100.299, 261.584, 104.442, 269.476, 104.891, 278.761, 101.614, 284, 100, 289, 99, 294.449, 100.285, 303.107, 103.916, 309, 106, 320, 111, 327.76, 113.253, 338, 116, 351, 119, 356.889, 118.394, 364.143, 116.415, 369.563, 114.937, 373, 114, 377.777, 112.697, 381, 112, 384, 111, 384, 179, 1, 179)
+polygon = PackedVector2Array(0, 0, 11.8127, -2.62505, 27, -6, 40.9789, -5.51797, 56, -7, 69.9978, -5.60953, 81.2947, 0.33621, 88, 7, 98, 14, 105.654, 19.9249, 117.443, 27.2534, 122.86, 34.5819, 129.551, 39.9986, 140.384, 47.9644, 148.987, 54.0184, 165.357, 63.9756, 174.988, 66.7718, 185.112, 69.7109, 198.814, 79.5885, 216.657, 85.6425, 235.775, 92.971, 251.706, 100.299, 261.584, 104.442, 269.476, 104.891, 278.761, 101.614, 284, 100, 289, 99, 294.449, 100.285, 303.107, 103.916, 309, 106, 320, 111, 327.76, 113.253, 338, 116, 351, 119, 356.889, 118.394, 364.143, 116.415, 369.563, 114.937, 373, 114, 377.777, 112.697, 381, 112, 384, 111, 384, 179, 1, 179)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 11.8127, -2.62505, 27, -6, 40.9789, -5.51797, 56, -7, 69.9978, -5.60953, 81.2947, 0.33621, 88, 7, 98, 14, 105.654, 19.9249, 117.443, 27.2534, 122.86, 34.5819, 129.551, 39.9986, 140.384, 47.9644, 148.987, 54.0184, 165.357, 63.9756, 185.112, 69.7109, 198.814, 79.5885, 216.657, 85.6425, 235.775, 92.971, 251.706, 100.299, 261.584, 104.442, 269.476, 104.891, 278.761, 101.614, 284, 100, 289, 99, 294.449, 100.285, 303.107, 103.916, 309, 106, 320, 111, 327.76, 113.253, 338, 116, 351, 119, 356.889, 118.394, 364.143, 116.415, 369.563, 114.937, 373, 114, 377.777, 112.697, 381, 112, 384, 111)
+points = PackedVector2Array(0, 0, 11.8127, -2.62505, 27, -6, 40.9789, -5.51797, 56, -7, 69.9978, -5.60953, 81.2947, 0.33621, 88, 7, 98, 14, 105.654, 19.9249, 117.443, 27.2534, 122.86, 34.5819, 129.551, 39.9986, 140.384, 47.9644, 148.987, 54.0184, 165.357, 63.9756, 174.988, 66.7718, 185.112, 69.7109, 198.814, 79.5885, 216.657, 85.6425, 235.775, 92.971, 251.706, 100.299, 261.584, 104.442, 269.476, 104.891, 278.761, 101.614, 284, 100, 289, 99, 294.449, 100.285, 303.107, 103.916, 309, 106, 320, 111, 327.76, 113.253, 338, 116, 351, 119, 356.889, 118.394, 364.143, 116.415, 369.563, 114.937, 373, 114, 377.777, 112.697, 381, 112, 384, 111)
 width = 1.0
 texture = ExtResource("3_vm8xl")
 texture_mode = 1
@@ -71,3 +72,48 @@ rotation = 0.229825
 [node name="rock9" parent="rocks" instance=ExtResource("4_lc8wy")]
 position = Vector2(376.097, 112.682)
 rotation = -0.264279
+
+[node name="bushes" type="Node2D" parent="."]
+position = Vector2(-1, -1)
+
+[node name="Bush2" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(17.1339, -5.53028)
+rotation = -0.204597
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vm8xl")
+
+[node name="Bush3" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(73.6283, -6.51362)
+rotation = 0.487647
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vm8xl")
+
+[node name="Bush4" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(170.97, 63.265)
+rotation = 0.285231
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vm8xl")
+
+[node name="Bush5" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(231.87, 89.0014)
+rotation = 0.376717
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vm8xl")
+
+[node name="Bush6" type="Sprite2D" parent="bushes"]
+z_index = 5
+position = Vector2(290.91, 97.2588)
+rotation = 0.226126
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vm8xl")
+
+[node name="Bush7" type="Sprite2D" parent="bushes"]
+z_index = -5
+position = Vector2(372.26, 112.509)
+rotation = -0.258671
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vm8xl")
