@@ -8,15 +8,26 @@ func _ready() -> void:
 	wheel_array = get_tree().get_nodes_in_group("wheel")
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("accelerate") and is_movable:
-		for i in wheel_array.size():
-			if wheel_array[i].angular_velocity < max_speed:
-				wheel_array[i].apply_torque(1000 * speed * delta * 60)
+		accelerate()
 	if Input.is_action_pressed("boost") and is_movable:
-		var direction = $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
-		apply_central_force(direction * 10000)
+		boost()
 	if Input.is_action_pressed("brake") and linear_velocity.x > 5:
 		brake()
+
+
+func accelerate():
+	for i in wheel_array.size():
+			if wheel_array[i].angular_velocity < max_speed:
+				wheel_array[i].apply_torque(1000 * speed * 
+				get_physics_process_delta_time() * 60)
+
+
+func boost():
+	var direction = $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
+	apply_central_force(direction * 10000)
+
+
 func brake():
 	apply_central_force(Vector2.LEFT * 300)
