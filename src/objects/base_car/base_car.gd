@@ -16,3 +16,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("boost") and is_movable:
 		var direction = $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
 		apply_central_force(direction * 10000)
+	if Input.is_action_pressed("brake") and linear_velocity.x > 5:
+		brake()
+func brake():
+	apply_central_force(Vector2.LEFT * 300)
