@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxp1pb6tnm8yj"]
+
+[ext_resource type="Texture2D" uid="uid://d0g8ciuicqxoc" path="res://assets/sprites/ui button 1.png" id="1_h5yyo"]
+[ext_resource type="Texture2D" uid="uid://bv2jes60uhi0q" path="res://assets/sprites/fuel update icon.png" id="2_ehpes"]
+
+[node name="upgrade_ui" type="CanvasLayer"]
+
+[node name="upgrade_ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="upgrade_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="CenterContainer" type="CenterContainer" parent="upgrade_ui/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="upgrade_ui/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Button" type="Button" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/Button"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("1_h5yyo")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/Button"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("2_ehpes")
+centered = false
+
+[node name="Button2" type="Button" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/Button2"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("1_h5yyo")
+centered = false
+
+[node name="Button3" type="Button" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/Button3"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("1_h5yyo")
+centered = false
+
+[node name="Button4" type="Button" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/Button4"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("1_h5yyo")
+centered = false

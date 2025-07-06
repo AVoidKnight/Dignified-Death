@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0ius48ej0emt"]
+
+[ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/level_tutor_end.tscn" id="1_gusc0"]
+[ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="2_1w3bj"]
+[ext_resource type="PackedScene" uid="uid://cxp1pb6tnm8yj" path="res://src/ui/upgrade_ui.tscn" id="3_1w3bj"]
+
+[node name="upgrade_level" type="Node2D"]
+
+[node name="LevelPart" parent="." instance=ExtResource("1_gusc0")]
+scale = Vector2(6, 6)
+
+[node name="base_car" parent="." instance=ExtResource("2_1w3bj")]
+position = Vector2(219, -29)
+
+[node name="Camera2D" parent="base_car" index="0"]
+offset = Vector2(0, 0)
+zoom = Vector2(1.1, 1.1)
+
+[node name="upgrade_ui" parent="." instance=ExtResource("3_1w3bj")]
+
+[editable path="base_car"]
