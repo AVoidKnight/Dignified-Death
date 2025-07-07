@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2a3crrgw07mr"]
+
+[ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
+
+[node name="basic_ui" type="CanvasLayer"]
+
+[node name="basic_ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pause_margin" type="MarginContainer" parent="basic_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureButton" type="TextureButton" parent="basic_ui/pause_margin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("1_r0xtb")
+
+[node name="MarginContainer" type="MarginContainer" parent="basic_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 30
+
+[node name="PanelContainer" type="PanelContainer" parent="basic_ui/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="basic_ui/MarginContainer/PanelContainer"]
+layout_mode = 2
