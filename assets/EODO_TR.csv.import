@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bl21ilolr3nqe"
+
+[deps]
+
+files=["res://assets/EODO_TR.en.translation", "res://assets/EODO_TR.ru.translation"]
+
+source_file="res://assets/EODO_TR.csv"
+dest_files=["res://assets/EODO_TR.en.translation", "res://assets/EODO_TR.ru.translation"]
+
+[params]
+
+compress=true
+delimiter=0
