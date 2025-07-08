@@ -73,6 +73,11 @@ brake={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/EODO_TR.en.translation", "res://assets/EODO_TR.ru.translation")
+locale/locale_filter_mode=1
+
 [layer_names]
 
 2d_physics/layer_1="CarBody"
