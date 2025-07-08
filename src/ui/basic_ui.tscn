@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=6 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
+[ext_resource type="Texture2D" uid="uid://dbqgun728icov" path="res://assets/sprites/settings ui panel.png" id="2_l2qak"]
+[ext_resource type="FontFile" uid="uid://tcmxe3ywwub6" path="res://assets/C&C Red Alert [INET].ttf" id="3_no3nr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsses"]
+texture = ExtResource("2_l2qak")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5cyww"]
+font = ExtResource("3_no3nr")
+font_size = 15
 
 [node name="basic_ui" type="CanvasLayer"]
 
@@ -37,13 +46,294 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 30
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 15
 
 [node name="PanelContainer" type="PanelContainer" parent="basic_ui/MarginContainer"]
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lsses")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="basic_ui/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="basic_ui/MarginContainer/PanelContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "SETTINGS_CORNER"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="MenuButton" type="MenuButton" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "BOTTOM_LEFT"
+popup/item_0/id = 0
+popup/item_1/text = "BOTTOM_RIGHT"
+popup/item_1/id = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer11" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer11"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer12" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer12"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer13" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer13"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer14" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer14"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer15" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer15"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer16" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer16"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer17" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer17"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer18" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer18"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="HBoxContainer19" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 102
+
+[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+text = "Абаддон"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="CheckBox" type="CheckBox" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer19"]
+layout_mode = 2
+size_flags_horizontal = 8
