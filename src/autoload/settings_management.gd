@@ -13,9 +13,18 @@ func corner_setting(id: int):
 			WindowManagement.move_to_br_corner()
 			corner = BOTTOM_RIGHT
 			get_tree().get_first_node_in_group("pause_button").size_flags_horizontal = 8
+	create_config()
 
 
 func size_setting(id: int):
 	size = id + 1
 	WindowManagement.window_change_size(size)
 	corner_setting(corner)
+	create_config()
+
+
+func create_config():
+	var config = ConfigFile.new()
+	config.set_value("Settings", "Corner", corner)
+	config.set_value("Settings", "Size", size)
+	config.save("user://config.cfg")
