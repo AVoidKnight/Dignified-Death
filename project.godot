@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SettingsManagement="*res://src/autoload/settings_management.gd"
 WindowManagement="*res://src/autoload/window_management.gd"
 GlobalInputs="*res://src/autoload/global_inputs.gd"
 
@@ -28,11 +29,12 @@ GlobalInputs="*res://src/autoload/global_inputs.gd"
 window/size/viewport_width=384
 window/size/viewport_height=180
 window/size/initial_position_type=0
-window/size/resizable=false
 window/size/borderless=true
 window/size/always_on_top=true
 window/size/transparent=true
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
 window/per_pixel_transparency/allowed=true
 
 [editor]
@@ -44,6 +46,7 @@ version_control/autoload_on_startup=true
 
 wheel=""
 player=""
+pause_button=""
 
 [input]
 
