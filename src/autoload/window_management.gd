@@ -6,12 +6,11 @@ var taskbar_height : int
 enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
 var current_corner : int
 
-
 func _ready() -> void:
 	window_size = DisplayServer.window_get_size()
 	screen_size = DisplayServer.screen_get_size()
 	taskbar_height = get_taskbar_height()
-	move_to_bl_corner()
+	SettingsManagement.corner_setting(0)
 
 
 func move_to_tr_corner() -> void:
@@ -61,3 +60,8 @@ func debug_window_change() -> void:
 func test_window_change() -> void:
 	DisplayServer.window_set_size(window_size)
 	move_to_bl_corner()
+
+
+func window_change_size(size: int):
+	DisplayServer.window_set_size(Vector2(384, 180) * size)
+	window_size = DisplayServer.window_get_size()
