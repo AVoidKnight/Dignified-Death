@@ -1,9 +1,9 @@
 keys,en,ru
 SETTINGS_CORNER,Corner,Угол
-1,,
-2,,
-3,,
-4,,
+BOTTOM_LEFT,Bottom left,Нижний левый
+BOTTOM_RIGHT,Bottom right,Нижний правый
+WINDOW_SIZE,Window size,Размер окна
+GAME_LANGUAGE,Language,Язык
 5,,
 6,,
 7,,
