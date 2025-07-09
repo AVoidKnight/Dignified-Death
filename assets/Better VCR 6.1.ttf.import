@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://tcmxe3ywwub6"
-path="res://.godot/imported/C&C Red Alert [INET].ttf-f1040d0424051885c96b497b6f3fdae0.fontdata"
+uid="uid://e0a85vqnmmyo"
+path="res://.godot/imported/Better VCR 6.1.ttf-d2be22ca555b6daf2df23c59a4fdb4dc.fontdata"
 
 [deps]
 
-source_file="res://assets/C&C Red Alert [INET].ttf"
-dest_files=["res://.godot/imported/C&C Red Alert [INET].ttf-f1040d0424051885c96b497b6f3fdae0.fontdata"]
+source_file="res://assets/Better VCR 6.1.ttf"
+dest_files=["res://.godot/imported/Better VCR 6.1.ttf-d2be22ca555b6daf2df23c59a4fdb4dc.fontdata"]
 
 [params]
 
