@@ -8,11 +8,9 @@ func corner_setting(id: int):
 		0:
 			WindowManagement.move_to_bl_corner()
 			corner = BOTTOM_LEFT
-			get_tree().get_first_node_in_group("pause_button").size_flags_horizontal = 0
 		1:
 			WindowManagement.move_to_br_corner()
 			corner = BOTTOM_RIGHT
-			get_tree().get_first_node_in_group("pause_button").size_flags_horizontal = 8
 	create_config()
 
 
