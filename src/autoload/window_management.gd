@@ -10,7 +10,6 @@ func _ready() -> void:
 	window_size = DisplayServer.window_get_size()
 	screen_size = DisplayServer.screen_get_size()
 	taskbar_height = get_taskbar_height()
-	SettingsManagement.corner_setting(0)
 
 
 func move_to_tr_corner() -> void:
