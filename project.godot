@@ -48,6 +48,7 @@ version_control/autoload_on_startup=true
 wheel=""
 player=""
 pause_button=""
+fuel_progressbar=""
 
 [input]
 
