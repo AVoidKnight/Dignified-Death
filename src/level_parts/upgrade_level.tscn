@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0ius48ej0emt"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ius48ej0emt"]
 
 [ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/level_tutor_end.tscn" id="1_gusc0"]
 [ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="2_1w3bj"]
 [ext_resource type="PackedScene" uid="uid://cxp1pb6tnm8yj" path="res://src/ui/upgrade_ui.tscn" id="3_1w3bj"]
+[ext_resource type="PackedScene" uid="uid://b2a3crrgw07mr" path="res://src/ui/basic_ui.tscn" id="4_7hg5o"]
 
 [node name="upgrade_level" type="Node2D"]
 
@@ -17,5 +18,7 @@ offset = Vector2(0, 0)
 zoom = Vector2(1.1, 1.1)
 
 [node name="upgrade_ui" parent="." instance=ExtResource("3_1w3bj")]
+
+[node name="basic_ui" parent="." instance=ExtResource("4_7hg5o")]
 
 [editable path="base_car"]
