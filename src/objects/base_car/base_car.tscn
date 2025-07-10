@@ -9,6 +9,7 @@
 
 [node name="base_car" type="RigidBody2D" groups=["player"]]
 collision_mask = 5
+mass = 2.0
 gravity_scale = 2.0
 center_of_mass_mode = 1
 center_of_mass = Vector2(-4.3, 6)
