@@ -3,9 +3,13 @@ var wheel_array : Array[Node]
 @export var speed = 40
 @export var max_speed = 30
 var is_movable : bool = true
+var bodies_entered : int = 0
 
 func _ready() -> void:
 	wheel_array = get_tree().get_nodes_in_group("wheel")
+	for i in wheel_array.size():
+		wheel_array[i].body_entered.connect(_on_wheels_body_entered)
+		wheel_array[i].body_exited.connect(_on_wheels_body_exited)
 
 
 func _physics_process(_delta: float) -> void:
@@ -31,3 +35,13 @@ func boost():
 
 func brake():
 	apply_central_force(Vector2.LEFT * 300)
+
+
+func _on_wheels_body_entered(body: Node):
+	bodies_entered += 1
+	print("Node entered: ", body.name, "; Bodies entered = ", bodies_entered)
+
+
+func _on_wheels_body_exited(body: Node):
+	bodies_entered -= 1
+	print("Node exited: ", body.name, "; Bodies entered = ", bodies_entered)

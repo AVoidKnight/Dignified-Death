@@ -27,6 +27,8 @@ softness = 1.0
 
 [node name="Wheel" parent="PinJoint2D" instance=ExtResource("2_scnjq")]
 mass = 1.0
+contact_monitor = true
+max_contacts_reported = 2
 
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
 position = Vector2(28.4012, 15.1719)
@@ -36,6 +38,8 @@ softness = 1.0
 
 [node name="Wheel" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]
 mass = 1.0
+contact_monitor = true
+max_contacts_reported = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(55.7993, 4.07596, 48.9077, 12.8594, 39.6649, 15.9695, -51.3528, 15.7462, -51.0177, 6.58858, -26.2252, -13.6252, 0.689236, -14.1835, 45.1371, -0.11211)
