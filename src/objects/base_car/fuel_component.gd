@@ -15,8 +15,7 @@ func _physics_process(delta: float) -> void:
 	base_car.bodies_entered > 0 and fuel_active:
 		$Timer.paused = false
 		fuel_progressbar.value = ($Timer.time_left / fuel_sec) * 100
-	else: $Timer.paused = true
-	print($Timer.time_left)
+	else: $Timer.paused = true                                                                                                                                         
 
 
 func _on_timer_timeout() -> void:
