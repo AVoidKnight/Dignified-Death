@@ -23,37 +23,17 @@ font_size = 15
 [node name="basic_ui" type="CanvasLayer"]
 
 [node name="basic_ui" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uwfos")
 
-[node name="pause_margin" type="MarginContainer" parent="basic_ui"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="TextureButton" type="TextureButton" parent="basic_ui/pause_margin" groups=["pause_button"]]
-custom_minimum_size = Vector2(25, 25)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="basic_ui/pause_margin/TextureButton"]
-scale = Vector2(1.5625, 1.5625)
-texture = ExtResource("1_r0xtb")
-centered = false
-
-[node name="MarginContainer" type="MarginContainer" parent="basic_ui"]
+[node name="SettingsMargin" type="MarginContainer" parent="basic_ui"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,28 +45,28 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 15
 
-[node name="PanelContainer" type="PanelContainer" parent="basic_ui/MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="basic_ui/SettingsMargin"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lsses")
 
-[node name="MarginContainer" type="MarginContainer" parent="basic_ui/MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="basic_ui/SettingsMargin/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 10
 
-[node name="ScrollContainer" type="ScrollContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(162, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -94,7 +74,7 @@ size_flags_vertical = 0
 text = "SETTINGS_CORNER"
 label_settings = SubResource("LabelSettings_5cyww")
 
-[node name="MenuButton" type="MenuButton" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+[node name="MenuButton" type="MenuButton" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -109,11 +89,11 @@ popup/item_1/checkable = 2
 popup/item_1/id = 1
 script = ExtResource("4_no3nr")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Label" type="Label" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(162, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -121,7 +101,7 @@ size_flags_vertical = 0
 text = "WINDOW_SIZE"
 label_settings = SubResource("LabelSettings_5cyww")
 
-[node name="MenuButton" type="MenuButton" parent="basic_ui/MarginContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
+[node name="MenuButton" type="MenuButton" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 size_flags_horizontal = 0
