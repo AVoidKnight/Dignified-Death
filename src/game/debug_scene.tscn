@@ -12,7 +12,8 @@
 script = ExtResource("1_4ewb7")
 
 [node name="base_car" parent="." instance=ExtResource("1_w5w5f")]
-position = Vector2(58, -88)
+position = Vector2(62, -52)
+mass = 2.0
 
 [node name="LevelPart" parent="." instance=ExtResource("2_kojx4")]
 z_as_relative = false
