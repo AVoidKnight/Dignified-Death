@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=13 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
+[ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
 [ext_resource type="Texture2D" uid="uid://dbqgun728icov" path="res://assets/sprites/settings ui panel.png" id="2_l2qak"]
 [ext_resource type="FontFile" uid="uid://e0a85vqnmmyo" path="res://assets/Better VCR 6.1.ttf" id="3_no3nr"]
 [ext_resource type="Script" uid="uid://dsh4okhwxh5nc" path="res://src/ui/menu_button.gd" id="4_no3nr"]
 [ext_resource type="Script" uid="uid://br00jtjqi8ro6" path="res://src/ui/menu_button_2.gd" id="5_lsses"]
+[ext_resource type="Texture2D" uid="uid://cr4880oosq186" path="res://assets/sprites/fuel progress bar bg.png" id="6_t5gq6"]
+[ext_resource type="Texture2D" uid="uid://32m8m6bxhk3s" path="res://assets/sprites/fuel progress bar.png" id="7_uwfos"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsses"]
 texture = ExtResource("2_l2qak")
@@ -135,3 +138,55 @@ popup/item_2/text = "3X"
 popup/item_2/checkable = 2
 popup/item_2/id = 2
 script = ExtResource("5_lsses")
+
+[node name="FuelMargin" type="MarginContainer" parent="basic_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="FuelProgressbar" type="TextureProgressBar" parent="basic_ui/FuelMargin" groups=["fuel_progressbar"]]
+custom_minimum_size = Vector2(10, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("6_t5gq6")
+texture_progress = ExtResource("7_uwfos")
+texture_progress_offset = Vector2(4, 16)
+
+[node name="PauseMargin" type="MarginContainer" parent="basic_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureButton" type="TextureButton" parent="basic_ui/PauseMargin" groups=["pause_button"]]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+toggle_mode = true
+
+[node name="Sprite2D" type="Sprite2D" parent="basic_ui/PauseMargin/TextureButton"]
+scale = Vector2(1.5625, 1.5625)
+texture = ExtResource("1_r0xtb")
+centered = false
+
+[connection signal="toggled" from="basic_ui/PauseMargin/TextureButton" to="basic_ui" method="_on_texture_button_toggled"]
