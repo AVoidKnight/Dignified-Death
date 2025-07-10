@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8m25vro04m75"]
+[gd_scene load_steps=7 format=3 uid="uid://c8m25vro04m75"]
 
 [ext_resource type="Script" uid="uid://b6mhr5wyaraqq" path="res://src/objects/base_car/base_car.gd" id="1_sud1f"]
 [ext_resource type="PackedScene" uid="uid://y466bjhb17da" path="res://src/objects/wheel.tscn" id="2_scnjq"]
 [ext_resource type="Texture2D" uid="uid://bb5ctm1u1e818" path="res://assets/sprites/beta car proper sprite.png" id="2_sud1f"]
 [ext_resource type="PackedScene" uid="uid://cp7bu3qe876qx" path="res://src/camera_2d.tscn" id="2_yeeaf"]
+[ext_resource type="Script" uid="uid://bbmdpeugcgvvv" path="res://src/objects/base_car/upgrade_component.gd" id="5_kk0bo"]
+[ext_resource type="Script" uid="uid://d4die76brl2ml" path="res://src/objects/base_car/fuel_component.gd" id="6_7qf4u"]
 
 [node name="base_car" type="RigidBody2D" groups=["player"]]
 collision_mask = 5
@@ -43,3 +45,13 @@ max_contacts_reported = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(55.7993, 4.07596, 48.9077, 12.8594, 39.6649, 15.9695, -51.3528, 15.7462, -51.0177, 6.58858, -26.2252, -13.6252, 0.689236, -14.1835, 45.1371, -0.11211)
+
+[node name="UpgradeComponent" type="Node" parent="."]
+script = ExtResource("5_kk0bo")
+
+[node name="FuelComponent" type="Node" parent="."]
+script = ExtResource("6_7qf4u")
+
+[node name="Timer" type="Timer" parent="FuelComponent"]
+
+[connection signal="timeout" from="FuelComponent/Timer" to="FuelComponent" method="_on_timer_timeout"]
