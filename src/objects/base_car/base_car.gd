@@ -4,6 +4,7 @@ var wheel_array : Array[Node]
 @export var max_speed = 30
 var is_movable : bool = true
 var bodies_entered : int = 0
+signal car_stopped
 
 func _ready() -> void:
 	wheel_array = get_tree().get_nodes_in_group("wheel")
@@ -17,8 +18,10 @@ func _physics_process(_delta: float) -> void:
 		accelerate()
 	if Input.is_action_pressed("boost") and is_movable:
 		boost()
-	if Input.is_action_pressed("brake") and linear_velocity.x > 5:
+	if Input.is_action_pressed("brake"):
 		brake()
+		if linear_velocity.x < 5:
+			car_stopped.emit()
 
 
 func accelerate():
@@ -39,9 +42,7 @@ func brake():
 
 func _on_wheels_body_entered(body: Node):
 	bodies_entered += 1
-	print("Node entered: ", body.name, "; Bodies entered = ", bodies_entered)
 
 
 func _on_wheels_body_exited(body: Node):
 	bodies_entered -= 1
-	print("Node exited: ", body.name, "; Bodies entered = ", bodies_entered)
