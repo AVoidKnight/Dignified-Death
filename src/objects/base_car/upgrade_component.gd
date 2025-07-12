@@ -9,6 +9,7 @@ func _ready() -> void:
 	else: 
 		var base_upgrade_resource = ResourceLoader.load("res://src/resources/base_upgrade_save.tres")
 		ResourceSaver.save(base_upgrade_resource, "user://upgrade_save.tres")
+		upgrade_dictionary = base_upgrade_resource
 	upgrades_to_nums()
 
 
