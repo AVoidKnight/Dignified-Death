@@ -6,6 +6,8 @@ func _ready() -> void:
 
 
 func _tutor_hitbox(body: Node2D) -> void:
+	if get_parent().get_parent().name == "upgrade_level":
+		return
 	player.is_movable = false
 	Input.action_press("brake")
 	await player.car_stopped
