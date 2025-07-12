@@ -10,8 +10,6 @@ func _ready() -> void:
 #getting settings from cfg
 
 	corner = config.get_value("Settings", "Corner")
-	print(config.get_value("Settings", "Corner", 0))
-	print("h")
 	size = config.get_value("Settings", "Size", 1)
  
 #setting settings from cfg

@@ -5,7 +5,6 @@ var fuel_upgrade : int:
 	set(value):
 		fuel_sec = 6 + 6 * fuel_upgrade
 		$Timer.wait_time = fuel_sec
-		print(fuel_sec)
 		fuel_upgrade = value
 var fuel_sec : float
 @onready var base_car: RigidBody2D = $".."
@@ -19,6 +18,5 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("Out of Fuel")
 	base_car.is_movable = false
 	fuel_progressbar.value = 0
