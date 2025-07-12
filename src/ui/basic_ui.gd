@@ -1,5 +1,12 @@
 extends Control
 
+func _ready() -> void:
+	match WindowManagement.current_corner:
+		WindowManagement.BOTTOM_LEFT:
+			get_tree().get_first_node_in_group("pause_button").size_flags_horizontal = 0
+		WindowManagement.BOTTOM_RIGHT:
+			get_tree().get_first_node_in_group("pause_button").size_flags_horizontal = 8
+
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:
 	match toggled_on:
