@@ -9,6 +9,11 @@ var fuel_upgrade : int:
 var fuel_sec : float
 @onready var base_car: RigidBody2D = $".."
 
+func _ready() -> void:
+	if ("fuel_active" in get_parent().get_parent()) == true:
+		fuel_active = get_parent().get_parent().fuel_active 
+
+
 func _physics_process(delta: float) -> void:
 	if base_car.is_movable and Input.is_action_pressed("accelerate") and \
 	base_car.bodies_entered > 0 and fuel_active:
