@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3jr5ul8ag2ev"]
+[gd_scene load_steps=8 format=3 uid="uid://ctfwn1gtb2xd4"]
 
 [ext_resource type="Script" uid="uid://cdhb54dqt5v2o" path="res://src/game/debug_scene.gd" id="1_rrfxv"]
 [ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="2_8anth"]
