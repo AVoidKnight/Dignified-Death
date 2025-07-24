@@ -1,19 +1,14 @@
 extends Node
-var upgrade_dictionary : Dictionary
+var upgrade_dictionary_1 : Dictionary
 var fuel_upgrade
+var save_resource : Resource
 
 func _ready() -> void:
-	if ResourceLoader.exists("user://upgrade_save.tres"):
-		var upgrade_resource = ResourceLoader.load("user://upgrade_save.tres")
-		upgrade_dictionary = upgrade_resource.upgrade_dictionary
-	else: 
-		var base_upgrade_resource = ResourceLoader.load("res://src/resources/base_upgrade_save.tres")
-		ResourceSaver.save(base_upgrade_resource, "user://upgrade_save.tres")
-		upgrade_dictionary = base_upgrade_resource
-	upgrades_to_nums()
+	save_resource = PlayerManagement.load_saved_resource()
+	upgrades_to_nums(save_resource.upgrade_dictionary_1)
 
 
-func upgrades_to_nums():
+func upgrades_to_nums(upgrade_dictionary : Dictionary):
 	fuel_upgrade = upgrade_dictionary.get("car_1_fuel_current_upgrade")
 	$"../FuelComponent".fuel_upgrade = fuel_upgrade
 	$"../FuelComponent/Timer".start()
