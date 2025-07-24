@@ -1,5 +1,5 @@
 class_name SaveResource
-extends Node
+extends Resource
 @export var money : int = 0
 @export var upgrade_dictionary_1 : Dictionary = {
 "car_1_fuel_current_upgrade" : 0,
