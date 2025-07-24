@@ -23,5 +23,6 @@ position = Vector2(211, -29)
 offset = Vector2(41.62, -8.67)
 zoom = Vector2(0.815, 0.815)
 
+[editable path="upgrade_ui"]
 [editable path="basic_ui"]
 [editable path="base_car"]
