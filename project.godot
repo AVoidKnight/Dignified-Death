@@ -23,6 +23,7 @@ config/icon="res://icon.svg"
 WindowManagement="*res://src/autoload/window_management.gd"
 SettingsManagement="*res://src/autoload/settings_management.gd"
 GlobalInputs="*res://src/autoload/global_inputs.gd"
+PlayerManagement="*res://src/autoload/player_management.gd"
 
 [display]
 
