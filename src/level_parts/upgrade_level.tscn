@@ -20,7 +20,7 @@ scale = Vector2(6, 6)
 position = Vector2(211, -29)
 
 [node name="Camera2D" parent="base_car" index="0"]
-offset = Vector2(41.62, -8.67)
+offset = Vector2(41.62, 25.535)
 zoom = Vector2(0.815, 0.815)
 
 [editable path="upgrade_ui"]
