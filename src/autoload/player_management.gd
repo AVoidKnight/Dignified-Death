@@ -6,7 +6,7 @@ var engine : int = 0
 var n2o : int = 0
 var penetration : int = 0
 signal update_stats
-signal updated_stats
+var updated_stats : bool
 
 func load_saved_resource() -> Resource:
 	if ResourceLoader.exists("user://save.tres"):
@@ -28,6 +28,8 @@ func save():
 	var save = SaveResource.new()
 	print_debug("Saving...")
 	emit_signal("update_stats")
+	while updated_stats != true:
+		var waiting
 	await updated_stats
 	save.money = money
 	save.upgrade_dictionary_1 = upgrade_dict_create()

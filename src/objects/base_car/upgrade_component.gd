@@ -25,4 +25,4 @@ func upgrade_stats():
 	PlayerManagement.engine = engine_upgrade
 	PlayerManagement.n2o = n2o_upgrade
 	PlayerManagement.penetration = penetration_upgrade
-	PlayerManagement.emit_signal("updated_stats")
+	PlayerManagement.updated_stats = true
