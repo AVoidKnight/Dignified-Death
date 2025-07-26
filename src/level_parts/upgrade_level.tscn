@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b0ius48ej0emt"]
 
 [ext_resource type="Script" uid="uid://cyykoqofw77ps" path="res://src/level_parts/upgrade_level.gd" id="1_3sx1t"]
-[ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/start_level_parts/level_tutor_end.tscn" id="1_gusc0"]
+[ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/level_tutor_end.tscn" id="1_gusc0"]
 [ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="2_1w3bj"]
 [ext_resource type="PackedScene" uid="uid://cxp1pb6tnm8yj" path="res://src/ui/upgrade_ui.tscn" id="3_1w3bj"]
 [ext_resource type="PackedScene" uid="uid://b2a3crrgw07mr" path="res://src/ui/basic_ui.tscn" id="4_7hg5o"]

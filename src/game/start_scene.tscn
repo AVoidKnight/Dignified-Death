@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cdhb54dqt5v2o" path="res://src/game/debug_scene.gd" id="1_rrfxv"]
 [ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="2_8anth"]
-[ext_resource type="PackedScene" uid="uid://cycex7pdelwka" path="res://src/level_parts/start_level_parts/level_part_1.tscn" id="3_ond08"]
-[ext_resource type="PackedScene" uid="uid://d2xmjyfsb5ssh" path="res://src/level_parts/start_level_parts/level_part_2.tscn" id="4_qqtx7"]
-[ext_resource type="PackedScene" uid="uid://bqnc2g37p8lry" path="res://src/level_parts/start_level_parts/level_part_3.tscn" id="5_mcbqv"]
-[ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/start_level_parts/level_tutor_end.tscn" id="6_qq2a4"]
+[ext_resource type="PackedScene" uid="uid://cycex7pdelwka" path="res://src/level_parts/main_level_parts/level_part_1.tscn" id="3_ond08"]
+[ext_resource type="PackedScene" uid="uid://d2xmjyfsb5ssh" path="res://src/level_parts/main_level_parts/level_part_2.tscn" id="4_qqtx7"]
+[ext_resource type="PackedScene" uid="uid://bqnc2g37p8lry" path="res://src/level_parts/main_level_parts/level_part_3.tscn" id="5_mcbqv"]
+[ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/level_tutor_end.tscn" id="6_qq2a4"]
 [ext_resource type="PackedScene" uid="uid://b2a3crrgw07mr" path="res://src/ui/basic_ui.tscn" id="7_stuit"]
 
 [node name="start_scene" type="Node2D"]
