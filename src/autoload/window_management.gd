@@ -3,29 +3,14 @@ var window_position : Vector2i
 var screen_size : Vector2i
 var window_size : Vector2i
 var taskbar_height : int
-enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
 var current_corner : int
+enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
+signal corner_changed
 
 func _ready() -> void:
 	window_size = DisplayServer.window_get_size()
 	screen_size = DisplayServer.screen_get_size()
 	taskbar_height = get_taskbar_height()
-
-
-func move_to_tr_corner() -> void:
-	print("TR_PRESSED")
-	current_corner = TOP_RIGHT
-	window_position.x = screen_size.x - window_size.x
-	window_position.y = 0
-	DisplayServer.window_set_position(window_position)
-
-
-func move_to_tl_corner() -> void:
-	print("TL_PRESSED")
-	current_corner = TOP_LEFT
-	window_position.x = 0
-	window_position.y = 0
-	DisplayServer.window_set_position(window_position)
 
 
 func move_to_bl_corner() -> void:
@@ -35,6 +20,7 @@ func move_to_bl_corner() -> void:
 	window_position.y = screen_size.y - window_size.y - taskbar_height
 	print(window_position)
 	DisplayServer.window_set_position(window_position)
+	emit_signal("corner_changed")
 
 
 func move_to_br_corner() -> void:
@@ -44,6 +30,7 @@ func move_to_br_corner() -> void:
 	window_position.y = screen_size.y - window_size.y - taskbar_height
 	print(window_position)
 	DisplayServer.window_set_position(window_position)
+	emit_signal("corner_changed")
 
 
 func get_taskbar_height() -> int:
@@ -61,6 +48,6 @@ func test_window_change() -> void:
 	move_to_bl_corner()
 
 
-func window_change_size(size: int):
+func window_change_size(size: float):
 	DisplayServer.window_set_size(Vector2(384, 180) * size)
 	window_size = DisplayServer.window_get_size()
