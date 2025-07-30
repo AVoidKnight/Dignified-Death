@@ -10,6 +10,7 @@
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_r3h1s")
+level_number = 3
 end_position = Vector2(384, 111)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

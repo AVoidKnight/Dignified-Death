@@ -11,6 +11,7 @@ scale = Vector2(6, 6)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_acy02")
+level_number = 1
 end_position = Vector2(382, -13)
 metadata/_custom_type_script = "uid://dkm2tm70mfqe7"
 
