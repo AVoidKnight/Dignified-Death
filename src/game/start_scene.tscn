@@ -16,16 +16,19 @@ position = Vector2(62, -52)
 
 [node name="LevelPart" parent="." instance=ExtResource("3_ond08")]
 z_as_relative = false
+level_number = 0
 
 [node name="LevelPart" parent="LevelPart" instance=ExtResource("4_qqtx7")]
 z_index = -1
 z_as_relative = false
 position = Vector2(382, -13)
+level_number = 0
 
 [node name="LevelPart" parent="LevelPart/LevelPart" instance=ExtResource("5_mcbqv")]
 z_index = -2
 z_as_relative = false
 position = Vector2(384, -42)
+level_number = 0
 
 [node name="LevelPart" parent="LevelPart/LevelPart/LevelPart" instance=ExtResource("6_qq2a4")]
 position = Vector2(384, 111)
