@@ -1,12 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://civm6ltfdyy54"]
+[gd_scene load_steps=3 format=3 uid="uid://civm6ltfdyy54"]
 
 [ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_g4pww"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7230a"]
+a = Vector2(0, -100)
+b = Vector2(0, 100)
 
 [node name="LevelPart" type="StaticBody2D"]
 scale = Vector2(6, 6)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_g4pww")
+level_number = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 
@@ -17,3 +22,20 @@ script = ExtResource("1_g4pww")
 [node name="rocks" type="Node2D" parent="."]
 
 [node name="bushes" type="Node2D" parent="."]
+
+[node name="degen_hitbox" type="Area2D" parent="."]
+position = Vector2(96, 0)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="degen_hitbox"]
+shape = SubResource("SegmentShape2D_7230a")
+
+[node name="regen_hitbox" type="Area2D" parent="."]
+position = Vector2(32, 0)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="regen_hitbox"]
+shape = SubResource("SegmentShape2D_7230a")
+
+[connection signal="body_entered" from="degen_hitbox" to="." method="_on_degen_hitbox_body_entered"]
+[connection signal="body_entered" from="regen_hitbox" to="." method="_on_regen_hitbox_body_entered"]
