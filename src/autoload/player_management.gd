@@ -44,3 +44,7 @@ func upgrade_dict_create() -> Dictionary:
 	upgrade_dict["car_1_n2o_current_upgrade"] = n2o
 	upgrade_dict["car_1_penetration_current_upgrade"] = penetration
 	return upgrade_dict
+
+
+func distance_to_money(distance: float, auto: bool = false):
+	print(distance)

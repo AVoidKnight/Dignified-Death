@@ -23,5 +23,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	PlayerManagement.distance_to_money(get_parent().global_position.x)
 	base_car.is_movable = false
 	fuel_progressbar.value = 0
