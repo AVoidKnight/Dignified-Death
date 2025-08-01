@@ -14,19 +14,18 @@ size = Vector2(122, 20)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_qnroy")
-level_number = null
-end_position = Vector2(217, 0)
+end_position = Vector2(90, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 217, 0, 217, 72, 0, 72)
+polygon = PackedVector2Array(0, 0, 90, 0, 90, 72, 0, 72)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource("2_rksrg")
-polygon = PackedVector2Array(0, 0, 217, 0, 217, 72, 0, 72)
+polygon = PackedVector2Array(0, 0, 90, 0, 90, 72, 0, 72)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 217, 0)
+points = PackedVector2Array(0, 0, 90, 0)
 width = 1.0
 texture = ExtResource("3_juucf")
 texture_mode = 1

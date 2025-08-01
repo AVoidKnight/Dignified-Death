@@ -20,7 +20,9 @@ func rlg(parent : Node):
 
 	var level = load(new_level_path).instantiate()
 	parent.add_child(level)
-	level.global_position = parent.global_position + parent.end_position
+	level.global_position = parent.global_position
+	level.global_position.x += parent.end_position.x * 6
+	level.global_position.y += parent.end_position.y
 
 
 func reset_level_array():

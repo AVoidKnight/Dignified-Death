@@ -1,3 +1,4 @@
+@tool
 extends StaticBody2D
 class_name LevelPart
 @export var level_number : int
@@ -7,6 +8,7 @@ var player
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		sync()
+		return
 	if ("end_position" in get_parent()) == true:
 		position = get_parent().end_position
 	if get_parent().name == "game":
@@ -37,5 +39,7 @@ func _on_regen_hitbox_body_entered(body: Node2D) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if player.global_position.x + 100 > self.global_position.x + end_position.x and level_number != 0:
+	if Engine.is_editor_hint():
+		return
+	if player.global_position.x - 500 > self.global_position.x + (end_position.x * 6) and level_number != 0:
 		queue_free()
