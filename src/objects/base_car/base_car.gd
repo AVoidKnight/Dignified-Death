@@ -37,7 +37,7 @@ func boost():
 
 
 func brake():
-	apply_central_force(Vector2.LEFT * 300)
+	apply_central_force(Vector2.LEFT * 500)
 
 
 func _on_wheels_body_entered(body: Node):
