@@ -4,6 +4,7 @@ var screen_size : Vector2i
 var window_size : Vector2i
 var taskbar_height : int
 var current_corner : int
+var clickthrough_window: bool
 enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
 signal corner_changed
 
@@ -51,3 +52,13 @@ func test_window_change() -> void:
 func window_change_size(size: float):
 	DisplayServer.window_set_size(Vector2(384, 180) * size)
 	window_size = DisplayServer.window_get_size()
+
+
+func clickthrough_window_state_change():
+	match clickthrough_window:
+		true:
+			clickthrough_window = false
+			TransparentWindow.SetClickThrough(false)
+		false:
+			clickthrough_window = true
+			TransparentWindow.SetClickThrough(true)

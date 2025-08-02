@@ -6,7 +6,5 @@ func _process(delta: float) -> void:
 	elif Input.is_action_just_pressed("testing_state"):
 		WindowManagement.test_window_change()
 		PlayerManagement.save()
-	if Input.is_key_pressed(KEY_ALT):
-		TransparentWindow.SetClickThrough(true)
-	else:
-		TransparentWindow.SetClickThrough(false)
+	if Input.is_action_just_pressed("clickthrough_window"):
+		WindowManagement.clickthrough_window_state_change()
