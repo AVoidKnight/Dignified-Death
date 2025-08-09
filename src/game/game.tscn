@@ -21,3 +21,4 @@ monitorable = false
 position = Vector2(214, -48)
 
 [editable path="LevelPart"]
+[editable path="base_car"]
