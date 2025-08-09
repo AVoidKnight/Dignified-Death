@@ -1,5 +1,6 @@
 extends RigidBody2D
 var wheel_array : Array[Node]
+var particles_array : Array
 @export var speed = 40
 @export var max_speed = 30
 var is_movable : bool = true
@@ -11,6 +12,11 @@ func _ready() -> void:
 	for i in wheel_array.size():
 		wheel_array[i].body_entered.connect(_on_wheels_body_entered)
 		wheel_array[i].body_exited.connect(_on_wheels_body_exited)
+		var particles = load("res://src/objects/wheel_particles.tscn").instantiate()
+		self.add_child(particles)
+		particles.global_position = wheel_array[i].global_position + Vector2(0,11)
+		particles.emitting = false
+		particles_array.append(particles)
 
 
 func _physics_process(_delta: float) -> void:
@@ -22,6 +28,14 @@ func _physics_process(_delta: float) -> void:
 		brake()
 		if linear_velocity.x < 5:
 			car_stopped.emit()
+	for i in particles_array.size():
+		particles_array[i].global_position = wheel_array[i].global_position + Vector2(0,11)
+		if self.linear_velocity.length() < 5 and self.linear_velocity.length() > -5:
+			particles_array[i].emitting = false
+		else:
+			particles_array[i].emitting = true
+			particles_array[i].initial_velocity_min = self.linear_velocity.length()
+			particles_array[i].initial_velocity_max = self.linear_velocity.length()
 
 
 func accelerate():
