@@ -11,7 +11,7 @@
 size = Vector2(122, 20)
 
 [node name="LevelPart" type="StaticBody2D"]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 4
 script = ExtResource("1_qnroy")
 end_position = Vector2(90, 0)

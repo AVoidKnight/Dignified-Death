@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ct5miegmkip3e" path="res://assets/sprites/bush1.png" id="5_gsbpj"]
 
 [node name="LevelPart" type="StaticBody2D"]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 4
 script = ExtResource("1_acy02")
 level_number = 1
