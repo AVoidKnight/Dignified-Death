@@ -3,6 +3,7 @@ extends StaticBody2D
 class_name LevelPart
 @export var level_number : int
 @export var end_position : Vector2
+var is_level_added : bool
 var player
 
 func _ready() -> void:
@@ -11,8 +12,9 @@ func _ready() -> void:
 		return
 	if ("end_position" in get_parent()) == true:
 		position = get_parent().end_position
-	if get_parent().name == "game":
-		LevelManagement.rlg(self)
+	if get_parent().name == "game" and is_level_added == false:
+		is_level_added == true
+		LevelManagement.rlg(self, self)
 	player = get_tree().get_first_node_in_group("player")
 
 func sync():
@@ -34,12 +36,11 @@ func _on_degen_hitbox_body_entered(body: Node2D) -> void:
 	queue_free()
 
 
-func _on_regen_hitbox_body_entered(body: Node2D) -> void:
-	LevelManagement.rlg(get_parent())
-
-
 func _physics_process(delta: float) -> void:
-	if Engine.is_editor_hint():
+	if Engine.is_editor_hint() or get_parent().name == "game":
 		return
 	if player.global_position.x - 500 > self.global_position.x + (end_position.x * 6) and level_number != 0:
 		queue_free()
+	if (player.global_position.x - 500 > self.global_position.x) and is_level_added == false:
+		is_level_added = true
+		LevelManagement.rlg(get_parent(), self)
