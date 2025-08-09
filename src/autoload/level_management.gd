@@ -10,19 +10,20 @@ func _ready():
 
 
 #random level generator
-func rlg(parent : Node):
+func rlg(levels_node : Node, position_reference : Node):
 
 	var level_number = level_array.pick_random()
 	if level_number == null:
 		reset_level_array()
+		level_number = level_array.pick_random()
 	var new_level_path = level_part_path + str(level_number) + ".tscn"
 	level_array.erase(level_number)
-
+	print(new_level_path)
 	var level = load(new_level_path).instantiate()
-	parent.add_child(level)
-	level.global_position = parent.global_position
-	level.global_position.x += parent.end_position.x * 6
-	level.global_position.y += parent.end_position.y
+	levels_node.add_child(level)
+	level.global_position = position_reference.global_position
+	level.global_position.x += position_reference.end_position.x * 6
+	level.global_position.y += position_reference.end_position.y * 6
 
 
 func reset_level_array():
