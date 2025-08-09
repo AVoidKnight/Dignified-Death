@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c8m25vro04m75"]
+[gd_scene load_steps=8 format=3 uid="uid://c8m25vro04m75"]
 
 [ext_resource type="Script" uid="uid://b6mhr5wyaraqq" path="res://src/objects/base_car/base_car.gd" id="1_sud1f"]
 [ext_resource type="PackedScene" uid="uid://y466bjhb17da" path="res://src/objects/wheel.tscn" id="2_scnjq"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cp7bu3qe876qx" path="res://src/camera_2d.tscn" id="2_yeeaf"]
 [ext_resource type="Script" uid="uid://bbmdpeugcgvvv" path="res://src/objects/base_car/upgrade_component.gd" id="5_kk0bo"]
 [ext_resource type="Script" uid="uid://d4die76brl2ml" path="res://src/objects/base_car/fuel_component.gd" id="6_7qf4u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qf4u"]
+size = Vector2(4, 25)
 
 [node name="base_car" type="RigidBody2D" groups=["player"]]
 collision_mask = 5
@@ -26,7 +29,6 @@ texture = ExtResource("2_sud1f")
 position = Vector2(-32.8938, 15.1719)
 node_a = NodePath("..")
 node_b = NodePath("Wheel")
-softness = 0.5
 
 [node name="Wheel" parent="PinJoint2D" instance=ExtResource("2_scnjq")]
 mass = 1.0
@@ -37,7 +39,6 @@ max_contacts_reported = 2
 position = Vector2(28.4012, 15.1719)
 node_a = NodePath("..")
 node_b = NodePath("Wheel")
-softness = 0.5
 
 [node name="Wheel" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]
 mass = 1.0
@@ -54,5 +55,25 @@ script = ExtResource("5_kk0bo")
 script = ExtResource("6_7qf4u")
 
 [node name="Timer" type="Timer" parent="FuelComponent"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-17, 15)
+shape = SubResource("RectangleShape2D_7qf4u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-49, 15)
+shape = SubResource("RectangleShape2D_7qf4u")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13, 15)
+shape = SubResource("RectangleShape2D_7qf4u")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(44, 15)
+shape = SubResource("RectangleShape2D_7qf4u")
 
 [connection signal="timeout" from="FuelComponent/Timer" to="FuelComponent" method="_on_timer_timeout"]
