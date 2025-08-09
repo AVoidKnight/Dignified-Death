@@ -8,7 +8,7 @@ b = Vector2(0, 100)
 
 [node name="LevelPart" type="StaticBody2D"]
 scale = Vector2(6, 6)
-collision_layer = 4
+collision_layer = 12
 collision_mask = 4
 script = ExtResource("1_g4pww")
 
