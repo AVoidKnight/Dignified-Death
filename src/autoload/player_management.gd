@@ -25,16 +25,16 @@ func base_save():
 
 
 func save():
-	var save = SaveResource.new()
+	var save_resource = SaveResource.new()
 	print_debug("Saving...")
 	emit_signal("update_stats")
 	while updated_stats != true:
-		var waiting
+		var _waiting
 	await updated_stats
-	save.money = money
-	save.upgrade_dictionary_1 = upgrade_dict_create()
-	print(save.upgrade_dictionary_1)
-	ResourceSaver.save(save, "user://save.tres")
+	save_resource.money = money
+	save_resource.upgrade_dictionary_1 = upgrade_dict_create()
+	print(save_resource.upgrade_dictionary_1)
+	ResourceSaver.save(save_resource, "user://save.tres")
 
 
 func upgrade_dict_create() -> Dictionary:
