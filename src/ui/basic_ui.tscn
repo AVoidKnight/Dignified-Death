@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
 [ext_resource type="Texture2D" uid="uid://dbqgun728icov" path="res://assets/sprites/settings ui panel.png" id="2_l2qak"]
-[ext_resource type="FontFile" uid="uid://e0a85vqnmmyo" path="res://assets/Better VCR 6.1.ttf" id="3_no3nr"]
+[ext_resource type="FontFile" uid="uid://7wa3qdioyyd6" path="res://assets/gnomoria_rus.ttf" id="3_uwfos"]
 [ext_resource type="Script" uid="uid://dsh4okhwxh5nc" path="res://src/ui/menu_button.gd" id="4_no3nr"]
 [ext_resource type="Script" uid="uid://br00jtjqi8ro6" path="res://src/ui/menu_button_2.gd" id="5_lsses"]
 [ext_resource type="Texture2D" uid="uid://cr4880oosq186" path="res://assets/sprites/fuel progress bar bg.png" id="6_t5gq6"]
@@ -13,8 +13,8 @@
 texture = ExtResource("2_l2qak")
 
 [sub_resource type="LabelSettings" id="LabelSettings_5cyww"]
-font = ExtResource("3_no3nr")
-font_size = 15
+font = ExtResource("3_uwfos")
+font_size = 8
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_no3nr"]
 
@@ -34,7 +34,6 @@ mouse_filter = 2
 script = ExtResource("1_uwfos")
 
 [node name="SettingsMargin" type="MarginContainer" parent="basic_ui"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
