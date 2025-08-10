@@ -4,9 +4,9 @@ BOTTOM_LEFT,Bottom left,Нижний левый
 BOTTOM_RIGHT,Bottom right,Нижний правый
 WINDOW_SIZE,Window size,Размер окна
 GAME_LANGUAGE,Language,Язык
-5,,
-6,,
-7,,
+DISTANCE_MONEY,Distance money,Деньги за расстояние
+ZOMBIE_MONEY,Zombie money,Деньги за зомби
+RUN_RESULTS,Run results:,Результаты забега:
 8,,
 9,,
 10,,
