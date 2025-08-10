@@ -1,4 +1,5 @@
 extends CharacterBody2D
+var is_dead : bool = false
 
 func _physics_process(delta: float) -> void:
 	velocity.x = -50
@@ -10,8 +11,14 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if is_dead == true:
+		return
 	ragdoll()
 
 
 func ragdoll():
-	pass
+	LevelManagement.zombie_killed += 1
+	var zombie_ragdoll = load("res://src/objects/zombie/zombie_ragdoll.tscn").instantiate()
+	get_parent().add_child(zombie_ragdoll)
+	zombie_ragdoll.global_position = self.global_position
+	queue_free()
