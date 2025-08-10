@@ -8,6 +8,7 @@ var bodies_entered : int = 0
 signal car_stopped
 
 func _ready() -> void:
+	Utils.player = self
 	wheel_array = get_tree().get_nodes_in_group("wheel")
 	for i in wheel_array.size():
 		wheel_array[i].body_entered.connect(_on_wheels_body_entered)
