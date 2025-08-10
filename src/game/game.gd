@@ -4,3 +4,4 @@ var fuel_active = false
 
 func _ready() -> void:
 	TransparentWindow.SetClickThrough(false)
+	Utils.game = self
