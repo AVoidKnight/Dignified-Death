@@ -8,21 +8,10 @@ var save_resource : Resource
 signal updated_stats
 
 func _ready() -> void:
-	PlayerManagement.update_stats.connect(upgrade_stats)
-	save_resource = PlayerManagement.load_saved_resource()
-	upgrade_dict_to_nums(save_resource.upgrade_dictionary_1)
+	saved_upgrades_to_nums()
 
 
-func upgrade_dict_to_nums(upgrade_dictionary : Dictionary):
-	fuel_upgrade = upgrade_dictionary.get("car_1_fuel_current_upgrade")
+func saved_upgrades_to_nums():
+	fuel_upgrade = PlayerManagement.fuel
 	$"../FuelComponent".fuel_upgrade = fuel_upgrade
 	$"../FuelComponent/Timer".start()
-
-
-func upgrade_stats():
-	print_debug("Update stats signal received, updating stats...")
-	PlayerManagement.fuel = fuel_upgrade
-	PlayerManagement.engine = engine_upgrade
-	PlayerManagement.n2o = n2o_upgrade
-	PlayerManagement.penetration = penetration_upgrade
-	PlayerManagement.updated_stats = true
