@@ -23,6 +23,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	PlayerManagement.distance_to_money(get_parent().global_position.x)
 	base_car.is_movable = false
 	fuel_progressbar.value = 0
+	LevelManagement.level_end(Utils.player.position.x)
+	await get_tree().create_timer(2).timeout
+	var end_ui = load("res://src/ui/level_end_ui.tscn")
+	Utils.game.add_child(end_ui.instantiate())
