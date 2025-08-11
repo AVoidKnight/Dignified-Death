@@ -5,7 +5,6 @@ var fuel : int = 0
 var engine : int = 0 
 var n2o : int = 0
 var penetration : int = 0
-signal update_stats
 var updated_stats : bool
 
 func _ready() -> void:
@@ -29,12 +28,12 @@ func base_save():
 
 
 func save():
-	var save_resource = SaveResource.new()
+	var save_resource_temp = SaveResource.new()
 	print_debug("Saving...")
-	save_resource.money = money
-	save_resource.upgrade_dictionary_1 = upgrade_dict_create()
-	print(save_resource.upgrade_dictionary_1)
-	ResourceSaver.save(save_resource, "user://save.tres")
+	save_resource_temp.money = money
+	save_resource_temp.upgrade_dictionary_1 = upgrade_dict_create()
+	print(save_resource_temp.upgrade_dictionary_1)
+	ResourceSaver.save(save_resource_temp, "user://save.tres")
 
 
 func upgrade_dict_create() -> Dictionary:

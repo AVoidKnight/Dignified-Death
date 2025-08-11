@@ -1,6 +1,6 @@
 extends Node
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("debugging_state"):
 		WindowManagement.debug_window_change()
 	elif Input.is_action_just_pressed("testing_state"):

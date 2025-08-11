@@ -13,7 +13,7 @@ func _ready() -> void:
 	if ("end_position" in get_parent()) == true:
 		position = get_parent().end_position
 	if get_parent().name == "game" and is_level_added == false:
-		is_level_added == true
+		is_level_added = true
 		LevelManagement.rlg(self, self)
 	player = get_tree().get_first_node_in_group("player")
 
@@ -32,11 +32,7 @@ func sync():
 	end_position = $Line2D.points[-1]
 
 
-func _on_degen_hitbox_body_entered(body: Node2D) -> void:
-	queue_free()
-
-
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Engine.is_editor_hint() or get_parent().name == "game":
 		return
 	if player.global_position.x - 500 > self.global_position.x + (end_position.x * 6) and level_number != 0:
