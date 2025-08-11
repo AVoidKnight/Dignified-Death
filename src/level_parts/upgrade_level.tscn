@@ -23,6 +23,8 @@ position = Vector2(211, -29)
 offset = Vector2(41.62, 25.535)
 zoom = Vector2(0.815, 0.815)
 
+[connection signal="pressed" from="upgrade_ui/upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/TextureButton" to="upgrade_ui/upgrade_ui" method="_on_start_button_pressed"]
+
 [editable path="upgrade_ui"]
 [editable path="basic_ui"]
 [editable path="base_car"]
