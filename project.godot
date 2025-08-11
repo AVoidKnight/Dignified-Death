@@ -21,7 +21,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Utils="*res://src/autoload/Utils.gd"
-TransparentWindow="*res://TransparentWindow.cs"
+TransparentWindow="*res://src/autoload/TransparentWindow.cs"
 WindowManagement="*res://src/autoload/window_management.gd"
 SettingsManagement="*res://src/autoload/settings_management.gd"
 GlobalInputs="*res://src/autoload/global_inputs.gd"
