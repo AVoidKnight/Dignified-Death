@@ -7,16 +7,16 @@ GAME_LANGUAGE,Language,Язык
 DISTANCE_MONEY,Distance money,Деньги за расстояние
 ZOMBIE_MONEY,Zombie money,Деньги за зомби
 RUN_RESULTS,Run results:,Результаты забега:
-8,,
-9,,
-10,,
-11,,
-12,,
-13,,
-14,,
-15,,
-16,,
-17,,
+UPGRADE_FUEL,Upgrade fuel,Улучшить топливо
+UPGRADE_ENGINE,Upgrade engine,Улучшить двигатель
+UPGRADE_N2O,Upgrade N2O,Улучшить нитро
+UPGRADE_PENETRATION,Upgrade piercing,Улучшить пробиваемость
+FUEL_TOOLTIP,More fuel,Больше топлива
+ENGINE_TOOLTIP,Higher max speed \n and acceleration,Выше максимальная скорость\n и ускорение
+N2O_TOOLTIP_1,Use,Нажми 
+PENETRATION_TOOLTIP,Lowers zombie's impact,Снижает влияние зомби на скорость
+N2O_TOOLTIP_2,to boost!,", чтобы ускориться!"
+BUY,Buy,Купить
 18,,
 19,,
 20,,
