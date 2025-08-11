@@ -55,9 +55,9 @@ func brake():
 	apply_central_force(Vector2.LEFT * 500)
 
 
-func _on_wheels_body_entered(body: Node):
+func _on_wheels_body_entered(_body: Node):
 	bodies_entered += 1
 
 
-func _on_wheels_body_exited(body: Node):
+func _on_wheels_body_exited(_body: Node):
 	bodies_entered -= 1

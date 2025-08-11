@@ -5,7 +5,6 @@ var engine_upgrade = 0
 var n2o_upgrade = 0
 var penetration_upgrade = 0
 var save_resource : Resource
-signal updated_stats
 
 func _ready() -> void:
 	saved_upgrades_to_nums()

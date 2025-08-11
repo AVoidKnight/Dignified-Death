@@ -20,6 +20,6 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 func ragdoll():
 	LevelManagement.zombie_killed += 1
 	var zombie_ragdoll = load("res://src/objects/zombie/zombie_ragdoll.tscn").instantiate()
-	get_parent().add_child(zombie_ragdoll)
+	get_parent().add_child.call_deferred(zombie_ragdoll)
 	zombie_ragdoll.global_position = self.global_position
 	queue_free()

@@ -11,7 +11,6 @@ const distance_coef : float = 0.025
 const zombie_coef: int = 5
 
 func _ready():
-	Utils.current_car = self
 	reset_level_array()
 
 
@@ -38,7 +37,7 @@ func rlg(levels_node : Node, position_reference : Node):
 		var current_point = points.pick_random()
 		points.erase(current_point)
 		var zombie_instance = zombie_preload.instantiate()
-		levels_node.get_parent().add_child(zombie_instance)
+		levels_node.get_parent().add_child.call_deferred(zombie_instance)
 		zombie_instance.global_position = level.global_position + current_point * 6 + Vector2(0, -20) 
 		
 
