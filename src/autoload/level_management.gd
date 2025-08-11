@@ -1,5 +1,6 @@
 extends Node
 
+@onready var zombie_preload = preload("res://src/objects/zombie/zombie.tscn")
 var zombie_killed : int = 0
 var auto : bool = false
 var level_array : Array[int]
@@ -10,6 +11,7 @@ const distance_coef : float = 0.025
 const zombie_coef: int = 5
 
 func _ready():
+	Utils.current_car = self
 	reset_level_array()
 
 
@@ -28,6 +30,17 @@ func rlg(levels_node : Node, position_reference : Node):
 	level.global_position = position_reference.global_position
 	level.global_position.x += position_reference.end_position.x * 6
 	level.global_position.y += position_reference.end_position.y * 6
+
+#adding zombies
+	var zombie_quantity : int = randi_range(6, 9)
+	var points = Array(level.get_node("Line2D").points)
+	for current_zombie in zombie_quantity:
+		var current_point = points.pick_random()
+		points.erase(current_point)
+		var zombie_instance = zombie_preload.instantiate()
+		levels_node.get_parent().add_child(zombie_instance)
+		zombie_instance.global_position = level.global_position + current_point * 6 + Vector2(0, -20) 
+		
 
 
 func reset_level_array():
