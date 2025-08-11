@@ -9,6 +9,7 @@ enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
 signal corner_changed
 
 func _ready() -> void:
+	TransparentWindow.SetClickThrough(false)
 	window_size = DisplayServer.window_get_size()
 	screen_size = DisplayServer.screen_get_size()
 	taskbar_height = get_taskbar_height()
