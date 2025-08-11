@@ -1,10 +1,15 @@
 extends Node
-var money : int
+signal money_changed
+var money : int:
+	set(value):
+		emit_signal("money_changed")
+		money = value
 var save_resource : Resource
 var fuel : int = 0
 var engine : int = 0 
 var n2o : int = 0
 var penetration : int = 0
+var penetration_converted : float = -1
 var updated_stats : bool
 
 func _ready() -> void:
@@ -52,3 +57,19 @@ func load_data():
 	engine = upgrade_dict["car_1_engine_current_upgrade"]
 	n2o = upgrade_dict["car_1_n2o_current_upgrade"]
 	penetration = upgrade_dict["car_1_penetration_current_upgrade"]
+
+
+func get_stat(stat: String) -> Variant:
+	match stat:
+		"fuel":
+			return fuel
+		"engine":
+			return engine
+		"n2o":
+			return n2o
+		"penetration":
+			if penetration_converted == -1:
+				penetration_converted = 1 - 0.15 * penetration
+			return penetration_converted
+		_:
+			return 0
