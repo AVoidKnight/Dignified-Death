@@ -3,8 +3,6 @@ var is_dead : bool = false
 
 func _physics_process(_delta: float) -> void:
 	velocity.x = -50
-	if Utils.player.is_movable == false:
-		queue_free()
 	if !is_on_floor():
 		velocity.y += 60
 	else:
@@ -13,7 +11,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	if is_dead == true or Utils.player.is_movable == false:
+	if is_dead == true:
 		return
 	is_dead = true
 	Utils.player.apply_impulse(Vector2.LEFT * 1000 * PlayerManagement.get_stat("penetration"))
