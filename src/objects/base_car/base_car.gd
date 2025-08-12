@@ -21,11 +21,13 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_pressed("accelerate") and is_movable:
+	if get_parent().name == "upgrade_level":
+		return
+	if (Input.is_action_pressed("accelerate") or PlayerManagement.auto == true) and is_movable:
 		accelerate()
-	if Input.is_action_pressed("boost") and is_movable:
+	if Input.is_action_pressed("boost") and is_movable and PlayerManagement.auto == false:
 		boost()
-	if Input.is_action_pressed("brake"):
+	if (Input.is_action_pressed("brake") and PlayerManagement.auto == false) or !is_movable:
 		brake()
 		if linear_velocity.x < 5:
 			car_stopped.emit()
