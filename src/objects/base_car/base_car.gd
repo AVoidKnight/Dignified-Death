@@ -50,8 +50,7 @@ func accelerate():
 
 
 func boost():
-	var direction = $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
-	apply_central_force(direction * 10000)
+	apply_central_force(get_direction() * 10000)
 
 
 func brake():
@@ -64,3 +63,7 @@ func _on_wheels_body_entered(_body: Node):
 
 func _on_wheels_body_exited(_body: Node):
 	bodies_entered -= 1
+
+
+func get_direction() -> Vector2:
+	return $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
