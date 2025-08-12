@@ -2,7 +2,6 @@ extends Node
 
 @onready var zombie_preload = preload("res://src/objects/zombie/zombie.tscn")
 var zombie_killed : int = 0
-var auto : bool = false
 var level_array : Array[int]
 var zombie_money : int
 var distance_money : int
@@ -53,6 +52,4 @@ func level_end(distance : float):
 
 
 func calc_money(distance : float) -> int:
-	distance_money = floori(distance * distance_coef)
-	zombie_money = zombie_killed * zombie_coef
 	return (distance_money + zombie_money)
