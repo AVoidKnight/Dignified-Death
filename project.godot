@@ -27,6 +27,7 @@ SettingsManagement="*res://src/autoload/settings_management.gd"
 GlobalInputs="*res://src/autoload/global_inputs.gd"
 PlayerManagement="*res://src/autoload/player_management.gd"
 LevelManagement="*res://src/autoload/level_management.gd"
+AudioManagement="*res://src/autoload/AudioManagement.gd"
 
 [display]
 
