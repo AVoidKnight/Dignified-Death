@@ -14,7 +14,7 @@ script = ExtResource("3_lnu2h")
 scale = Vector2(6, 6)
 
 [node name="base_car" parent="." instance=ExtResource("4_l80un")]
-position = Vector2(214, -48)
+position = Vector2(214, -27)
 
 [editable path="LevelPart"]
 [editable path="base_car"]

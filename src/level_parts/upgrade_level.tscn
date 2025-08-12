@@ -17,7 +17,7 @@ scale = Vector2(6, 6)
 [node name="basic_ui" parent="." instance=ExtResource("4_7hg5o")]
 
 [node name="base_car" parent="." instance=ExtResource("2_1w3bj")]
-position = Vector2(211, -29)
+position = Vector2(211, -27)
 
 [node name="Camera2D" parent="base_car" index="0"]
 offset = Vector2(41.62, 25.535)
