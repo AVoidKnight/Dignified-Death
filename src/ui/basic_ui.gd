@@ -21,4 +21,4 @@ func _on_texture_button_toggled(toggled_on: bool) -> void:
 
 
 func update_money_label():
-	$PauseMargin/VBoxContainer/Label.text = "$" + str(PlayerManagement.money)
+	$PauseMargin/VBoxContainer/PanelContainer/Label.text = "$" + str(PlayerManagement.money)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=13 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
@@ -16,9 +16,8 @@ texture = ExtResource("2_l2qak")
 font = ExtResource("3_uwfos")
 font_size = 8
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_no3nr"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lsses"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwfos"]
+texture = ExtResource("2_l2qak")
 
 [sub_resource type="LabelSettings" id="LabelSettings_uwfos"]
 font = ExtResource("3_uwfos")
@@ -85,7 +84,6 @@ label_settings = SubResource("LabelSettings_5cyww")
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 size_flags_horizontal = 0
-icon = SubResource("PlaceholderTexture2D_no3nr")
 expand_icon = true
 item_count = 2
 popup/item_0/text = "BOTTOM_LEFT"
@@ -95,6 +93,15 @@ popup/item_1/text = "BOTTOM_RIGHT"
 popup/item_1/checkable = 2
 popup/item_1/id = 1
 script = ExtResource("4_no3nr")
+
+[node name="TextureRect" type="TextureRect" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r0xtb")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -112,7 +119,6 @@ label_settings = SubResource("LabelSettings_5cyww")
 custom_minimum_size = Vector2(15, 15)
 layout_mode = 2
 size_flags_horizontal = 0
-icon = SubResource("PlaceholderTexture2D_lsses")
 expand_icon = true
 item_count = 3
 popup/item_0/text = "1X"
@@ -125,6 +131,15 @@ popup/item_2/text = "3X"
 popup/item_2/checkable = 2
 popup/item_2/id = 2
 script = ExtResource("5_lsses")
+
+[node name="TextureRect" type="TextureRect" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r0xtb")
 
 [node name="FuelMargin" type="MarginContainer" parent="basic_ui"]
 layout_mode = 1
@@ -178,7 +193,12 @@ toggle_mode = true
 texture_normal = ExtResource("1_r0xtb")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="basic_ui/PauseMargin/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="basic_ui/PauseMargin/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_uwfos")
+
+[node name="Label" type="Label" parent="basic_ui/PauseMargin/VBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "55"
