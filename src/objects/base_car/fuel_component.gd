@@ -28,6 +28,7 @@ func _on_timer_timeout() -> void:
 	fuel_progressbar.value = 0
 	LevelManagement.level_end(Utils.player.position.x)
 	await get_tree().create_timer(2).timeout
+	get_tree().paused = false
 	if PlayerManagement.auto == true:
 		get_tree().change_scene_to_file("res://src/game/game.tscn")
 	else:
