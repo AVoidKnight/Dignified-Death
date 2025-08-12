@@ -47,6 +47,7 @@ func reset_level_array():
 
 func level_end(distance : float):
 	var end_money : int = calc_money(distance)
+	zombie_killed = 0
 	PlayerManagement.money += end_money
 	PlayerManagement.save()
 
