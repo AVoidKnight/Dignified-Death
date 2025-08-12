@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3gbkinh85wuq"]
+
+[ext_resource type="Script" uid="uid://2taa1nhqrfkk" path="res://src/ui/level_end_auto_ui.gd" id="1_j1n45"]
+[ext_resource type="Texture2D" uid="uid://34oipb7vfuvm" path="res://assets/sprites/test_panel_32x16.png" id="1_v16tt"]
+[ext_resource type="FontFile" uid="uid://7wa3qdioyyd6" path="res://assets/gnomoria_rus.ttf" id="1_wf7dn"]
+[ext_resource type="Texture2D" uid="uid://mpo7jpuxbibc" path="res://assets/sprites/distance_icon.png" id="3_67c7t"]
+[ext_resource type="Texture2D" uid="uid://50vmx12oamgd" path="res://icon.svg" id="5_snunb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_67c7t"]
+texture = ExtResource("1_v16tt")
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1n45"]
+font = ExtResource("1_wf7dn")
+font_size = 8
+font_color = Color(0.45098, 0.670588, 0.262745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_snunb"]
+font = ExtResource("1_wf7dn")
+font_size = 8
+font_color = Color(0.45098, 0.670588, 0.262745, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(64, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_67c7t")
+script = ExtResource("1_j1n45")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_67c7t")
+stretch_mode = 4
+
+[node name="distance_money" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$55"
+label_settings = SubResource("LabelSettings_j1n45")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("5_snunb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="zombie_money" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "$25"
+label_settings = SubResource("LabelSettings_snunb")
