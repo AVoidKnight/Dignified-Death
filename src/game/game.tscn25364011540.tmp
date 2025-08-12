@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv73v63g31crm"]
+
+[ext_resource type="PackedScene" uid="uid://b2a3crrgw07mr" path="res://src/ui/basic_ui.tscn" id="2_s6lek"]
+[ext_resource type="PackedScene" uid="uid://cmxn14lq350js" path="res://src/level_parts/level_tutor_end.tscn" id="3_kgj8g"]
+[ext_resource type="Script" uid="uid://dcfiiqlr8mf0g" path="res://src/game/game.gd" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c8m25vro04m75" path="res://src/objects/base_car/base_car.tscn" id="4_l80un"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("3_lnu2h")
+
+[node name="basic_ui" parent="." instance=ExtResource("2_s6lek")]
+
+[node name="LevelPart" parent="." instance=ExtResource("3_kgj8g")]
+scale = Vector2(6, 6)
+
+[node name="base_car" parent="." instance=ExtResource("4_l80un")]
+position = Vector2(214, -27)
+
+[editable path="LevelPart"]
+[editable path="base_car"]
