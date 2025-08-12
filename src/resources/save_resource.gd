@@ -7,3 +7,4 @@ extends Resource
 "car_1_n2o_current_upgrade" : 0,
 "car_1_penetration_current_upgrade" : 0
 }
+@export var auto : bool = false
