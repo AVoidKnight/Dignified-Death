@@ -33,7 +33,8 @@ func _physics_process(_delta: float) -> void:
 			car_stopped.emit()
 	for i in particles_array.size():
 		particles_array[i].global_position = wheel_array[i].global_position + Vector2(0,11)
-		if self.linear_velocity.length() < 5 and self.linear_velocity.length() > -5:
+		if (self.linear_velocity.length() < 5 and self.linear_velocity.length() > -5) \
+		or !wheel_array[i].get_colliding_bodies().any(func(node): return node.name == "LevelPart"):
 			particles_array[i].emitting = false
 		else:
 			particles_array[i].emitting = true
