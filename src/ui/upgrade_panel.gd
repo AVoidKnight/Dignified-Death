@@ -25,6 +25,9 @@ func fuel():
 	$MarginContainer/engine_panel.hide()
 	$MarginContainer/n2o_panel.hide()
 	$MarginContainer/penetration_panel.hide()
+	$MarginContainer/fuel_panel/Label3.text = \
+	str(6 + PlayerManagement.fuel * 6) + "s > " \
+	+ str(6 + (PlayerManagement.fuel + 1) * 6) + "s"
 
 
 func engine():
@@ -33,6 +36,9 @@ func engine():
 	$MarginContainer/engine_panel.show()
 	$MarginContainer/n2o_panel.hide()
 	$MarginContainer/penetration_panel.hide()
+	$MarginContainer/engine_panel/Label3.text = \
+	str(1 + PlayerManagement.engine * 0.25) + "x > " \
+	+str(1 + (PlayerManagement.engine + 1) * 0.25) + "x"
 
 
 func n2o():
@@ -41,6 +47,9 @@ func n2o():
 	$MarginContainer/engine_panel.hide()
 	$MarginContainer/n2o_panel.show()
 	$MarginContainer/penetration_panel.hide()
+	$MarginContainer/n2o_panel/Label3.text = \
+	str(3 + PlayerManagement.n2o * 3) + "s > " \
+	+ str(3 + (PlayerManagement.n2o + 1) * 3) + "s"
 
 
 func penetration():
@@ -49,3 +58,6 @@ func penetration():
 	$MarginContainer/engine_panel.hide()
 	$MarginContainer/n2o_panel.hide()
 	$MarginContainer/penetration_panel.show()
+	$MarginContainer/penetration_panel/Label3.text = \
+	str(1 - PlayerManagement.penetration * 0.15) + "x > " \
+	+str(1 - (PlayerManagement.penetration + 1) * 0.15) + "x"
