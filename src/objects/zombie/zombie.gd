@@ -14,7 +14,8 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if is_dead == true:
 		return
 	is_dead = true
-	Utils.player.apply_impulse(Vector2.LEFT * 1000 * PlayerManagement.get_stat("penetration"))
+	Utils.player.apply_impulse(Utils.player.get_direction().normalized() * -1000 \
+	* PlayerManagement.get_stat("penetration"))
 	ragdoll()
 
 
