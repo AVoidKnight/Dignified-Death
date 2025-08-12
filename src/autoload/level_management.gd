@@ -16,11 +16,9 @@ func _ready():
 
 #random level generator
 func rlg(levels_node : Node, position_reference : Node):
-
-	var level_number = level_array.pick_random()
-	if level_number == null:
+	if level_array.is_empty():
 		reset_level_array()
-		level_number = level_array.pick_random()
+	var level_number = level_array.pick_random()
 	var new_level_path = level_part_path + str(level_number) + ".tscn"
 	level_array.erase(level_number)
 	print(new_level_path)
