@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://c54hikfw3st06"]
+[gd_scene load_steps=14 format=3 uid="uid://c54hikfw3st06"]
 
 [ext_resource type="Texture2D" uid="uid://b3d74qql5d2ln" path="res://src/objects/zombie/zombie_torso.png" id="1_kchww"]
+[ext_resource type="Script" uid="uid://bsau62blnb7o6" path="res://src/objects/zombie/zombie_ragdoll.gd" id="1_mo8xj"]
 [ext_resource type="Texture2D" uid="uid://1a4p034n6ucj" path="res://src/objects/zombie/zombie_right_arm.png" id="2_mo8xj"]
 [ext_resource type="Texture2D" uid="uid://1u1mbo5erakk" path="res://src/objects/zombie/zombie_left_arm.png" id="3_j67bm"]
 [ext_resource type="Texture2D" uid="uid://u107pnvhlro7" path="res://src/objects/zombie/zombie_head.png" id="4_skdcu"]
@@ -33,6 +34,7 @@ height = 14.1183
 [node name="zombie_ragdoll" type="RigidBody2D"]
 collision_layer = 16
 collision_mask = 24
+script = ExtResource("1_mo8xj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5.96046e-08, 0)
@@ -142,3 +144,22 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PinJoint2D5/RigidBody2D"]
 position = Vector2(-4.06154, 7.13245)
 shape = SubResource("CapsuleShape2D_e3iwg")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 40
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.3
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 225.0
+linear_accel_min = -60.0
+linear_accel_max = -60.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+color = Color(0.569786, 0.139278, 0.0558244, 1)
