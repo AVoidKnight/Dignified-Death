@@ -10,6 +10,7 @@ var engine : int = 0
 var n2o : int = 0
 var penetration : int = 0
 var penetration_converted : float = -1
+var auto : bool = false
 var updated_stats : bool
 
 func _ready() -> void:
@@ -37,7 +38,7 @@ func save():
 	print_debug("Saving...")
 	save_resource_temp.money = money
 	save_resource_temp.upgrade_dictionary_1 = upgrade_dict_create()
-	print(save_resource_temp.upgrade_dictionary_1)
+	save_resource_temp.auto = auto
 	ResourceSaver.save(save_resource_temp, "user://save.tres")
 
 
@@ -57,6 +58,7 @@ func load_data():
 	engine = upgrade_dict["car_1_engine_current_upgrade"]
 	n2o = upgrade_dict["car_1_n2o_current_upgrade"]
 	penetration = upgrade_dict["car_1_penetration_current_upgrade"]
+	auto = save_resource.auto
 
 
 func get_stat(stat: String) -> Variant:
