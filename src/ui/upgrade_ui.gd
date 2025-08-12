@@ -34,6 +34,10 @@ func _on_cancel_button_pressed() -> void:
 	upgrade_panel.states = upgrade_panel.states_enum.HIDE
 
 
+func _on_auto_button_toggled(toggled_on: bool) -> void:
+	PlayerManagement.auto = toggled_on
+
+
 func _on_start_button_pressed() -> void:
 	PlayerManagement.save()
 	get_tree().change_scene_to_file("res://src/game/game.tscn")

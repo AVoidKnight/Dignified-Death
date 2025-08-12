@@ -15,14 +15,15 @@
 [ext_resource type="FontFile" uid="uid://7wa3qdioyyd6" path="res://assets/gnomoria_rus.ttf" id="13_fln5w"]
 [ext_resource type="Script" uid="uid://dmqwrcibg1i4p" path="res://src/ui/upgrade_panel.gd" id="13_i6v5v"]
 [ext_resource type="Texture2D" uid="uid://dbqgun728icov" path="res://assets/sprites/settings ui panel.png" id="15_bxpq5"]
-[ext_resource type="Script" uid="uid://va0nlh8niq55" path="res://src/ui/n2o_tooltip.gd" id="16_8162v"]
+[ext_resource type="Script" path="res://src/ui/n2o_tooltip.gd" id="16_8162v"]
 [ext_resource type="Texture2D" uid="uid://ce28h05sh340i" path="res://assets/sprites/cancel button.png" id="17_jg31t"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evh8o"]
 texture = ExtResource("7_2h2eg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_evh8o"]
-font_size = 10
+font = ExtResource("13_fln5w")
+font_size = 8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fln5w"]
 texture = ExtResource("12_t33ps")
