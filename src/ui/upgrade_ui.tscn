@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cxp1pb6tnm8yj"]
+[gd_scene load_steps=34 format=3 uid="uid://cxp1pb6tnm8yj"]
 
 [ext_resource type="Script" uid="uid://cfd1j1uaj4aae" path="res://src/ui/upgrade_ui.gd" id="1_evh8o"]
 [ext_resource type="Texture2D" uid="uid://d0g8ciuicqxoc" path="res://assets/sprites/ui button 1.png" id="1_h5yyo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c75krcrn4pq6w" path="res://assets/sprites/beta upgrade bar.png" id="3_bnl2r"]
 [ext_resource type="Texture2D" uid="uid://barrepdiwg7v1" path="res://assets/sprites/engine upgrade icon.png" id="3_nvj21"]
 [ext_resource type="Texture2D" uid="uid://4fovdywa2b1b" path="res://assets/sprites/beta n2o upgrade icon.png" id="4_ua00t"]
+[ext_resource type="Texture2D" uid="uid://bnm3tnk2h5kq3" path="res://assets/sprites/progressbar.png" id="5_r1tf0"]
 [ext_resource type="Texture2D" uid="uid://b180vtg2w8m27" path="res://assets/sprites/beta spike upgrade icon.png" id="5_ul3a8"]
 [ext_resource type="Texture2D" uid="uid://dm0nng18hjj4j" path="res://assets/sprites/test panel.png" id="7_2h2eg"]
 [ext_resource type="Texture2D" uid="uid://dn5m5fjreoepw" path="res://assets/sprites/play button.png" id="7_gnxme"]
@@ -32,7 +33,50 @@ texture = ExtResource("12_t33ps")
 font = ExtResource("13_fln5w")
 font_size = 8
 
+[sub_resource type="LabelSettings" id="LabelSettings_st8y5"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_jg31t"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_lskkw"]
+font = ExtResource("13_fln5w")
+font_size = 8
+font_color = Color(0.45098, 0.670588, 0.262745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fkorp"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1tf0"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_0s1j4"]
+font = ExtResource("13_fln5w")
+font_size = 8
+font_color = Color(0.45098, 0.670588, 0.262745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_otadf"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_yesof"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
 [sub_resource type="LabelSettings" id="LabelSettings_bxpq5"]
+font = ExtResource("13_fln5w")
+font_size = 8
+font_color = Color(0.45098, 0.670588, 0.262745, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ofw8g"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_7eayx"]
 font = ExtResource("13_fln5w")
 font_size = 8
 
@@ -92,7 +136,10 @@ centered = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 4.0
 texture_under = ExtResource("3_bnl2r")
+texture_progress = ExtResource("5_r1tf0")
+texture_progress_offset = Vector2(1, 1)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -230,7 +277,6 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="fuel_panel" type="VBoxContainer" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel"]
@@ -242,13 +288,13 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel"]
 layout_mode = 2
 text = "FUEL_TOOLTIP"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_st8y5")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel"]
 layout_mode = 2
 text = "if you can see this, i am stupid"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_jg31t")
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel"]
@@ -273,7 +319,7 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "BUY"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_lskkw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -290,13 +336,13 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/engine_panel"]
 layout_mode = 2
 text = "ENGINE_TOOLTIP"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_fkorp")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/engine_panel"]
 layout_mode = 2
 text = "if you can see this, i am stupid"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_r1tf0")
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/engine_panel"]
@@ -321,7 +367,7 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "BUY"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_0s1j4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -338,14 +384,14 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/n2o_panel"]
 layout_mode = 2
 text = "N2O_TOOLTIP"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_otadf")
 horizontal_alignment = 1
 script = ExtResource("16_8162v")
 
 [node name="Label3" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/n2o_panel"]
 layout_mode = 2
 text = "if you can see this, i am stupid"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_yesof")
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/n2o_panel"]
@@ -387,13 +433,13 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/penetration_panel"]
 layout_mode = 2
 text = "PENETRATION_TOOLTIP"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_ofw8g")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/penetration_panel"]
 layout_mode = 2
 text = "if you can see this, i am stupid"
-label_settings = SubResource("LabelSettings_bxpq5")
+label_settings = SubResource("LabelSettings_7eayx")
 horizontal_alignment = 1
 
 [node name="TextureButton" type="TextureButton" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/penetration_panel"]
@@ -424,6 +470,7 @@ vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="upgrade_ui/MarginContainer/upgrade_panel"]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -439,4 +486,5 @@ texture_normal = ExtResource("17_jg31t")
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button2" to="upgrade_ui" method="_on_engine_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer3/Button3" to="upgrade_ui" method="_on_n2o_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer4/Button4" to="upgrade_ui" method="_on_penetration_button_pressed"]
+[connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_fuel_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer2/TextureButton" to="upgrade_ui" method="_on_cancel_button_pressed"]
