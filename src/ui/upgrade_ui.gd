@@ -2,6 +2,7 @@ extends Control
 @onready var upgrade_panel: PanelContainer = $MarginContainer/upgrade_panel
 
 func _ready() -> void:
+	update_progressbars()
 	WindowManagement.corner_changed.connect(_on_corner_changed)
 	_on_corner_changed()
 
@@ -41,3 +42,14 @@ func _on_auto_button_toggled(toggled_on: bool) -> void:
 func _on_start_button_pressed() -> void:
 	PlayerManagement.save()
 	get_tree().change_scene_to_file("res://src/game/game.tscn")
+
+
+func update_progressbars():
+	$MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/TextureProgressBar.value = \
+	PlayerManagement.fuel
+	$MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/TextureProgressBar2.value = \
+	PlayerManagement.engine
+	$MarginContainer/CenterContainer/HBoxContainer/VBoxContainer3/TextureProgressBar3.value = \
+	PlayerManagement.n2o
+	$MarginContainer/CenterContainer/HBoxContainer/VBoxContainer4/TextureProgressBar4.value = \
+	PlayerManagement.penetration
