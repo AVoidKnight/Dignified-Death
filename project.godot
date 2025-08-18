@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="OverlayGame"
+config/name="Dignified Death"
 run/main_scene="uid://b0ius48ej0emt"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 boot_splash/show_image=false
