@@ -62,7 +62,13 @@ script = ExtResource("6_7qf4u")
 
 [node name="Timer" type="Timer" parent="FuelComponent"]
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -46)
+script = ExtResource("8_x8hmn")
 
+[node name="Timer" type="Timer" parent="RayCast2D"]
+wait_time = 3.0
 
 [connection signal="timeout" from="BoostComponent/Timer" to="BoostComponent" method="_on_timer_timeout"]
 [connection signal="timeout" from="FuelComponent/Timer" to="FuelComponent" method="_on_timer_timeout"]
+[connection signal="timeout" from="RayCast2D/Timer" to="RayCast2D" method="_on_timer_timeout"]
