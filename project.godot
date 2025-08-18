@@ -59,6 +59,7 @@ wheel=""
 player=""
 pause_button=""
 fuel_progressbar=""
+auto_end_button=""
 
 [input]
 
