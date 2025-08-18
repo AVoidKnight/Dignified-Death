@@ -189,6 +189,26 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_r0xtb")
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(162, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "DELETE_SAVE"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="TextureButton" type="TextureButton" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("7_cy2ig")
+script = ExtResource("8_8g37t")
+
+[node name="Timer" type="Timer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton"]
+wait_time = 5.0
+
 [node name="FuelMargin" type="MarginContainer" parent="basic_ui"]
 layout_mode = 1
 anchors_preset = 15
@@ -212,6 +232,31 @@ value = 100.0
 fill_mode = 3
 texture_under = ExtResource("6_t5gq6")
 texture_progress = ExtResource("7_uwfos")
+texture_progress_offset = Vector2(4, 16)
+
+[node name="BoostMargin" type="MarginContainer" parent="basic_ui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="BoostProgressbar" type="TextureProgressBar" parent="basic_ui/BoostMargin" groups=["boost_progressbar"]]
+custom_minimum_size = Vector2(10, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("9_opk7s")
+texture_progress = ExtResource("10_70g4d")
 texture_progress_offset = Vector2(4, 16)
 
 [node name="PauseMargin" type="MarginContainer" parent="basic_ui"]
@@ -254,4 +299,29 @@ label_settings = SubResource("LabelSettings_uwfos")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TextureButton" type="TextureButton" parent="basic_ui/PauseMargin" groups=["auto_end_button"]]
+visible = false
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture_normal = ExtResource("11_70g4d")
+stretch_mode = 5
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+value = 50.0
+fill_mode = 3
+texture_under = ExtResource("9_opk7s")
+texture_progress = ExtResource("10_70g4d")
+texture_progress_offset = Vector2(4, 16)
+
+[connection signal="drag_ended" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/HSlider" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/HSlider" method="_on_drag_ended"]
+[connection signal="button_down" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_down"]
+[connection signal="button_up" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_up"]
+[connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_up"]
+[connection signal="timeout" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton/Timer" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_timer_timeout"]
 [connection signal="toggled" from="basic_ui/PauseMargin/VBoxContainer/TextureButton" to="basic_ui" method="_on_texture_button_toggled"]
+[connection signal="pressed" from="basic_ui/PauseMargin/TextureButton" to="basic_ui" method="_on_auto_end_button_pressed"]
