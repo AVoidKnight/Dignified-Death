@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	Utils.game = self
 	$basic_ui/basic_ui/FuelMargin/FuelProgressbar.hide()
 	$base_car.is_movable = false
 
