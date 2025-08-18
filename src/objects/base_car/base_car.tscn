@@ -51,6 +51,11 @@ polygon = PackedVector2Array(55.7993, 4.07596, 48.9077, 12.8594, 39.6649, 15.969
 [node name="UpgradeComponent" type="Node" parent="."]
 script = ExtResource("5_kk0bo")
 
+[node name="BoostComponent" type="Node" parent="."]
+script = ExtResource("6_pkjd3")
+
+[node name="Timer" type="Timer" parent="BoostComponent"]
+
 [node name="FuelComponent" type="Node" parent="."]
 script = ExtResource("6_7qf4u")
 
@@ -76,4 +81,5 @@ shape = SubResource("RectangleShape2D_7qf4u")
 position = Vector2(42, 15)
 shape = SubResource("RectangleShape2D_7qf4u")
 
+[connection signal="timeout" from="BoostComponent/Timer" to="BoostComponent" method="_on_timer_timeout"]
 [connection signal="timeout" from="FuelComponent/Timer" to="FuelComponent" method="_on_timer_timeout"]

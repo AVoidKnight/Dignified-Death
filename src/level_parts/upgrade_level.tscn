@@ -16,6 +16,9 @@ scale = Vector2(6, 6)
 
 [node name="basic_ui" parent="." instance=ExtResource("4_7hg5o")]
 
+[node name="BoostMargin" parent="basic_ui/basic_ui" index="2"]
+visible = false
+
 [node name="base_car" parent="." instance=ExtResource("2_1w3bj")]
 position = Vector2(211, -27)
 
@@ -24,7 +27,6 @@ offset = Vector2(41.62, 25.535)
 zoom = Vector2(0.815, 0.815)
 
 [connection signal="pressed" from="upgrade_ui/upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/TextureButton" to="upgrade_ui/upgrade_ui" method="_on_start_button_pressed"]
-[connection signal="toggled" from="upgrade_ui/upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="upgrade_ui/upgrade_ui" method="_on_auto_button_toggled"]
 
 [editable path="upgrade_ui"]
 [editable path="basic_ui"]

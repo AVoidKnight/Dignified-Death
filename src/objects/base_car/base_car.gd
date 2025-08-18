@@ -4,6 +4,7 @@ var particles_array : Array
 @export var speed = 40
 @export var max_speed = 30
 var is_movable : bool = true
+var boost_active : bool = true
 var bodies_entered : int = 0
 signal car_stopped
 
@@ -25,8 +26,11 @@ func _physics_process(_delta: float) -> void:
 		return
 	if (Input.is_action_pressed("accelerate") or PlayerManagement.auto == true) and is_movable:
 		accelerate()
-	if Input.is_action_pressed("boost") and is_movable and PlayerManagement.auto == false:
+	if Input.is_action_pressed("boost") and is_movable \
+	and PlayerManagement.auto == false and boost_active == true:
 		boost()
+	else:
+		$BoostComponent/Timer.paused = true
 	if (Input.is_action_pressed("brake") and PlayerManagement.auto == false) or !is_movable:
 		brake()
 		if linear_velocity.x < 5:
@@ -50,7 +54,12 @@ func accelerate():
 
 
 func boost():
+	$BoostComponent/Timer.paused = false
 	apply_central_force(get_direction() * 10000)
+
+
+func deboost():
+	pass
 
 
 func brake():
