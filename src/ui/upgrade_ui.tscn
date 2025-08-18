@@ -163,7 +163,10 @@ offset = Vector2(0, -0.5)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 4.0
 texture_under = ExtResource("3_bnl2r")
+texture_progress = ExtResource("5_r1tf0")
+texture_progress_offset = Vector2(1, 1)
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -186,7 +189,10 @@ centered = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 4.0
 texture_under = ExtResource("3_bnl2r")
+texture_progress = ExtResource("5_r1tf0")
+texture_progress_offset = Vector2(1, 1)
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
@@ -209,7 +215,10 @@ centered = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 4.0
 texture_under = ExtResource("3_bnl2r")
+texture_progress = ExtResource("5_r1tf0")
+texture_progress_offset = Vector2(1, 1)
 
 [node name="start_panel" type="PanelContainer" parent="upgrade_ui/MarginContainer" groups=["panel_with_play_button"]]
 layout_mode = 2
@@ -302,6 +311,7 @@ custom_minimum_size = Vector2(30, 20)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 texture_normal = ExtResource("15_bxpq5")
 stretch_mode = 5
 
@@ -486,5 +496,9 @@ texture_normal = ExtResource("17_jg31t")
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button2" to="upgrade_ui" method="_on_engine_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer3/Button3" to="upgrade_ui" method="_on_n2o_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer4/Button4" to="upgrade_ui" method="_on_penetration_button_pressed"]
+[connection signal="toggled" from="upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="upgrade_ui" method="_on_auto_button_toggled"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_fuel_button_pressed"]
+[connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/engine_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_engine_button_pressed"]
+[connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/n2o_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_n2o_button_pressed"]
+[connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/penetration_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_penetration_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer2/TextureButton" to="upgrade_ui" method="_on_cancel_button_pressed"]

@@ -37,7 +37,6 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_auto_button_toggled(toggled_on: bool) -> void:
-	PlayerManagement.auto = toggled_on
 	auto_button = toggled_on
 
 
