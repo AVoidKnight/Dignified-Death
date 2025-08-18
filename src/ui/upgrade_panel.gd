@@ -32,7 +32,10 @@ func fuel():
 	if PlayerManagement.fuel < upgrade_resource.fuel_price.size():
 		$MarginContainer/fuel_panel/TextureButton/Label.text = \
 		"$" + str(upgrade_resource.fuel_price[PlayerManagement.fuel])
-	else: $MarginContainer/fuel_panel/TextureButton/Label.text = "-"
+	else:
+		$MarginContainer/fuel_panel/TextureButton/Label.text = "-"
+		$MarginContainer/fuel_panel/Label3.text = \
+		str(6 + PlayerManagement.fuel * 6) + "s"
 	$"../..".update_progressbars()
 
 
@@ -48,7 +51,12 @@ func engine():
 	if PlayerManagement.engine < upgrade_resource.engine_price.size():
 		$MarginContainer/engine_panel/TextureButton/Label.text = \
 		"$" + str(upgrade_resource.engine_price[PlayerManagement.engine])
-	else: $MarginContainer/engine_panel/TextureButton/Label.text = "-"
+		$MarginContainer/engine_panel/Label3.text = \
+		str(1 + PlayerManagement.engine * 0.25) + "x"
+	else: 
+		$MarginContainer/engine_panel/TextureButton/Label.text = "-"
+		$MarginContainer/engine_panel/Label3.text = \
+		str(1 + PlayerManagement.engine * 0.25) + "x"
 	$"../..".update_progressbars()
 
 
@@ -64,7 +72,10 @@ func n2o():
 	if PlayerManagement.n2o < upgrade_resource.n2o_price.size():
 		$MarginContainer/n2o_panel/TextureButton/Label.text = \
 		"$" + str(upgrade_resource.n2o_price[PlayerManagement.n2o])
-	else: $MarginContainer/n2o_panel/TextureButton/Label.text = "-"
+	else: 
+		$MarginContainer/n2o_panel/TextureButton/Label.text = "-"
+		$MarginContainer/n2o_panel/Label3.text = \
+		str(3 + PlayerManagement.n2o * 3) + "s"
 	$"../..".update_progressbars()
 
 
@@ -75,19 +86,25 @@ func penetration():
 	$MarginContainer/n2o_panel.hide()
 	$MarginContainer/penetration_panel.show()
 	$MarginContainer/penetration_panel/Label3.text = \
-	str(1 - PlayerManagement.penetration * 0.15) + "x > " \
-	+str(1 - (PlayerManagement.penetration + 1) * 0.15) + "x"
+	str(1 - PlayerManagement.penetration * 0.2) + "x > " \
+	+str(1 - (PlayerManagement.penetration + 1) * 0.2) + "x"
 	if PlayerManagement.penetration < upgrade_resource.penetration_price.size():
 		$MarginContainer/penetration_panel/TextureButton/Label.text = \
 		"$" + str(upgrade_resource.penetration_price[PlayerManagement.penetration])
-	else: $MarginContainer/penetration_panel/TextureButton/Label.text = "-"
+	else: 
+		$MarginContainer/penetration_panel/Label3.text = \
+		str(1 - PlayerManagement.penetration * 0.2) + "x"
+		$MarginContainer/penetration_panel/TextureButton/Label.text = "-"
 	$"../..".update_progressbars()
 
 
 func _on_fuel_button_pressed() -> void:
 	print("fuel")
+	if PlayerManagement.fuel == upgrade_resource.fuel_price.size():
+		return
 	var price = upgrade_resource.fuel_price[PlayerManagement.fuel]
-	if price < PlayerManagement.money:
+	print(PlayerManagement.money)
+	if price <= PlayerManagement.money:
 		PlayerManagement.money -= price
 		PlayerManagement.fuel += 1
 	fuel()
@@ -95,8 +112,10 @@ func _on_fuel_button_pressed() -> void:
 
 func _on_engine_button_pressed() -> void:
 	print("engine")
+	if PlayerManagement.engine == upgrade_resource.engine_price.size():
+		return
 	var price = upgrade_resource.engine_price[PlayerManagement.engine]
-	if price < PlayerManagement.money:
+	if price <= PlayerManagement.money:
 		PlayerManagement.money -= price
 		PlayerManagement.engine += 1
 	engine()
@@ -104,8 +123,10 @@ func _on_engine_button_pressed() -> void:
 
 func _on_n2o_button_pressed() -> void:
 	print("n2o")
+	if PlayerManagement.n2o == upgrade_resource.n2o_price.size():
+		return
 	var price = upgrade_resource.n2o_price[PlayerManagement.n2o]
-	if price < PlayerManagement.money:
+	if price <= PlayerManagement.money:
 		PlayerManagement.money -= price
 		PlayerManagement.n2o += 1
 	n2o()
@@ -113,8 +134,10 @@ func _on_n2o_button_pressed() -> void:
 
 func _on_penetration_button_pressed() -> void:
 	print("penetration")
+	if PlayerManagement.penetration == upgrade_resource.penetration_price.size():
+		return
 	var price = upgrade_resource.penetration_price[PlayerManagement.penetration]
-	if price < PlayerManagement.money:
+	if price <= PlayerManagement.money:
 		PlayerManagement.money -= price
 		PlayerManagement.penetration += 1
 	penetration()
