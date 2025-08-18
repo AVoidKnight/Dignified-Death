@@ -19,6 +19,7 @@ func _ready() -> void:
 
 
 func load_saved_resource():
+	OS.set_restart_on_exit(false)
 	if ResourceLoader.exists("user://save.tres"):
 		save_resource = ResourceLoader.load("user://save.tres")
 		print("Save resource loaded")
@@ -75,3 +76,9 @@ func get_stat(stat: String) -> Variant:
 			return penetration_converted
 		_:
 			return 0
+
+
+func delete_save():
+	OS.set_restart_on_exit(true)
+	base_save()
+	Utils.game.get_tree().quit()
