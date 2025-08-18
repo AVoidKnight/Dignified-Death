@@ -11,6 +11,12 @@ func _ready() -> void:
 
 
 func saved_upgrades_to_nums():
+	engine_upgrade = PlayerManagement.engine
+	n2o_upgrade = PlayerManagement.n2o
 	fuel_upgrade = PlayerManagement.fuel
+	penetration_upgrade = PlayerManagement.penetration
+	$"..".engine_upgrade = engine_upgrade
 	$"../FuelComponent".fuel_upgrade = fuel_upgrade
+	$"../BoostComponent".boost_upgrade = n2o_upgrade
 	$"../FuelComponent/Timer".start()
+	$"../BoostComponent/Timer".start()
