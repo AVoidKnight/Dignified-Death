@@ -1,5 +1,6 @@
 extends Control
 @onready var upgrade_panel: PanelContainer = $MarginContainer/upgrade_panel
+var auto_button : bool = false
 
 func _ready() -> void:
 	update_progressbars()
@@ -37,9 +38,11 @@ func _on_cancel_button_pressed() -> void:
 
 func _on_auto_button_toggled(toggled_on: bool) -> void:
 	PlayerManagement.auto = toggled_on
+	auto_button = toggled_on
 
 
 func _on_start_button_pressed() -> void:
+	PlayerManagement.auto = auto_button
 	PlayerManagement.save()
 	get_tree().change_scene_to_file("res://src/game/game.tscn")
 
