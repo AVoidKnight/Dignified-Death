@@ -10,6 +10,7 @@ func play(path: String, start: float = 0, length: float = 0):
 	if length == 0:
 		await audio_player.finished
 	else:
-		await get_tree().create_timer(length).timeout
+		await get_tree().create_timer(length - start).timeout
 	if is_instance_valid(audio_player) == true:
 		audio_player.stop()
+		audio_player.queue_free()
