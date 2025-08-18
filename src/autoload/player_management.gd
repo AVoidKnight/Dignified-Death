@@ -2,8 +2,8 @@ extends Node
 signal money_changed
 var money : int:
 	set(value):
-		emit_signal("money_changed")
 		money = value
+		emit_signal("money_changed")
 var save_resource : Resource
 var fuel : int = 0
 var engine : int = 0 
