@@ -38,6 +38,10 @@ func size_setting(id: int):
 	corner_setting(corner)
 
 func volume_setting(value):
+	volume = value
+	AudioManagement.volume = volume
+	create_config()
+
 
 func create_config():
 	var config = ConfigFile.new()
