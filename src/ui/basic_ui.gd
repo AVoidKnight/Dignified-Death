@@ -13,6 +13,7 @@ func _ready() -> void:
 			get_tree().get_first_node_in_group("auto_end_button").size_flags_horizontal = 8
 		WindowManagement.BOTTOM_RIGHT:
 			get_tree().get_first_node_in_group("pause_button").size_flags_horizontal = 8
+			get_tree().get_first_node_in_group("auto_end_button").size_flags_horizontal = 0
 
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:
