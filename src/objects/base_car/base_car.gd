@@ -3,6 +3,10 @@ var wheel_array : Array[Node]
 var particles_array : Array
 @export var speed = 40
 @export var max_speed = 30
+var engine_upgrade : int:
+	set(value):
+		speed = 40 * (1 + value * 0.25)
+		max_speed = 30 * (1 + value * 0.25)
 var is_movable : bool = true
 var boost_active : bool = true
 var bodies_entered : int = 0
