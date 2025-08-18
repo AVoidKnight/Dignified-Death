@@ -72,7 +72,7 @@ func get_stat(stat: String) -> Variant:
 			return n2o
 		"penetration":
 			if penetration_converted == -1:
-				penetration_converted = 1 - 0.15 * penetration
+				penetration_converted = 1 - 0.2 * penetration
 			return penetration_converted
 		_:
 			return 0
