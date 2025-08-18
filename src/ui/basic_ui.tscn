@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=25 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
@@ -7,7 +7,16 @@
 [ext_resource type="Script" uid="uid://dsh4okhwxh5nc" path="res://src/ui/menu_button.gd" id="4_no3nr"]
 [ext_resource type="Script" uid="uid://br00jtjqi8ro6" path="res://src/ui/menu_button_2.gd" id="5_lsses"]
 [ext_resource type="Texture2D" uid="uid://cr4880oosq186" path="res://assets/sprites/fuel progress bar bg.png" id="6_t5gq6"]
+[ext_resource type="Texture2D" uid="uid://ce28h05sh340i" path="res://assets/sprites/cancel button.png" id="7_cy2ig"]
 [ext_resource type="Texture2D" uid="uid://32m8m6bxhk3s" path="res://assets/sprites/fuel progress bar.png" id="7_uwfos"]
+[ext_resource type="Script" uid="uid://cwves815oek4s" path="res://src/ui/delete_save.gd" id="8_8g37t"]
+[ext_resource type="Texture2D" uid="uid://ustg7qkbjw0j" path="res://assets/sprites/beta wheel.png" id="9_518jk"]
+[ext_resource type="Texture2D" uid="uid://cqke47tn443y4" path="res://assets/sprites/n2o progress bar bg.png" id="9_opk7s"]
+[ext_resource type="Texture2D" uid="uid://cw82vg1ueukss" path="res://assets/sprites/n2o progress bar.png" id="10_70g4d"]
+[ext_resource type="Texture2D" uid="uid://51b6xmci6op3" path="res://assets/sprites/ui_slider.png" id="10_gruft"]
+[ext_resource type="Texture2D" uid="uid://dn5m5fjreoepw" path="res://assets/sprites/play button.png" id="11_70g4d"]
+[ext_resource type="Texture2D" uid="uid://dr0ussnog4d4h" path="res://assets/sprites/ui_slider_2.png" id="11_rifkw"]
+[ext_resource type="Script" uid="uid://bjswix6cdb1qp" path="res://src/ui/h_slider.gd" id="12_gruft"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsses"]
 texture = ExtResource("2_l2qak")
@@ -15,6 +24,19 @@ texture = ExtResource("2_l2qak")
 [sub_resource type="LabelSettings" id="LabelSettings_5cyww"]
 font = ExtResource("3_uwfos")
 font_size = 8
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nc5ak"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+texture = ExtResource("10_gruft")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ok5sm"]
+texture = ExtResource("11_rifkw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gruft"]
+texture = ExtResource("11_rifkw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwfos"]
 texture = ExtResource("2_l2qak")
@@ -67,6 +89,32 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = -79
+
+[node name="Label" type="Label" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(162, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="HSlider" type="HSlider" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_icons/grabber = ExtResource("9_518jk")
+theme_override_icons/grabber_highlight = ExtResource("9_518jk")
+theme_override_styles/slider = SubResource("StyleBoxTexture_nc5ak")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_ok5sm")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_gruft")
+value = 50.0
+script = ExtResource("12_gruft")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
