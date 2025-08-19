@@ -56,6 +56,7 @@ script = ExtResource("5_kk0bo")
 script = ExtResource("6_pkjd3")
 
 [node name="Timer" type="Timer" parent="BoostComponent"]
+wait_time = 0.1
 
 [node name="FuelComponent" type="Node" parent="."]
 script = ExtResource("6_7qf4u")
