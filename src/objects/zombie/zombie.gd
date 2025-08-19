@@ -1,5 +1,6 @@
 extends CharacterBody2D
 var is_dead : bool = false
+var impulse_direction : int = 1
 
 func _physics_process(_delta: float) -> void:
 	velocity.x = -50
@@ -22,8 +23,11 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",1.68, 2.55)
 		3:
 			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",3.0, 4.05)
+	if Utils.player.get_node("RayCast2D").is_upside_down:
+		impulse_direction = -1
+	else: impulse_direction = 1
 	Utils.player.apply_impulse(Utils.player.get_direction().normalized() * -1000 \
-	* PlayerManagement.get_stat("penetration"))
+	* PlayerManagement.get_stat("penetration") * impulse_direction)
 	ragdoll()
 
 
