@@ -7,19 +7,21 @@ var current_corner : int
 var clickthrough_window: bool
 enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
 signal corner_changed
+signal clickthrough_state_changed
 
 func _ready() -> void:
 	TransparentWindow.SetClickThrough(false)
-	window_size = DisplayServer.window_get_size()
-	screen_size = DisplayServer.screen_get_size()
+	print(window_position)
+	window_size = DisplayServer.window_get_size(DisplayServer.get_primary_screen())
+	screen_size = DisplayServer.screen_get_size(DisplayServer.get_primary_screen())
 	taskbar_height = get_taskbar_height()
 
 
 func move_to_bl_corner() -> void:
 	print("BL_PRESSED")
 	current_corner = BOTTOM_LEFT
-	window_position.x = 0
-	window_position.y = screen_size.y - window_size.y - taskbar_height
+	window_position = DisplayServer.screen_get_position(DisplayServer.get_primary_screen())
+	window_position.y += screen_size.y - window_size.y - taskbar_height
 	print(window_position)
 	DisplayServer.window_set_position(window_position)
 	emit_signal("corner_changed")
@@ -28,15 +30,17 @@ func move_to_bl_corner() -> void:
 func move_to_br_corner() -> void:
 	print("BR_PRESSED")
 	current_corner = BOTTOM_RIGHT
-	window_position.x = screen_size.x - window_size.x
-	window_position.y = screen_size.y - window_size.y - taskbar_height
+	window_position = DisplayServer.screen_get_position(DisplayServer.get_primary_screen())
+	window_position.x += screen_size.x - window_size.x
+	window_position.y += screen_size.y - window_size.y - taskbar_height
 	print(window_position)
 	DisplayServer.window_set_position(window_position)
 	emit_signal("corner_changed")
 
 
 func get_taskbar_height() -> int:
-	return DisplayServer.screen_get_size().y - DisplayServer.screen_get_usable_rect().size.y
+	return DisplayServer.screen_get_size(DisplayServer.get_primary_screen()).y \
+	- DisplayServer.screen_get_usable_rect(DisplayServer.get_primary_screen()).size.y
 
 
 func debug_window_change() -> void:
@@ -63,3 +67,4 @@ func clickthrough_window_state_change():
 		false:
 			clickthrough_window = true
 			TransparentWindow.SetClickThrough(true)
+	emit_signal("clickthrough_state_changed")
