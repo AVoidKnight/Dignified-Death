@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_up() -> void:
+	end_progress = Utils.game.get_node("basic_ui/TextureProgressBar")
 	$Timer.stop()
 	end_progress.hide()
 	is_impending_doom_initiated = false
