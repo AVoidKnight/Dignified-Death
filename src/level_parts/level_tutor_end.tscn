@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmxn14lq350js"]
+[gd_scene load_steps=10 format=3 uid="uid://cmxn14lq350js"]
 
 [ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_qnroy"]
 [ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_rksrg"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cq51s1kj411kg" path="res://assets/sprites/beta camp.png" id="4_rksrg"]
 [ext_resource type="Texture2D" uid="uid://ct5miegmkip3e" path="res://assets/sprites/bush1.png" id="6_no3yk"]
 [ext_resource type="Texture2D" uid="uid://ctld7r2av1oyb" path="res://assets/sprites/beta rock.png" id="6_xsmik"]
+[ext_resource type="Texture2D" uid="uid://c4v6obs4k2j0x" path="res://assets/sprites/tijo.png" id="7_xsmik"]
+[ext_resource type="Script" uid="uid://bt1ge08a8kpke" path="res://src/level_parts/tijoe_area.gd" id="8_negly"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_negly"]
+size = Vector2(3.13793, 15.942)
 
 [node name="LevelPart" type="StaticBody2D"]
 collision_layer = 12
@@ -63,3 +68,17 @@ texture = ExtResource("6_no3yk")
 position = Vector2(6.1, -2.9)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_xsmik")
+
+[node name="Tijo" type="Sprite2D" parent="."]
+position = Vector2(-13.7498, -5.14045)
+scale = Vector2(0.0618761, 0.0254096)
+texture = ExtResource("7_xsmik")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("8_negly")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.86375, -3.9357)
+shape = SubResource("RectangleShape2D_negly")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
