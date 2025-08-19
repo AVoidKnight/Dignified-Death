@@ -5,7 +5,7 @@ func _ready() -> void:
 	$Timer.start()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if ((global_rotation_degrees > -280 and global_rotation_degrees < -80) or \
 	(global_rotation_degrees > 80 and global_rotation_degrees < 280)) and base_car.is_movable:
 		$Timer.paused = false

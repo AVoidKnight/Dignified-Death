@@ -9,7 +9,7 @@ var boost_upgrade : int:
 		boost_upgrade = value
 @onready var base_car: RigidBody2D = $".."
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if base_car.is_movable and \
 	(Input.is_action_pressed("boost") or PlayerManagement.auto == true) and \
 	boost_active:
