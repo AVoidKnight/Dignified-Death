@@ -32,4 +32,4 @@ func update_money_label():
 
 func _on_auto_end_button_pressed() -> void:
 	PlayerManagement.auto = false
-	get_tree().get_first_node_in_group("player").get_node("FuelComponent")._on_timer_timeout()
+	Utils.player.get_node("FuelComponent")._on_timer_timeout()
