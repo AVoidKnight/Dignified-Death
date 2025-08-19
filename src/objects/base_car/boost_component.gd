@@ -4,7 +4,7 @@ var boost_active : bool = true
 var boost_sec : float
 var boost_upgrade : int:
 	set(value):
-		boost_sec = 3 + 3 * value
+		boost_sec = 3 * value
 		$Timer.wait_time = boost_sec
 		boost_upgrade = value
 @onready var base_car: RigidBody2D = $".."

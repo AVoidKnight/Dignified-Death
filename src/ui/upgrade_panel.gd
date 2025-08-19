@@ -67,15 +67,15 @@ func n2o():
 	$MarginContainer/n2o_panel.show()
 	$MarginContainer/penetration_panel.hide()
 	$MarginContainer/n2o_panel/Label3.text = \
-	str(3 + PlayerManagement.n2o * 3) + "s > " \
-	+ str(3 + (PlayerManagement.n2o + 1) * 3) + "s"
+	str(PlayerManagement.n2o * 3) + "s > " \
+	+ str((PlayerManagement.n2o + 1) * 3) + "s"
 	if PlayerManagement.n2o < upgrade_resource.n2o_price.size():
 		$MarginContainer/n2o_panel/TextureButton/Label.text = \
 		"$" + str(upgrade_resource.n2o_price[PlayerManagement.n2o])
 	else: 
 		$MarginContainer/n2o_panel/TextureButton/Label.text = "-"
 		$MarginContainer/n2o_panel/Label3.text = \
-		str(3 + PlayerManagement.n2o * 3) + "s"
+		str(PlayerManagement.n2o * 3) + "s"
 	$"../..".update_progressbars()
 
 

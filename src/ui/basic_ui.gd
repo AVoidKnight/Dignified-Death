@@ -5,6 +5,8 @@ func _ready() -> void:
 		$BoostMargin/BoostProgressbar.hide()
 		if $"../..".name == "game":
 			$PauseMargin/TextureButton.show()
+	if PlayerManagement.n2o == 0:
+		$BoostMargin/BoostProgressbar.hide()
 	PlayerManagement.money_changed.connect(update_money_label)
 	update_money_label()
 	match WindowManagement.current_corner:
