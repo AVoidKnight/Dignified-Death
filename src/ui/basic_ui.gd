@@ -1,10 +1,10 @@
 extends Control
 
 func _ready() -> void:
+	if $"../..".name == "game":
+		$PauseMargin/TextureButton.show()
 	if PlayerManagement.auto == true:
 		$BoostMargin/BoostProgressbar.hide()
-		if $"../..".name == "game":
-			$PauseMargin/TextureButton.show()
 	if PlayerManagement.n2o == 0:
 		$BoostMargin/BoostProgressbar.hide()
 	PlayerManagement.money_changed.connect(update_money_label)
