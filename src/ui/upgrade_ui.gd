@@ -42,6 +42,7 @@ func _on_auto_button_toggled(toggled_on: bool) -> void:
 
 func _on_start_button_pressed() -> void:
 	PlayerManagement.auto = auto_button
+	LevelManagement.auto = auto_button
 	PlayerManagement.save()
 	get_tree().change_scene_to_file("res://src/game/game.tscn")
 
