@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cxp1pb6tnm8yj"]
+[gd_scene load_steps=37 format=3 uid="uid://cxp1pb6tnm8yj"]
 
 [ext_resource type="Script" uid="uid://cfd1j1uaj4aae" path="res://src/ui/upgrade_ui.gd" id="1_evh8o"]
 [ext_resource type="Texture2D" uid="uid://d0g8ciuicqxoc" path="res://assets/sprites/ui button 1.png" id="1_h5yyo"]
@@ -24,6 +24,14 @@
 texture = ExtResource("7_2h2eg")
 
 [sub_resource type="LabelSettings" id="LabelSettings_evh8o"]
+font = ExtResource("13_fln5w")
+font_size = 8
+
+[sub_resource type="Theme" id="Theme_7eayx"]
+TooltipLabel/font_sizes/font_size = 8
+TooltipLabel/fonts/font = ExtResource("13_fln5w")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0vyuh"]
 font = ExtResource("13_fln5w")
 font_size = 8
 
@@ -261,6 +269,8 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+tooltip_auto_translate_mode = 1
+mouse_filter = 1
 text = "Auto"
 label_settings = SubResource("LabelSettings_evh8o")
 
@@ -270,6 +280,16 @@ layout_mode = 2
 toggle_mode = true
 texture_normal = ExtResource("10_v4ixc")
 texture_pressed = ExtResource("11_t33ps")
+
+[node name="Label" type="Label" parent="upgrade_ui/MarginContainer/start_panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+tooltip_text = "AUTO_TOOLTIP"
+mouse_filter = 1
+theme = SubResource("Theme_7eayx")
+text = "?"
+label_settings = SubResource("LabelSettings_0vyuh")
 
 [node name="upgrade_panel" type="PanelContainer" parent="upgrade_ui/MarginContainer"]
 custom_minimum_size = Vector2(160, 80)
