@@ -8,3 +8,4 @@ extends Resource
 "car_1_penetration_current_upgrade" : 0
 }
 @export var auto : bool = false
+@export var is_first_launch : bool = true

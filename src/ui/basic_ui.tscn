@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=30 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bjswix6cdb1qp" path="res://src/ui/h_slider.gd" id="12_gruft"]
 [ext_resource type="Texture2D" uid="uid://cevxgwsw55ye2" path="res://assets/sprites/clickthrough_icon.png" id="18_nc5ak"]
 [ext_resource type="Script" uid="uid://mkb2gxh7if5y" path="res://src/ui/texture_rect.gd" id="19_ok5sm"]
+[ext_resource type="Script" uid="uid://b551qgbu3hs5t" path="res://src/ui/tutorial_label.gd" id="20_ok5sm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lsses"]
 texture = ExtResource("2_l2qak")
@@ -47,6 +48,13 @@ texture = ExtResource("2_l2qak")
 font = ExtResource("3_uwfos")
 font_size = 8
 font_color = Color(0.452027, 0.67, 0.2613, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kn4tl"]
+texture = ExtResource("2_l2qak")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v6qw"]
+font = ExtResource("3_uwfos")
+font_size = 8
 
 [node name="basic_ui" type="CanvasLayer"]
 
@@ -326,6 +334,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
+[node name="PanelContainer" type="PanelContainer" parent="basic_ui/PauseMargin"]
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 visible = false
 offset_right = 40.0

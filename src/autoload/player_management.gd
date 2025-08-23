@@ -11,6 +11,7 @@ var n2o : int = 0
 var penetration : int = 0
 var penetration_converted : float = -1
 var auto : bool = false
+var is_first_launch : bool = false
 var updated_stats : bool
 
 func _ready() -> void:
@@ -40,6 +41,7 @@ func save():
 	save_resource_temp.money = money
 	save_resource_temp.upgrade_dictionary_1 = upgrade_dict_create()
 	save_resource_temp.auto = auto
+	save_resource_temp.is_first_launch = is_first_launch
 	ResourceSaver.save(save_resource_temp, "user://save.tres")
 
 
@@ -60,6 +62,7 @@ func load_data():
 	n2o = upgrade_dict["car_1_n2o_current_upgrade"]
 	penetration = upgrade_dict["car_1_penetration_current_upgrade"]
 	auto = save_resource.auto
+	is_first_launch = save_resource.is_first_launch
 
 
 func get_stat(stat: String) -> Variant:
