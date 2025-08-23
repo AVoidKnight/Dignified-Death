@@ -12,7 +12,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	if is_dead == true:
+	if is_dead == true or Utils.player.is_waited:
 		return
 	is_dead = true
 	var zombie_sans = randi_range(1,3)
@@ -26,8 +26,9 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if Utils.player.get_node("RayCast2D").is_upside_down:
 		impulse_direction = -1
 	else: impulse_direction = 1
-	Utils.player.apply_impulse(Utils.player.get_direction().normalized() * -1000 \
-	* PlayerManagement.get_stat("penetration") * impulse_direction)
+	if Utils.player.is_movable:
+		Utils.player.apply_impulse(Utils.player.get_direction().normalized() * -1000 \
+		* PlayerManagement.get_stat("penetration") * impulse_direction)
 	ragdoll()
 
 

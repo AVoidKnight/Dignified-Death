@@ -10,6 +10,7 @@ var engine_upgrade : int:
 var is_movable : bool = true
 var boost_active : bool = true
 var bodies_entered : int = 0
+var is_waited : bool = false
 
 func _ready() -> void:
 	Utils.player = self
