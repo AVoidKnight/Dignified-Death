@@ -9,7 +9,7 @@ ZOMBIE_MONEY,Zombie money,Деньги за зомби
 RUN_RESULTS,Run results:,Результаты забега:
 UPGRADE_FUEL,Upgrade fuel,Улучшить топливо
 UPGRADE_ENGINE,Upgrade engine,Улучшить двигатель
-UPGRADE_N2O,Upgrade N2O,Улучшить нитро
+UPGRADE_N2O,Upgrade boost,Улучшить нитро
 UPGRADE_PENETRATION,Upgrade piercing,Улучшить пробиваемость
 FUEL_TOOLTIP,More fuel,Больше топлива
 ENGINE_TOOLTIP,Higher max speed \n and acceleration,Выше максимальная скорость\n и ускорение
@@ -19,9 +19,9 @@ N2O_TOOLTIP_2,to boost!,", чтобы ускориться!"
 BUY,Buy,Купить
 DELETE_SAVE,Delete save data,Удалить сохранение
 VOLUME,Volume,Громкость
-20,,
-21,,
-22,,
+TUTORIAL_TOOLTIP_1,to accelerate.,", чтобы ехать.\n"
+TUTORIAL_TOOLTIP_2,to make the window \n clickthrough.,", чтобы окно\n пропускало нажатия."
+AUTO_TOOLTIP,"In Auto mode, the car accelerates automatically, but you get less money. You can reverse this change by purchasing the acceleration upgrade.","В режиме Авто машина движется самостоятельно, но вы\nполучаете меньше денег при завершении забега. \nВы можете откатить это изменение, купив улучшение нитро."
 23,,
 24,,
 25,,
