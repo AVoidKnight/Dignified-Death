@@ -19,15 +19,15 @@ script = ExtResource("1_qnroy")
 end_position = Vector2(90, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, 90, 0, 90, 72, 0, 72)
+polygon = PackedVector2Array(-30, 0, -30, -6.57206, -30, -13, -30, -14, -26.0559, -14, -21.3518, -14, -18, -14, -15, -14, -10.828, -14, -7.15808, -14, -4, -14, -2.48195, -13.494, -1, -13, -2.23404, -12.7943, -3.8263, -12.5289, -5.05597, -12.324, -7, -12, -7.26186, -10.6907, -7.49556, -9.5222, -7.71991, -8.40046, -8, -7, -7.3844, -5.7688, -7, -5, -6, -3, -4.63205, -2.08803, -3, -1, -1.74011, -0.577873, -0.0480843, -0.0109577, 1.91497, -0.0140533, 90, 0, 90, 72, -30, 72)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture = ExtResource("2_rksrg")
-polygon = PackedVector2Array(0, 0, 90, 0, 90, 72, 0, 72)
+polygon = PackedVector2Array(-30, 0, -30, -6.57206, -30, -13, -30, -14, -26.0559, -14, -21.3518, -14, -18, -14, -15, -14, -10.828, -14, -7.15808, -14, -4, -14, -2.48195, -13.494, -1, -13, -2.23404, -12.7943, -3.8263, -12.5289, -5.05597, -12.324, -7, -12, -7.26186, -10.6907, -7.49556, -9.5222, -7.71991, -8.40046, -8, -7, -7.3844, -5.7688, -7, -5, -6, -3, -4.63205, -2.08803, -3, -1, -1.74011, -0.577873, -0.0480843, -0.0109577, 1.91497, -0.0140533, 90, 0, 90, 72, -30, 72)
 
 [node name="Line2D" type="Line2D" parent="."]
 texture_repeat = 2
-points = PackedVector2Array(0, 0, 90, 0)
+points = PackedVector2Array(-30, 0, -30, -6.57206, -30, -13, -30, -14, -26.0559, -14, -21.3518, -14, -18, -14, -15, -14, -10.828, -14, -7.15808, -14, -4, -14, -2.48195, -13.494, -1, -13, -2.23404, -12.7943, -3.8263, -12.5289, -5.05597, -12.324, -7, -12, -7.26186, -10.6907, -7.49556, -9.5222, -7.71991, -8.40046, -8, -7, -7.3844, -5.7688, -7, -5, -6, -3, -4.63205, -2.08803, -3, -1, -1.74011, -0.577873, -0.0480843, -0.0109577, 1.91497, -0.0140533, 90, 0)
 width = 1.0
 texture = ExtResource("3_juucf")
 texture_mode = 1
@@ -70,7 +70,7 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_xsmik")
 
 [node name="Tijo" type="Sprite2D" parent="."]
-position = Vector2(-13.7498, -5.14045)
+position = Vector2(-17, -18)
 scale = Vector2(0.0618761, 0.0254096)
 texture = ExtResource("7_xsmik")
 
@@ -78,7 +78,7 @@ texture = ExtResource("7_xsmik")
 script = ExtResource("8_negly")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.86375, -3.9357)
+position = Vector2(-12, -27)
 shape = SubResource("RectangleShape2D_negly")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
