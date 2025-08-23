@@ -43,7 +43,6 @@ script = ExtResource("1_dox8j")
 shape = SubResource("CapsuleShape2D_qk8cn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_ihbad")
 animation = &"walking"
 autoplay = "walking"

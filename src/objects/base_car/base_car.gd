@@ -10,7 +10,6 @@ var engine_upgrade : int:
 var is_movable : bool = true
 var boost_active : bool = true
 var bodies_entered : int = 0
-signal car_stopped
 
 func _ready() -> void:
 	Utils.player = self
@@ -35,10 +34,6 @@ func _physics_process(_delta: float) -> void:
 		boost()
 	else:
 		$BoostComponent/Timer.paused = true
-	if (Input.is_action_pressed("brake") and PlayerManagement.auto == false) or !is_movable:
-		brake()
-		if linear_velocity.x < 5:
-			car_stopped.emit()
 	for i in particles_array.size():
 		particles_array[i].global_position = wheel_array[i].global_position + Vector2(0,11)
 		if (self.linear_velocity.length() < 5 and self.linear_velocity.length() > -5) \
@@ -60,14 +55,6 @@ func accelerate():
 func boost():
 	$BoostComponent/Timer.paused = false
 	apply_central_force(get_direction() * 10000)
-
-
-func deboost():
-	pass
-
-
-func brake():
-	apply_central_force(Vector2.LEFT * 500)
 
 
 func _on_wheels_body_entered(_body: Node):

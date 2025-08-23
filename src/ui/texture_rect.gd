@@ -7,7 +7,6 @@ func _ready() -> void:
 
 
 func icon_loop():
-	print("icon_loop")
 	if WindowManagement.clickthrough_window == true:
 		$Timer.start()
 	else:
