@@ -22,7 +22,7 @@ visible = false
 [node name="base_car" parent="." instance=ExtResource("2_1w3bj")]
 position = Vector2(211, -27)
 
-[node name="Camera2D" parent="base_car" index="0"]
+[node name="Camera2D" parent="base_car" index="2"]
 offset = Vector2(41.62, 25.535)
 zoom = Vector2(0.815, 0.815)
 
