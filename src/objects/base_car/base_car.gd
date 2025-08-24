@@ -13,6 +13,8 @@ var bodies_entered : int = 0
 var is_waited : bool = false
 
 func _ready() -> void:
+	if PlayerManagement.penetration > 0:
+		$BetaSpikeUpgradeIcon.show()
 	Utils.player = self
 	wheel_array = get_tree().get_nodes_in_group("wheel")
 	for i in wheel_array.size():

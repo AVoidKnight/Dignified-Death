@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6w1lrt6b5id4"]
+
+[ext_resource type="Texture2D" uid="uid://byiwf01i20552" path="res://assets/sprites/test_blood.png" id="1_gm48e"]
+[ext_resource type="Script" uid="uid://d2agtes73xk4k" path="res://src/objects/blood_stain.gd" id="2_64jst"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_gm48e")
+script = ExtResource("2_64jst")
