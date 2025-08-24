@@ -3,6 +3,7 @@ var wheel_array : Array[Node]
 var particles_array : Array
 @export var speed = 40
 @export var max_speed = 30
+@onready var blood_stain_preload = preload("res://src/objects/blood_stain.tscn")
 var engine_upgrade : int:
 	set(value):
 		speed = 40 * (1 + value * 0.25)
@@ -71,6 +72,7 @@ func _on_wheels_body_exited(_body: Node):
 
 func get_direction() -> Vector2:
 	return $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
+
 func is_penetrating():
 	if PlayerManagement.penetration > 0:
 		$BetaCarProperSprite.texture = load("res://assets/sprites/beta car proper sprite2.png")

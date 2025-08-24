@@ -29,6 +29,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if Utils.player.is_movable:
 		Utils.player.apply_impulse(Utils.player.get_direction().normalized() * -1000 \
 		* PlayerManagement.get_stat("penetration") * impulse_direction)
+	Utils.player.add_bloodstain()
 	ragdoll()
 
 
