@@ -15,6 +15,7 @@ var is_waited : bool = false
 func _ready() -> void:
 	if PlayerManagement.penetration > 0:
 		$BetaSpikeUpgradeIcon.show()
+	is_penetrating()
 	Utils.player = self
 	wheel_array = get_tree().get_nodes_in_group("wheel")
 	for i in wheel_array.size():
@@ -70,3 +71,7 @@ func _on_wheels_body_exited(_body: Node):
 
 func get_direction() -> Vector2:
 	return $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
+func is_penetrating():
+	if PlayerManagement.penetration > 0:
+		$BetaCarProperSprite.texture = load("res://assets/sprites/beta car proper sprite2.png")
+		$BetaCarProperSprite.offset.x = 2
