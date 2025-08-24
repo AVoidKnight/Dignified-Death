@@ -14,8 +14,6 @@ var bodies_entered : int = 0
 var is_waited : bool = false
 
 func _ready() -> void:
-	if PlayerManagement.penetration > 0:
-		$BetaSpikeUpgradeIcon.show()
 	is_penetrating()
 	Utils.player = self
 	wheel_array = get_tree().get_nodes_in_group("wheel")
@@ -48,6 +46,8 @@ func _physics_process(_delta: float) -> void:
 			particles_array[i].emitting = true
 			particles_array[i].initial_velocity_min = self.linear_velocity.length()
 			particles_array[i].initial_velocity_max = self.linear_velocity.length()
+	for i in wheel_array.size():
+		wheel_array[i].position.x = 0
 
 
 func accelerate():
@@ -72,6 +72,11 @@ func _on_wheels_body_exited(_body: Node):
 
 func get_direction() -> Vector2:
 	return $PinJoint2D.global_position.direction_to($PinJoint2D2.global_position)
+
+
+func add_bloodstain():
+	$BetaCarProperSprite.add_child(blood_stain_preload.instantiate())
+
 
 func is_penetrating():
 	if PlayerManagement.penetration > 0:
