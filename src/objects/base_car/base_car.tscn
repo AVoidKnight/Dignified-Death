@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8m25vro04m75"]
+[gd_scene load_steps=10 format=3 uid="uid://c8m25vro04m75"]
 
 [ext_resource type="Script" uid="uid://b6mhr5wyaraqq" path="res://src/objects/base_car/base_car.gd" id="1_sud1f"]
 [ext_resource type="PackedScene" uid="uid://y466bjhb17da" path="res://src/objects/wheel.tscn" id="2_scnjq"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://toxa0tknx1g3" path="res://src/objects/base_car/blood_component.gd" id="6_227or"]
 [ext_resource type="Script" uid="uid://rm1124jq8frw" path="res://src/objects/base_car/boost_component.gd" id="6_pkjd3"]
 [ext_resource type="Script" uid="uid://7er5vqcftp7d" path="res://src/objects/base_car/ray_cast_2d.gd" id="8_x8hmn"]
-[ext_resource type="Texture2D" uid="uid://b180vtg2w8m27" path="res://assets/sprites/beta spike upgrade icon.png" id="9_sr6g3"]
 
 [node name="base_car" type="RigidBody2D" groups=["player"]]
 collision_mask = 5
@@ -25,19 +24,13 @@ position = Vector2(0.5, 0)
 scale = Vector2(2, 2)
 texture = ExtResource("2_sud1f")
 
-[node name="BetaSpikeUpgradeIcon" type="Sprite2D" parent="."]
-clip_children = 2
-position = Vector2(57.4932, 8.02123)
-scale = Vector2(2, 2)
-texture = ExtResource("9_sr6g3")
-
 [node name="Camera2D" parent="." instance=ExtResource("2_yeeaf")]
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(-32.8938, 15.1719)
 node_a = NodePath("..")
 node_b = NodePath("Wheel")
-softness = 0.2
+softness = 0.1
 
 [node name="Wheel" parent="PinJoint2D" instance=ExtResource("2_scnjq")]
 mass = 1.0
@@ -47,10 +40,10 @@ max_contacts_reported = 2
 [node name="PinJoint2D2" type="PinJoint2D" parent="."]
 position = Vector2(28.4012, 15.1719)
 node_a = NodePath("..")
-node_b = NodePath("Wheel")
-softness = 0.2
+node_b = NodePath("Wheel2")
+softness = 0.1
 
-[node name="Wheel" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]
+[node name="Wheel2" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]
 mass = 1.0
 contact_monitor = true
 max_contacts_reported = 2
