@@ -3,6 +3,7 @@ enum {BOTTOM_LEFT, BOTTOM_RIGHT}
 @export var corner : int = 0
 @export var size : int = 1
 @export var volume : float = 0.5
+@export var display : int = 0
 
 func _ready() -> void:
 	var config = ConfigFile.new()
@@ -13,13 +14,16 @@ func _ready() -> void:
 	corner = config.get_value("Settings", "Corner", 0)
 	size = config.get_value("Settings", "Size", 1)
 	volume = config.get_value("Settings", "Volume", 0.5)
+	display = config.get_value("Settings", "Display", 1)
+	set_settings()
 
- 
-#setting settings from cfg
 
+func set_settings():
 	corner_setting(corner)
-	size_setting(size - 1)
 	volume_setting(volume)
+	display_setting(display)
+	size_setting(size - 1)
+	create_config()
 
 func corner_setting(id: int):
 	match id:
@@ -29,7 +33,6 @@ func corner_setting(id: int):
 		1:
 			WindowManagement.move_to_br_corner()
 			corner = BOTTOM_RIGHT
-	create_config()
 
 
 func size_setting(id: int):
@@ -37,10 +40,21 @@ func size_setting(id: int):
 	WindowManagement.window_change_size(size)
 	corner_setting(corner)
 
+
 func volume_setting(value):
 	volume = value
 	AudioManagement.volume = volume
-	create_config()
+
+
+
+func display_setting(id: int):
+	if display == -1:
+		WindowManagement.display = DisplayServer.get_primary_screen()
+		WindowManagement.start()
+		return
+	WindowManagement.display = display
+	WindowManagement.start()
+	display = id + 1
 
 
 func create_config():

@@ -22,7 +22,7 @@ VOLUME,Volume,Громкость
 TUTORIAL_TOOLTIP_1,to accelerate.,", чтобы ехать.\n"
 TUTORIAL_TOOLTIP_2,to make the window \n clickthrough.,", чтобы окно\n пропускало нажатия."
 AUTO_TOOLTIP,"In Auto mode, the car accelerates automatically, but you get less money. You can reverse this change by purchasing the acceleration upgrade.","В режиме Авто машина движется самостоятельно, но вы\nполучаете меньше денег при завершении забега. \nВы можете откатить это изменение, купив улучшение нитро."
-23,,
+DISPLAY_SETTING,Choose display,Выбор дисплея
 24,,
 25,,
 26,,

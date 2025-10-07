@@ -5,22 +5,27 @@ var window_size : Vector2i
 var taskbar_height : int
 var current_corner : int
 var clickthrough_window: bool
+var display : int
 enum {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}
 signal corner_changed
 signal clickthrough_state_changed
 
 func _ready() -> void:
 	TransparentWindow.SetClickThrough(false)
+	start()
+
+
+func start():
 	print(window_position)
-	window_size = DisplayServer.window_get_size(DisplayServer.get_primary_screen())
-	screen_size = DisplayServer.screen_get_size(DisplayServer.get_primary_screen())
+	window_size = DisplayServer.window_get_size(display)
+	screen_size = DisplayServer.screen_get_size(display)
 	taskbar_height = get_taskbar_height()
 
 
 func move_to_bl_corner() -> void:
 	print("BL_PRESSED")
 	current_corner = BOTTOM_LEFT
-	window_position = DisplayServer.screen_get_position(DisplayServer.get_primary_screen())
+	window_position = DisplayServer.screen_get_position(display)
 	window_position.y += screen_size.y - window_size.y - taskbar_height
 	print(window_position)
 	DisplayServer.window_set_position(window_position)
@@ -30,7 +35,7 @@ func move_to_bl_corner() -> void:
 func move_to_br_corner() -> void:
 	print("BR_PRESSED")
 	current_corner = BOTTOM_RIGHT
-	window_position = DisplayServer.screen_get_position(DisplayServer.get_primary_screen())
+	window_position = DisplayServer.screen_get_position(display)
 	window_position.x += screen_size.x - window_size.x
 	window_position.y += screen_size.y - window_size.y - taskbar_height
 	print(window_position)
@@ -39,8 +44,8 @@ func move_to_br_corner() -> void:
 
 
 func get_taskbar_height() -> int:
-	return DisplayServer.screen_get_size(DisplayServer.get_primary_screen()).y \
-	- DisplayServer.screen_get_usable_rect(DisplayServer.get_primary_screen()).size.y
+	return DisplayServer.screen_get_size(display).y \
+	- DisplayServer.screen_get_usable_rect(display).size.y
 
 
 func debug_window_change() -> void:

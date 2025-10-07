@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=31 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cw82vg1ueukss" path="res://assets/sprites/n2o progress bar.png" id="10_70g4d"]
 [ext_resource type="Texture2D" uid="uid://51b6xmci6op3" path="res://assets/sprites/ui_slider.png" id="10_gruft"]
 [ext_resource type="Texture2D" uid="uid://dn5m5fjreoepw" path="res://assets/sprites/play button.png" id="11_70g4d"]
+[ext_resource type="Script" uid="uid://bm0vmcg2lftp5" path="res://src/ui/menu_button_3.gd" id="11_kn4tl"]
 [ext_resource type="Texture2D" uid="uid://dr0ussnog4d4h" path="res://assets/sprites/ui_slider_2.png" id="11_rifkw"]
 [ext_resource type="Script" uid="uid://bjswix6cdb1qp" path="res://src/ui/h_slider.gd" id="12_gruft"]
 [ext_resource type="Texture2D" uid="uid://cevxgwsw55ye2" path="res://assets/sprites/clickthrough_icon.png" id="18_nc5ak"]
@@ -70,7 +71,6 @@ mouse_filter = 2
 script = ExtResource("1_uwfos")
 
 [node name="SettingsMargin" type="MarginContainer" parent="basic_ui"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -191,6 +191,34 @@ popup/item_2/id = 2
 script = ExtResource("5_lsses")
 
 [node name="TextureRect" type="TextureRect" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_r0xtb")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Label" type="Label" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(162, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "DISPLAY_SETTING"
+label_settings = SubResource("LabelSettings_5cyww")
+
+[node name="MenuButton" type="MenuButton" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 0
+expand_icon = true
+script = ExtResource("11_kn4tl")
+
+[node name="TextureRect" type="TextureRect" parent="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/MenuButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
