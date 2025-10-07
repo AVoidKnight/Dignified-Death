@@ -8,7 +8,7 @@ func _ready() -> void:
 	print("Screen Count" + str(screen_count))
 	for i in screen_count:
 		popup_menu.add_check_item("Monitor " + str(i+1), i)
-	popup_menu.set_item_checked(SettingsManagement.display - 1, true)
+	popup_menu.set_item_checked(SettingsManagement.display, true)
 	popup_menu.id_pressed.connect(
 		_on_option_chosen
 			)

@@ -54,7 +54,7 @@ func display_setting(id: int):
 		return
 	WindowManagement.display = display
 	WindowManagement.start()
-	display = id + 1
+	display = id
 
 
 func create_config():
@@ -62,4 +62,5 @@ func create_config():
 	config.set_value("Settings", "Corner", corner)
 	config.set_value("Settings", "Size", size)
 	config.set_value("Settings", "Volume", volume)
+	config.set_value("Settings", "Display", display)
 	config.save("user://config.cfg")
