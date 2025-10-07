@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dkm2tm70mfqe7" path="res://src/level_parts/level_part.gd" id="1_qnroy"]
 [ext_resource type="Texture2D" uid="uid://cerjnrbxjs00e" path="res://assets/sprites/beta ground.png" id="2_rksrg"]
 [ext_resource type="Texture2D" uid="uid://bhtenlea18ovo" path="res://assets/sprites/beta road.png" id="3_juucf"]
-[ext_resource type="Texture2D" uid="uid://cq51s1kj411kg" path="res://assets/sprites/beta camp.png" id="4_rksrg"]
+[ext_resource type="Texture2D" uid="uid://drt204jl23dd3" path="res://assets/sprites/camp.png" id="4_negly"]
 [ext_resource type="Texture2D" uid="uid://ct5miegmkip3e" path="res://assets/sprites/bush1.png" id="6_no3yk"]
 [ext_resource type="Texture2D" uid="uid://ctld7r2av1oyb" path="res://assets/sprites/beta rock.png" id="6_xsmik"]
 [ext_resource type="Texture2D" uid="uid://c4v6obs4k2j0x" path="res://assets/sprites/tijo.png" id="7_xsmik"]
@@ -34,15 +34,10 @@ texture_mode = 1
 
 [node name="rocks" type="Node2D" parent="."]
 
-[node name="BetaCamp" type="Sprite2D" parent="."]
-position = Vector2(20.0167, -4.49525)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_rksrg")
-
 [node name="BetaCamp2" type="Sprite2D" parent="."]
-position = Vector2(56, -4.5)
-scale = Vector2(-0.5, 0.5)
-texture = ExtResource("4_rksrg")
+position = Vector2(33.11, -5.3)
+scale = Vector2(-0.3, 0.3)
+texture = ExtResource("4_negly")
 
 [node name="bushes" type="Node2D" parent="."]
 
