@@ -46,9 +46,8 @@ func volume_setting(value):
 	AudioManagement.volume = volume
 
 
-
 func display_setting(id: int):
-	if display == -1:
+	if display == -1 or DisplayServer.get_screen_count() - 1 < id:
 		WindowManagement.display = DisplayServer.get_primary_screen()
 		WindowManagement.start()
 		return
