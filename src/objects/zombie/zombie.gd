@@ -18,11 +18,11 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	var zombie_sans = randi_range(1,3)
 	match zombie_sans:
 		1:
-			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",0.0, 1.23)
+			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",0.0, 1.23, true)
 		2:
-			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",1.68, 2.55)
+			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",1.68, 2.55, true)
 		3:
-			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",3.0, 4.05)
+			AudioManagement.play("res://assets/sounds/zombie-sound.mp3",3.0, 4.05, true)
 	if Utils.player.get_node("RayCast2D").is_upside_down:
 		impulse_direction = -1
 	else: impulse_direction = 1
