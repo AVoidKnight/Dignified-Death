@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=32 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bm0vmcg2lftp5" path="res://src/ui/menu_button_3.gd" id="11_kn4tl"]
 [ext_resource type="Texture2D" uid="uid://dr0ussnog4d4h" path="res://assets/sprites/ui_slider_2.png" id="11_rifkw"]
 [ext_resource type="Script" uid="uid://bjswix6cdb1qp" path="res://src/ui/h_slider.gd" id="12_gruft"]
+[ext_resource type="Script" uid="uid://c3kqjid1fken6" path="res://src/ui/quit_button.gd" id="18_5v6qw"]
 [ext_resource type="Texture2D" uid="uid://cevxgwsw55ye2" path="res://assets/sprites/clickthrough_icon.png" id="18_nc5ak"]
 [ext_resource type="Script" uid="uid://mkb2gxh7if5y" path="res://src/ui/texture_rect.gd" id="19_ok5sm"]
 [ext_resource type="Script" uid="uid://b551qgbu3hs5t" path="res://src/ui/tutorial_label.gd" id="20_ok5sm"]
@@ -319,7 +320,7 @@ size_flags_vertical = 0
 [node name="TextureButton" type="TextureButton" parent="basic_ui/PauseMargin/VBoxContainer"]
 custom_minimum_size = Vector2(25, 25)
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 size_flags_vertical = 0
 toggle_mode = true
 texture_normal = ExtResource("1_r0xtb")
@@ -337,6 +338,15 @@ text = "55"
 label_settings = SubResource("LabelSettings_uwfos")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="basic_ui/PauseMargin/VBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("7_cy2ig")
+stretch_mode = 4
+script = ExtResource("18_5v6qw")
 
 [node name="TextureButton" type="TextureButton" parent="basic_ui/PauseMargin" groups=["auto_end_button"]]
 visible = false
@@ -400,5 +410,6 @@ texture_progress_offset = Vector2(4, 16)
 [connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_up"]
 [connection signal="timeout" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton/Timer" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_timer_timeout"]
 [connection signal="toggled" from="basic_ui/PauseMargin/VBoxContainer/TextureButton" to="basic_ui" method="_on_texture_button_toggled"]
+[connection signal="pressed" from="basic_ui/PauseMargin/VBoxContainer/TextureButton2" to="basic_ui/PauseMargin/VBoxContainer/TextureButton2" method="_on_pressed"]
 [connection signal="pressed" from="basic_ui/PauseMargin/TextureButton" to="basic_ui" method="_on_auto_end_button_pressed"]
 [connection signal="timeout" from="basic_ui/PauseMargin/TextureRect/Timer" to="basic_ui/PauseMargin/TextureRect" method="_on_timer_timeout"]
