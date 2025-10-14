@@ -47,7 +47,7 @@ func _physics_process(_delta: float) -> void:
 			particles_array[i].initial_velocity_min = self.linear_velocity.length()
 			particles_array[i].initial_velocity_max = self.linear_velocity.length()
 	for i in wheel_array.size():
-		wheel_array[i].position.x = 0
+		wheel_array[i].position = Vector2.ZERO
 
 
 func accelerate():
