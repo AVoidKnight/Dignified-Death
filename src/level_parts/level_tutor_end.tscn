@@ -65,8 +65,8 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_xsmik")
 
 [node name="Tijo" type="Sprite2D" parent="."]
-position = Vector2(-17, -18)
-scale = Vector2(0.0618761, 0.0254096)
+position = Vector2(-11.1383, -16.4491)
+scale = Vector2(0.0143297, 0.0125907)
 texture = ExtResource("7_xsmik")
 
 [node name="Area2D" type="Area2D" parent="."]
