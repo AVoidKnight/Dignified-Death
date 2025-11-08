@@ -55,10 +55,6 @@ func level_end(distance : float):
 
 
 func calc_money(distance : float) -> int:
-	distance_money = floori((distance * distance_coef) * (1 - int(LevelManagement.auto) * 0.75))
-	zombie_money = floori(zombie_killed * zombie_coef * \
-	(1 - float(LevelManagement.auto) * (0.75 - 0.75 * (0.25) * float(PlayerManagement.n2o))))
-	return (distance_money + zombie_money)
 	distance_money = floori((distance * distance_coef) * \
 	(1 - float(LevelManagement.auto) * (0.75 - 0.5 * (0.25) * float(PlayerManagement.n2o))))
 	if PlayerManagement.finale == true:
