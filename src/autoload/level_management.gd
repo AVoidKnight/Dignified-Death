@@ -41,7 +41,7 @@ func rlg(levels_node : Node, position_reference : Node):
 
 
 func reset_level_array():
-	var base_level_array : Array[int] = [1,2,3]
+	var base_level_array : Array[int] = [1,2,3,4]
 	level_array = base_level_array
 
 
