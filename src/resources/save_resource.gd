@@ -5,8 +5,9 @@ extends Resource
 "car_1_fuel_current_upgrade" : 0,
 "car_1_engine_current_upgrade" : 0,
 "car_1_n2o_current_upgrade" : 0,
-"car_1_penetration_current_upgrade" : 0
+"car_1_penetration_current_upgrade" : 0,
 "car_1_finale" : 0
 }
 @export var auto : bool = false
 @export var is_first_launch : bool = true
+@export var run_counter : int = 0
