@@ -32,7 +32,6 @@ node_a = NodePath("..")
 node_b = NodePath("Wheel")
 
 [node name="Wheel" parent="PinJoint2D" instance=ExtResource("2_scnjq")]
-mass = 1.0
 contact_monitor = true
 max_contacts_reported = 2
 
@@ -42,12 +41,12 @@ node_a = NodePath("..")
 node_b = NodePath("Wheel2")
 
 [node name="Wheel2" parent="PinJoint2D2" instance=ExtResource("2_scnjq")]
-mass = 1.0
 contact_monitor = true
 max_contacts_reported = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(55.7993, 4.07596, 48.9077, 12.8594, 39.6649, 15.9695, -51.3528, 15.7462, -51.0177, 6.58858, -26.2252, -13.6252, 0.689236, -14.1835, 45.1371, -0.11211)
+position = Vector2(-1, 0)
+polygon = PackedVector2Array(55, 7, 53, 12, 49, 14, 40.3367, 15.9804, 28, 16, 15, 12, -23, 12, -29, 16, -47, 16, -51, 12, -51.0177, 6.58858, -42, -2, -33, -6, -25, -13, 0.689236, -14.1835, 18, -4, 45.1371, -0.11211, 52, 3)
 
 [node name="BloodComponent" type="Node" parent="."]
 script = ExtResource("6_227or")
@@ -72,7 +71,7 @@ target_position = Vector2(0, -46)
 script = ExtResource("8_x8hmn")
 
 [node name="Timer" type="Timer" parent="RayCast2D"]
-wait_time = 3.0
+wait_time = 2.0
 
 [connection signal="timeout" from="BoostComponent/Timer" to="BoostComponent" method="_on_timer_timeout"]
 [connection signal="timeout" from="FuelComponent/Timer" to="FuelComponent" method="_on_timer_timeout"]
