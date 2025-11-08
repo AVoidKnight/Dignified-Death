@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b2a3crrgw07mr"]
+[gd_scene load_steps=33 format=3 uid="uid://b2a3crrgw07mr"]
 
 [ext_resource type="Texture2D" uid="uid://iy7w3ox5q4ax" path="res://assets/sprites/pause button.png" id="1_r0xtb"]
 [ext_resource type="Script" uid="uid://can51glbhlfca" path="res://src/ui/basic_ui.gd" id="1_uwfos"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://bjswix6cdb1qp" path="res://src/ui/h_slider.gd" id="12_gruft"]
 [ext_resource type="Script" uid="uid://c3kqjid1fken6" path="res://src/ui/quit_button.gd" id="18_5v6qw"]
 [ext_resource type="Texture2D" uid="uid://cevxgwsw55ye2" path="res://assets/sprites/clickthrough_icon.png" id="18_nc5ak"]
+[ext_resource type="Texture2D" uid="uid://ds0wad5pqqj37" path="res://assets/sprites/n2o auto icon.png" id="18_yicd0"]
 [ext_resource type="Script" uid="uid://mkb2gxh7if5y" path="res://src/ui/texture_rect.gd" id="19_ok5sm"]
 [ext_resource type="Script" uid="uid://b551qgbu3hs5t" path="res://src/ui/tutorial_label.gd" id="20_ok5sm"]
 
@@ -42,6 +43,10 @@ texture = ExtResource("11_rifkw")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gruft"]
 texture = ExtResource("11_rifkw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v6qw"]
+font = ExtResource("3_uwfos")
+font_size = 8
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uwfos"]
 texture = ExtResource("2_l2qak")
@@ -301,6 +306,31 @@ texture_under = ExtResource("9_opk7s")
 texture_progress = ExtResource("10_70g4d")
 texture_progress_offset = Vector2(4, 16)
 
+[node name="HBoxContainer" type="HBoxContainer" parent="basic_ui/BoostMargin"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TextureRect1" type="TextureRect" parent="basic_ui/BoostMargin/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("18_yicd0")
+
+[node name="TextureRect2" type="TextureRect" parent="basic_ui/BoostMargin/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("18_yicd0")
+
+[node name="TextureRect3" type="TextureRect" parent="basic_ui/BoostMargin/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("18_yicd0")
+
+[node name="TextureRect4" type="TextureRect" parent="basic_ui/BoostMargin/HBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("18_yicd0")
+
 [node name="PauseMargin" type="MarginContainer" parent="basic_ui"]
 layout_mode = 1
 anchors_preset = 15
@@ -407,11 +437,25 @@ texture_progress = ExtResource("10_70g4d")
 texture_progress_offset = Vector2(4, 16)
 
 [connection signal="drag_ended" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/HSlider" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/HSlider" method="_on_drag_ended"]
+[connection signal="mouse_entered" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/HSlider" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer4/HSlider" to="basic_ui" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MenuButton" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer/MenuButton" to="basic_ui" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/MenuButton" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer2/MenuButton" to="basic_ui" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/MenuButton" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer5/MenuButton" to="basic_ui" method="_on_mouse_exited"]
 [connection signal="button_down" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_down"]
 [connection signal="button_up" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui" method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_button_up"]
 [connection signal="timeout" from="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton/Timer" to="basic_ui/SettingsMargin/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer3/TextureButton" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="basic_ui/PauseMargin/VBoxContainer/TextureButton" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/PauseMargin/VBoxContainer/TextureButton" to="basic_ui" method="_on_mouse_exited"]
 [connection signal="toggled" from="basic_ui/PauseMargin/VBoxContainer/TextureButton" to="basic_ui" method="_on_texture_button_toggled"]
+[connection signal="mouse_entered" from="basic_ui/PauseMargin/VBoxContainer/TextureButton2" to="basic_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="basic_ui/PauseMargin/VBoxContainer/TextureButton2" to="basic_ui" method="_on_mouse_exited"]
 [connection signal="pressed" from="basic_ui/PauseMargin/VBoxContainer/TextureButton2" to="basic_ui/PauseMargin/VBoxContainer/TextureButton2" method="_on_pressed"]
 [connection signal="pressed" from="basic_ui/PauseMargin/TextureButton" to="basic_ui" method="_on_auto_end_button_pressed"]
 [connection signal="timeout" from="basic_ui/PauseMargin/TextureRect/Timer" to="basic_ui/PauseMargin/TextureRect" method="_on_timer_timeout"]

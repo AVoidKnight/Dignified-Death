@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b180vtg2w8m27" path="res://assets/sprites/beta spike upgrade icon.png" id="5_ul3a8"]
 [ext_resource type="Texture2D" uid="uid://dm0nng18hjj4j" path="res://assets/sprites/test panel.png" id="7_2h2eg"]
 [ext_resource type="Texture2D" uid="uid://dn5m5fjreoepw" path="res://assets/sprites/play button.png" id="7_gnxme"]
+[ext_resource type="Texture2D" uid="uid://eyrawmeovlip" path="res://assets/sprites/beta final upgrade icon.png" id="7_yesof"]
 [ext_resource type="Texture2D" uid="uid://dbpvx2bf6578v" path="res://assets/sprites/nah.png" id="10_v4ixc"]
 [ext_resource type="Texture2D" uid="uid://bktka6fmwxgp2" path="res://assets/sprites/yea.png" id="11_t33ps"]
 [ext_resource type="Texture2D" uid="uid://34oipb7vfuvm" path="res://assets/sprites/test_panel_32x16.png" id="12_t33ps"]
@@ -18,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dbqgun728icov" path="res://assets/sprites/settings ui panel.png" id="15_bxpq5"]
 [ext_resource type="Script" uid="uid://va0nlh8niq55" path="res://src/ui/n2o_tooltip.gd" id="16_8162v"]
 [ext_resource type="Texture2D" uid="uid://ce28h05sh340i" path="res://assets/sprites/cancel button.png" id="17_jg31t"]
-[ext_resource type="Script" uid="uid://c3kqjid1fken6" path="res://src/ui/quit_button.gd" id="19_yesof"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evh8o"]
 texture = ExtResource("7_2h2eg")
@@ -575,14 +575,24 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 texture_normal = ExtResource("17_jg31t")
 
+[connection signal="mouse_entered" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/Button" to="upgrade_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/Button" to="upgrade_ui" method="_on_mouse_exited"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/Button" to="upgrade_ui" method="_on_fuel_button_pressed"]
+[connection signal="mouse_entered" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button2" to="upgrade_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button2" to="upgrade_ui" method="_on_mouse_exited"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button2" to="upgrade_ui" method="_on_engine_button_pressed"]
+[connection signal="mouse_entered" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer5/Button4" to="upgrade_ui" method="_on_mouse_entered"]
+[connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer5/Button4" to="upgrade_ui" method="_on_finale_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer3/Button3" to="upgrade_ui" method="_on_n2o_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer4/Button4" to="upgrade_ui" method="_on_penetration_button_pressed"]
+[connection signal="mouse_entered" from="upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/TextureButton" to="upgrade_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/TextureButton" to="upgrade_ui" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="upgrade_ui" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="upgrade_ui" method="_on_mouse_exited"]
 [connection signal="toggled" from="upgrade_ui/MarginContainer/start_panel/MarginContainer/VBoxContainer/HBoxContainer/TextureButton" to="upgrade_ui" method="_on_auto_button_toggled"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_fuel_button_pressed"]
+[connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/finale_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_finale_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/engine_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_engine_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/n2o_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_n2o_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/penetration_panel/TextureButton" to="upgrade_ui/MarginContainer/upgrade_panel" method="_on_penetration_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer2/TextureButton" to="upgrade_ui" method="_on_cancel_button_pressed"]
-[connection signal="pressed" from="upgrade_ui/MarginContainer/TextureButton" to="upgrade_ui/MarginContainer/TextureButton" method="_on_pressed"]

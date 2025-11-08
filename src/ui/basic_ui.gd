@@ -1,9 +1,10 @@
 extends Control
-
+var mouse_counter : int = 0;
 func _ready() -> void:
 	if $"../..".name == "game":
 		$PauseMargin/TextureButton.show()
 	if PlayerManagement.auto == true:
+		update_n2o_auto_icon(PlayerManagement.n2o, true)
 		$BoostMargin/BoostProgressbar.hide()
 	if PlayerManagement.n2o == 0:
 		$BoostMargin/BoostProgressbar.hide()
@@ -37,3 +38,24 @@ func update_money_label():
 func _on_auto_end_button_pressed() -> void:
 	PlayerManagement.auto = false
 	Utils.player.get_node("FuelComponent")._on_timer_timeout()
+
+
+func update_n2o_auto_icon(run_counter: int = 4, is_first_time: bool = false) -> void:
+	for i in range(1, run_counter+1):
+		print("BoostMargin/HBoxContainer/TextureRect" + str(i))
+		get_node("BoostMargin/HBoxContainer/TextureRect" + str(i)).show()
+	if is_first_time == true:
+		return
+	get_node("BoostMargin/HBoxContainer/TextureRect" + str(run_counter + 1)).hide()
+
+
+func update_pos(pos: float) -> void:
+	$FuelMargin/Label.text = str(floori(pos));
+
+
+func _on_mouse_entered() -> void:
+	pass
+
+
+func _on_mouse_exited() -> void:
+	pass

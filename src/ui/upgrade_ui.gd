@@ -63,3 +63,11 @@ func update_progressbars():
 
 func _on_finale_button_pressed() -> void:
 	upgrade_panel.states = upgrade_panel.states_enum.FINALE
+
+
+func _on_mouse_entered() -> void:
+	Utils.game.get_node("basic_ui/basic_ui")._on_mouse_entered()
+
+
+func _on_mouse_exited() -> void:
+	Utils.game.get_node("basic_ui/basic_ui")._on_mouse_exited()

@@ -1,5 +1,4 @@
 extends PanelContainer
-enum states_enum {HIDE, FUEL, ENGINE, N2O, PENETRATION}
 enum states_enum {HIDE, FUEL, ENGINE, N2O, PENETRATION, FINALE}
 var states:
 	set(value):
