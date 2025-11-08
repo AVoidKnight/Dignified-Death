@@ -14,3 +14,5 @@ func _ready() -> void:
 		modulate.a -= 0.02
 		if is_instance_valid(get_tree()):
 			await get_tree().create_timer(0.01).timeout
+		else:
+			return
