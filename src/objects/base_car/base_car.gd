@@ -6,8 +6,8 @@ var particles_array : Array
 @onready var blood_stain_preload = preload("res://src/objects/blood_stain.tscn")
 var engine_upgrade : int:
 	set(value):
-		speed = 40 * (1 + value * 0.25)
-		max_speed = 30 * (1 + value * 0.25)
+		speed = 30 * (1 + value * 0.25)
+		max_speed = 50 * (1 + value * 0.25)
 var is_movable : bool = true
 var boost_active : bool = true
 var bodies_entered : int = 0
@@ -48,6 +48,7 @@ func _physics_process(_delta: float) -> void:
 			particles_array[i].initial_velocity_max = self.linear_velocity.length()
 	for i in wheel_array.size():
 		wheel_array[i].position = Vector2.ZERO
+	Utils.game.get_node("basic_ui/basic_ui").update_pos(global_position.x)
 
 
 func accelerate():
