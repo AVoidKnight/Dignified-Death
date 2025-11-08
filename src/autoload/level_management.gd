@@ -50,6 +50,7 @@ func level_end(distance : float):
 	zombie_killed = 0
 	PlayerManagement.money += end_money
 	PlayerManagement.is_first_launch = false
+	PlayerManagement.run_count += 1
 	PlayerManagement.save()
 
 

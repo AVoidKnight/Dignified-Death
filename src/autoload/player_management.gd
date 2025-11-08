@@ -12,6 +12,7 @@ var penetration : int = 0
 var finale: bool = false
 var penetration_converted : float = -1
 var auto : bool = false
+var run_count : int = 0;
 var is_first_launch : bool = false
 var updated_stats : bool
 
@@ -43,6 +44,7 @@ func save():
 	save_resource_temp.upgrade_dictionary_1 = upgrade_dict_create()
 	save_resource_temp.auto = auto
 	save_resource_temp.is_first_launch = is_first_launch
+	save_resource_temp.run_counter = run_count
 	ResourceSaver.save(save_resource_temp, "user://save.tres")
 
 
@@ -64,6 +66,7 @@ func load_data():
 	n2o = upgrade_dict["car_1_n2o_current_upgrade"]
 	penetration = upgrade_dict["car_1_penetration_current_upgrade"]
 	finale = upgrade_dict.get("car_1_finale", 0);
+	run_count = save_resource.run_counter;
 	auto = save_resource.auto
 	is_first_launch = save_resource.is_first_launch
 
