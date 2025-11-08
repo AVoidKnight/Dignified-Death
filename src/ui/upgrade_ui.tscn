@@ -177,6 +177,24 @@ texture_under = ExtResource("3_bnl2r")
 texture_progress = ExtResource("5_r1tf0")
 texture_progress_offset = Vector2(1, 1)
 
+[node name="VBoxContainer5" type="VBoxContainer" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button4" type="TextureButton" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer5"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer5/Button4"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("1_h5yyo")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer5/Button4"]
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("7_yesof")
+centered = false
+
 [node name="VBoxContainer3" type="VBoxContainer" parent="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer"]
 layout_mode = 2
 
@@ -307,6 +325,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="fuel_panel" type="VBoxContainer" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel"]
@@ -337,6 +356,49 @@ texture_normal = ExtResource("15_bxpq5")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/fuel_panel/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.5
+offset_top = -7.0
+offset_right = 10.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BUY"
+label_settings = SubResource("LabelSettings_lskkw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="finale_panel" type="VBoxContainer" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/finale_panel"]
+layout_mode = 2
+text = "UPGRADE_FINALE"
+label_settings = SubResource("LabelSettings_i6v5v")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/finale_panel"]
+layout_mode = 2
+text = "FINALE_TOOLTIP"
+label_settings = SubResource("LabelSettings_st8y5")
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/finale_panel"]
+custom_minimum_size = Vector2(30, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 1
+texture_normal = ExtResource("15_bxpq5")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="upgrade_ui/MarginContainer/upgrade_panel/MarginContainer/finale_panel/TextureButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -512,15 +574,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 texture_normal = ExtResource("17_jg31t")
-
-[node name="TextureButton" type="TextureButton" parent="upgrade_ui/MarginContainer"]
-custom_minimum_size = Vector2(15, 15)
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 8
-texture_normal = ExtResource("17_jg31t")
-stretch_mode = 4
-script = ExtResource("19_yesof")
 
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer/Button" to="upgrade_ui" method="_on_fuel_button_pressed"]
 [connection signal="pressed" from="upgrade_ui/MarginContainer/CenterContainer/HBoxContainer/VBoxContainer2/Button2" to="upgrade_ui" method="_on_engine_button_pressed"]

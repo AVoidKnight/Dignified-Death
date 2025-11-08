@@ -9,6 +9,7 @@ var fuel : int = 0
 var engine : int = 0 
 var n2o : int = 0
 var penetration : int = 0
+var finale: bool = false
 var penetration_converted : float = -1
 var auto : bool = false
 var is_first_launch : bool = false
@@ -51,6 +52,7 @@ func upgrade_dict_create() -> Dictionary:
 	upgrade_dict["car_1_engine_current_upgrade"] = engine
 	upgrade_dict["car_1_n2o_current_upgrade"] = n2o
 	upgrade_dict["car_1_penetration_current_upgrade"] = penetration
+	upgrade_dict["car_1_finale"] = finale;
 	return upgrade_dict
 
 
@@ -61,6 +63,7 @@ func load_data():
 	engine = upgrade_dict["car_1_engine_current_upgrade"]
 	n2o = upgrade_dict["car_1_n2o_current_upgrade"]
 	penetration = upgrade_dict["car_1_penetration_current_upgrade"]
+	finale = upgrade_dict.get("car_1_finale", 0);
 	auto = save_resource.auto
 	is_first_launch = save_resource.is_first_launch
 

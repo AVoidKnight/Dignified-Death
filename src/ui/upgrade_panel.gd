@@ -1,7 +1,13 @@
 extends PanelContainer
 enum states_enum {HIDE, FUEL, ENGINE, N2O, PENETRATION}
+enum states_enum {HIDE, FUEL, ENGINE, N2O, PENETRATION, FINALE}
 var states:
 	set(value):
+		$MarginContainer/fuel_panel.hide()
+		$MarginContainer/engine_panel.hide()
+		$MarginContainer/n2o_panel.hide()
+		$MarginContainer/penetration_panel.hide()
+		$MarginContainer/finale_panel.hide()
 		match value:
 			states_enum.HIDE:
 				hide()
@@ -13,6 +19,8 @@ var states:
 				n2o()
 			states_enum.PENETRATION:
 				penetration()
+			states_enum.FINALE:
+				finale()
 		states = value
 var upgrade_resource = UpgradeResource.new()
 
@@ -23,9 +31,6 @@ func _ready() -> void:
 func fuel():
 	show()
 	$MarginContainer/fuel_panel.show()
-	$MarginContainer/engine_panel.hide()
-	$MarginContainer/n2o_panel.hide()
-	$MarginContainer/penetration_panel.hide()
 	$MarginContainer/fuel_panel/Label3.text = \
 	str(6 + PlayerManagement.fuel * 6) + "s > " \
 	+ str(6 + (PlayerManagement.fuel + 1) * 6) + "s"
@@ -41,10 +46,7 @@ func fuel():
 
 func engine():
 	show()
-	$MarginContainer/fuel_panel.hide()
 	$MarginContainer/engine_panel.show()
-	$MarginContainer/n2o_panel.hide()
-	$MarginContainer/penetration_panel.hide()
 	$MarginContainer/engine_panel/Label3.text = \
 	str(1 + PlayerManagement.engine * 0.25) + "x > " \
 	+str(1 + (PlayerManagement.engine + 1) * 0.25) + "x"
@@ -62,10 +64,7 @@ func engine():
 
 func n2o():
 	show()
-	$MarginContainer/fuel_panel.hide()
-	$MarginContainer/engine_panel.hide()
 	$MarginContainer/n2o_panel.show()
-	$MarginContainer/penetration_panel.hide()
 	$MarginContainer/n2o_panel/Label3.text = \
 	str(PlayerManagement.n2o * 3) + "s > " \
 	+ str((PlayerManagement.n2o + 1) * 3) + "s"
@@ -81,9 +80,6 @@ func n2o():
 
 func penetration():
 	show()
-	$MarginContainer/fuel_panel.hide()
-	$MarginContainer/engine_panel.hide()
-	$MarginContainer/n2o_panel.hide()
 	$MarginContainer/penetration_panel.show()
 	$MarginContainer/penetration_panel/Label3.text = \
 	str(1 - PlayerManagement.penetration * 0.2) + "x > " \
@@ -96,6 +92,15 @@ func penetration():
 		str(1 - PlayerManagement.penetration * 0.2) + "x"
 		$MarginContainer/penetration_panel/TextureButton/Label.text = "-"
 	$"../..".update_progressbars()
+
+
+func finale():
+	if PlayerManagement.finale == true:
+		hide()
+	else:
+		show()
+		$MarginContainer/finale_panel.show()
+		$MarginContainer/finale_panel/TextureButton/Label.text = "$5000";
 
 
 func _on_fuel_button_pressed() -> void:
@@ -141,3 +146,15 @@ func _on_penetration_button_pressed() -> void:
 		PlayerManagement.money -= price
 		PlayerManagement.penetration += 1
 	penetration()
+
+
+func _on_finale_button_pressed() -> void:
+	if PlayerManagement.finale == true:
+		print("finale")
+		return
+	var price = 5000;
+	if price <= PlayerManagement.money :
+		PlayerManagement.money -=price;
+		PlayerManagement.finale = true;
+		PlayerManagement.save();
+	finale()

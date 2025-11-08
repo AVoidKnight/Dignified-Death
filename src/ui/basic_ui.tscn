@@ -54,10 +54,6 @@ font_color = Color(0.452027, 0.67, 0.2613, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kn4tl"]
 texture = ExtResource("2_l2qak")
 
-[sub_resource type="LabelSettings" id="LabelSettings_5v6qw"]
-font = ExtResource("3_uwfos")
-font_size = 8
-
 [node name="basic_ui" type="CanvasLayer"]
 
 [node name="basic_ui" type="Control" parent="."]
@@ -273,6 +269,12 @@ fill_mode = 3
 texture_under = ExtResource("6_t5gq6")
 texture_progress = ExtResource("7_uwfos")
 texture_progress_offset = Vector2(4, 16)
+
+[node name="Label" type="Label" parent="basic_ui/FuelMargin"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+label_settings = SubResource("LabelSettings_5v6qw")
 
 [node name="BoostMargin" type="MarginContainer" parent="basic_ui"]
 layout_mode = 1

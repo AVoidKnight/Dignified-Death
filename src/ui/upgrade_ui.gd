@@ -1,5 +1,6 @@
 extends Control
 @onready var upgrade_panel: PanelContainer = $MarginContainer/upgrade_panel
+@onready var finale_container: VBoxContainer = $MarginContainer/CenterContainer/HBoxContainer/VBoxContainer5
 var auto_button : bool = false
 
 func _ready() -> void:
@@ -56,3 +57,9 @@ func update_progressbars():
 	PlayerManagement.n2o
 	$MarginContainer/CenterContainer/HBoxContainer/VBoxContainer4/TextureProgressBar4.value = \
 	PlayerManagement.penetration
+	if (PlayerManagement.fuel + PlayerManagement.engine + PlayerManagement.n2o + PlayerManagement.penetration) == 16:
+		finale_container.show()
+
+
+func _on_finale_button_pressed() -> void:
+	upgrade_panel.states = upgrade_panel.states_enum.FINALE
