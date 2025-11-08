@@ -8,3 +8,5 @@ func _process(_delta: float) -> void:
 		PlayerManagement.save()
 	if Input.is_action_just_pressed("clickthrough_window"):
 		WindowManagement.clickthrough_window_state_change()
+	if Input.is_action_just_pressed("money"):
+		PlayerManagement.money += 2000;
