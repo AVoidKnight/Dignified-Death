@@ -14,8 +14,8 @@ animations = [{
 }]
 
 [node name="rock" type="StaticBody2D"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 2
+collision_mask = 0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.0473633, -1.60167)
@@ -24,5 +24,6 @@ sprite_frames = SubResource("SpriteFrames_5s80d")
 animation = &"rock_sprites"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 0.01)
 rotation = -0.0267906
-polygon = PackedVector2Array(-1.95961, -0.0759574, -1.10563, -0.154672, -0.111704, -0.206191, 0.630008, -0.1785, 1.05048, -0.120341, 1.36879, -0.0414736, 1.62504, 0.0201004)
+polygon = PackedVector2Array(-0.979147, -0.208189, -0.471098, -0.210205, 0.271241, -0.205943, 0.942875, -0.187945, 1.28525, -0.131879, 1.53941, 0.00779203, 2.38906, 0.382249, 2.38794, 1.00744, -2.20438, 0.892198, -2.18722, 0.251803)
