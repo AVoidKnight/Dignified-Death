@@ -23,8 +23,8 @@ TUTORIAL_TOOLTIP_1,to accelerate.,", чтобы ехать.\n"
 TUTORIAL_TOOLTIP_2,to make the window \n clickthrough.,", чтобы окно\n пропускало нажатия."
 AUTO_TOOLTIP,"In Auto mode, the car accelerates automatically, but you get less money. You can reverse this change by purchasing the acceleration upgrade.","В режиме Авто машина движется самостоятельно, но вы\nполучаете меньше денег при завершении забега. \nВы можете откатить это изменение, купив улучшение нитро."
 DISPLAY_SETTING,Choose display,Выбор дисплея
-24,,
-25,,
+UPGRADE_FINALE,Final Upgrade,Последнее улучшение
+FINALE_TOOLTIP,"Fuel X2, Auto Multiplier X1, ","Топливо х2, Авто множитель х1"
 26,,
 27,,
 28,,
