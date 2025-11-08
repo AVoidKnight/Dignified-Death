@@ -3,7 +3,6 @@ extends Node
 var fuel_active : bool = true
 var fuel_upgrade : int:
 	set(value):
-		fuel_sec = 6 + 6 * value
 		fuel_sec = (6 + 6 * value) * (1 + float(PlayerManagement.finale))
 		$Timer.wait_time = fuel_sec
 		fuel_upgrade = value
