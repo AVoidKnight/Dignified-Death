@@ -17,3 +17,4 @@ mono_crash.*.json
 
 addons
 scenes/debug_scene.tscn
+export_presets.cfg
